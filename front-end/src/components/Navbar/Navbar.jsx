@@ -4,9 +4,17 @@ import { images } from "../../constants";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 
+export const navList = [
+  "accueil",
+  "a propos",
+  "portfolio",
+  "competences",
+  "temoignages",
+  "contact",
+];
+
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const navList = ["home", "about", "work", "skills", "contact"];
 
   return (
     <nav className="app__navbar">
@@ -26,8 +34,8 @@ const Navbar = () => {
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {toggle && (
           <motion.div
-            whileInView={{ x: [300, 0] }} //width
-            transition={{ duration: 0.85, ease: "easeOut" }}
+            whileInView={{ x: [300, 0], opacity: [0, 1] }} //300 à 0 x-position
+            transition={{ duration: 0.8, ease: "backInOut" }}
           >
             {/* close icon */}
             <HiX onClick={() => setToggle(false)} />
