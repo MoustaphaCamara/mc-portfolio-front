@@ -1,15 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "./About.scss";
 import { urlFor, client } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper";
+import Typed from "typed.js";
 
 const About = () => {
-  const [abouts, setAbouts] = useState([]);
+  const el = React.useRef(null);
+
+  const generateTyped = (data) => {
+    const typed = new Typed(el.current, {
+      strings: [data[0].description],
+      typeSpeed: 15,
+      backSpeed: 0,
+      smartBackspace: false,
+    });
+    return () => {
+      typed.destroy();
+    };
+  };
+
   useEffect(() => {
     const query = "*[_type == 'about']";
-
-    client.fetch(query).then((data) => setAbouts(data));
+    client.fetch(query).then((data) => {
+      generateTyped(data);
+    });
   }, []);
 
   return (
@@ -17,27 +32,18 @@ const About = () => {
       <h2 className="head-text">
         A <span>propos</span> de <span>moi</span>
       </h2>
-      <p className="p-text">CV en pdf, qui suis je, reconversion etc</p>
       <div className="app__profiles">
-        {abouts.map((about, index) => (
-          <motion.div
-            whileInView={{ opacity: 1 }}
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.5, type: "tween" }}
-            className="app__profile-item"
-            key={about.title + index}
-          >
-            <img src={urlFor(about.imgUrl)} alt={about.title} />
-            <h2 className="bold-text" style={{ marginTop: 20 }}>
-              {" "}
-              {about.title}
-            </h2>
-            <p className="p-text" style={{ marginTop: 10 }}>
-              {" "}
-              {about.description}
-            </p>
-          </motion.div>
-        ))}
+        <p className=" app__profile-item typed" ref={el}></p>
+
+        <motion.button
+          className="button"
+          whileInView={{ opacity: [0, 1] }}
+          transition={{ duration: 0.5 }}
+        >
+          <a href="./src/assets/pdf/CV_Moustapha-Camara.pdf" target="_blank">
+            CV (pdf)
+          </a>
+        </motion.button>
       </div>
     </>
   );
