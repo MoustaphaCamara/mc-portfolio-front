@@ -1,105 +1,104 @@
 .app__footer {
   flex: 1;
   width: 100%;
+  min-height: 50vh;
+  // display: flex;
   flex-direction: column;
-  background: var(--dark-purple-color);
+  // justify-content: center;
+  // align-items: center;
 }
-.app__footer-cards {
-  width: 100%;
+
+// icons
+
+.app__footer-icons-list {
+  margin-top: 2rem;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  list-style: none;
   flex-wrap: wrap;
-  margin: 4rem 2rem 2rem;
-
-  .app__footer-card {
-    min-width: 290px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: var(--purple-color);
-    transition: all 0.3s ease-in-out;
-    img {
-      width: 40px;
-      height: 40px;
-      margin: 0 0.7rem;
-    }
-
-    a {
-      text-decoration: none;
-      font-weight: 600;
-    }
-    &:hover {
-      box-shadow: 0 0 25px var(--purple-color);
-    }
-
-    @media screen and (max-width: 450px) {
-      width: 100%;
-    }
-  }
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
+  justify-content: center;
 }
 
-.app__footer-form {
-  width: 100%;
+.app__footer-icons-list li {
+  position: relative;
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.app__footer-icons-list i {
+  color: #222;
+  font-size: 5rem;
+}
+
+.app__footer-icons-list a::before {
+  font-family: "FontAwesome";
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  font-size: 5rem;
+  transition: 0.6s ease-out;
+}
+
+.app__footer-icons-list a .app__footer-icons-line {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: calc(100% + 8px);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: 0.6s ease-out;
+}
+
+.app__footer-icons-list li:nth-child(1) a::before {
+  content: "\f08c";
+  color: #0a66c2;
+}
+
+.app__footer-icons-list li:nth-child(1) .app__footer-icons-line {
+  border-bottom: 4px solid #0a66c2;
+}
+
+.app__footer-icons-list li:nth-child(2) a::before {
+  content: "\f09b";
+  color: #fff;
+}
+
+.app__footer-icons-list li:nth-child(2) .app__footer-icons-line {
+  border-bottom: 4px solid #fff;
+}
+
+.app__footer-icons-list li:nth-child(3) a::before {
+  content: "\f0e0";
+  color: var(--orange-color);
+}
+
+.app__footer-icons-list li:nth-child(3) .app__footer-icons-line {
+  border-bottom: 4px solid var(--orange-color);
+}
+
+.app__footer-icons-list li:hover a::before {
+  height: 100%;
+}
+
+.app__footer-icons-list li:hover .app__footer-icons-line {
+  transform: translateY(84px);
+}
+.app__footer-contact-container {
+  display: flex;
   flex-direction: column;
-  margin: 1rem 2rem;
-  div {
-    width: 60%;
-    margin: 0.75rem 0;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: var(--primary-color);
+  justify-content: space-evenly;
+  height: 100%;
+}
+.app__footer-copyright-container {
+  padding: 2rem 0 0;
 
-    transition: all 0.3s ease-in-out;
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.95rem;
-      border: none;
-      border-radius: 7px;
-      background-color: var(--primary-color);
-      font-family: var(--font-base);
-      color: var(--secondary-color);
-      outline: none;
-    }
-    textarea {
-      height: 170px;
-    }
-
-    &:hover {
-      box-shadow: 0 0 25px var(--primary-color);
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  @media screen and (max-width: 500px) {
+    padding: 2rem;
   }
-  button {
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    border: none;
-    font-weight: 500;
-    background-color: var(--secondary-color);
-    color: var(--white-color);
-    outline: none;
-    cursor: pointer;
-    margin: 2rem 0 0 0;
-    font-family: var(--font-base);
+  p {
     text-transform: uppercase;
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-      background: var(--primary-color);
-      color: var(--secondary-color);
-    }
-  }
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    margin: 1rem 0;
   }
 }

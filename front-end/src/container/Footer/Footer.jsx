@@ -1,71 +1,43 @@
-import React, { useState } from "react";
-
+import React from "react";
+import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper/";
-import { client } from "../../client";
-import { images } from "../../constants";
 
 import "./Footer.scss";
 
 const Footer = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const { name, email, message } = formData;
-  // permet de destructurer (formData.name)
-
-  const handleChangeInput = (e) => {
-    const { name, value } = e.target;
-    // look further into this, un peu avancée comme syntaxe
-    setFormData({ ...formData, [name]: value });
-  };
-  const handleSubmit = () => {
-    setLoading(true);
-
-    const contact = {
-      _type: "contact",
-      name,
-      email,
-      message,
-    };
-    // name:name, email;email...
-    // send data to sanity client
-    // client.create(contact);
-    client.create(contact).then(() => {
-      setLoading(false);
-      setIsFormSubmitted(true);
-    });
-  };
-
   return (
     <>
-      <h2 className="head-text">Contactez moi</h2>
-      <div className="app__footer-cards">
-        <div className="app__footer-card">
-          <i className="fa-solid fa-envelope"></i>
-          <a href="mailto:cmr.mous@gmail.com" className="p-text">
-            cmr.mous@gmail.com
-          </a>
+      <div className="app__footer app__darkbg app_flex">
+        <div className="app__footer-contact-container">
+          <h2 className="head-text">Contactez moi</h2>
+          <ul className="app__footer-icons-list">
+            <li>
+              <a href="#">
+                <span className="app__footer-icons-line"></span>
+                <i className="fa-brands fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span className="app__footer-icons-line"></span>
+                <i className="fa-brands fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span className="app__footer-icons-line"></span>
+                <i className="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div className="app__footer-card">
-          <i className="fa-brands fa-linkedin"></i>
-          <img src={images.linkedin} alt="mobile" />
-          <a href="tel:+33 (7) 01 02 03 04" className="p-text">
-            +33 (7) 01 02 03 04
-          </a>
+        <div className="app__footer-copyright-container">
+          <p className="p-text">©2023 MC</p>
         </div>
-      </div>
-      <div className="copyright">
-        <p className="p-text">@2023 Moustapha</p>
-        <p className="p-text">Tous droits reservés</p>
       </div>
     </>
   );
 };
-// export default MotionWrap(Footer, "app__footer app__whitebg");
+// export default MotionWrap(Footer, "app__footer app__darkbg app_flex");
 
-export default AppWrap(MotionWrap(Footer, "app__footer"), "contact");
+export default Footer;

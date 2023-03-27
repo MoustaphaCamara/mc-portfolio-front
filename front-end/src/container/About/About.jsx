@@ -11,10 +11,11 @@ const About = () => {
   const generateTyped = (data) => {
     const typed = new Typed(el.current, {
       strings: [data[0].description],
-      typeSpeed: 15,
+      typeSpeed: 10,
       backSpeed: 0,
       smartBackspace: false,
       loop: false,
+      showCursor: false,
     });
   };
 
@@ -32,21 +33,20 @@ const About = () => {
       </h2>
       <div className="app__profiles">
         <p className=" app__profile-item typed" ref={el}></p>
-
-        <motion.button
-          className="button"
+        <motion.a
+          href="./src/assets/pdf/CV_Moustapha-Camara.pdf"
+          target="_blank"
+          className="btn btn-action"
           whileInView={{ opacity: [0, 1] }}
           transition={{ duration: 0.5 }}
         >
-          <a href="./src/assets/pdf/CV_Moustapha-Camara.pdf" target="_blank">
-            CV (pdf)
-          </a>
-        </motion.button>
+          voir cv (pdf)
+        </motion.a>
       </div>
     </>
   );
 };
-export default MotionWrap(About, "app__about");
+export default MotionWrap(About, "app__about app_darkbg");
 // export default AppWrap(
 //   MotionWrap(About, "app__about"),
 //   "a propos",
