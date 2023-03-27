@@ -159,8 +159,3 @@ const Skills = () => {
 };
 
 export default MotionWrap(Skills, "app__skills app__darkbg");
-// export default AppWrap(
-//   MotionWrap(Skills, "app__skills"),
-//   "competences",
-//   "app__whitebg"
-// );

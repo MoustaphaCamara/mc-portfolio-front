@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import "./About.scss";
-import { urlFor, client } from "../../client";
-import { AppWrap, MotionWrap } from "../../wrapper";
+import { client } from "../../client";
+import { MotionWrap } from "../../wrapper";
 import Typed from "typed.js";
 
 const About = () => {
@@ -47,8 +47,3 @@ const About = () => {
   );
 };
 export default MotionWrap(About, "app__about app_darkbg");
-// export default AppWrap(
-//   MotionWrap(About, "app__about"),
-//   "a propos",
-//   "app_whitebg"
-// );

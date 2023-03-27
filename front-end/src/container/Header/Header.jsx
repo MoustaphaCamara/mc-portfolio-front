@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import { AppWrap, MotionWrap } from "../../wrapper";
+import { MotionWrap } from "../../wrapper";
 
 import { images } from "../../constants";
 
@@ -42,7 +42,6 @@ const Header = () => {
         </div>
       </motion.div>
 
-      {/* profile pic */}
       <motion.div
         className="app__header-img"
         transition={{ duration: 0.5, delayChildren: 0.5 }}
@@ -51,7 +50,6 @@ const Header = () => {
         <img src={images.profile} alt="profile-bg" />
       </motion.div>
 
-      {/* profile circles*/}
       <motion.div
         className="app__header-circles"
         variants={scaleVariants}
@@ -68,8 +66,3 @@ const Header = () => {
 };
 
 export default MotionWrap(Header, "app__darkbg");
-// export default AppWrap(
-//   MotionWrap(Header, "app__header"),
-//   "accueil",
-//   "app__whitebg"
-// );

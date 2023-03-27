@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
-import { AppWrap, MotionWrap } from "../../wrapper";
+import { MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Testimonials.scss";
 
@@ -85,9 +85,3 @@ const Testimonials = () => {
   );
 };
 export default MotionWrap(Testimonials, "app__testimonial ");
-
-// export default AppWrap(
-//   MotionWrap(Testimonials, "app__testimonial"),
-//   "temoignages",
-//   "app__primarybg"
-// );

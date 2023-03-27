@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-import { AppWrap, MotionWrap } from "../../wrapper";
+import { MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Work.scss";
 
@@ -33,7 +33,6 @@ const Work = () => {
       } else {
         setFilterWork(works.filter((work) => work.tags.includes(item)));
         console.log(works.filter((work) => work.tags.includes(item)));
-        // setFilterWork(works.map((work) => work.tags.includes(item)));
       }
     }, 500);
   };
@@ -115,9 +114,3 @@ const Work = () => {
   );
 };
 export default MotionWrap(Work, "app__works app__darkbg");
-
-// export default AppWrap(
-//   MotionWrap(Work, "app__works"),
-//   "portfolio",
-//   "app__primarybg"
-// );

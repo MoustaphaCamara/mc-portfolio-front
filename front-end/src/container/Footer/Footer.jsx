@@ -1,7 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { AppWrap, MotionWrap } from "../../wrapper/";
-
 import "./Footer.scss";
 
 const Footer = () => {
@@ -38,6 +35,5 @@ const Footer = () => {
     </>
   );
 };
-// export default MotionWrap(Footer, "app__footer app__darkbg app_flex");
 
 export default Footer;
