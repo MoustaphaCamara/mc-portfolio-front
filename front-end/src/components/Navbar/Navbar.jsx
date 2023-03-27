@@ -49,10 +49,7 @@ const Navbar = () => {
       <div className="app__navbar-menu">
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {toggle && (
-          <motion.div
-            whileInView={{ x: [300, 0], opacity: [0, 1] }} //300 à 0 x-position
-            transition={{ duration: 0.8, ease: "linear", x: { duration: 1 } }}
-          >
+          <div className="app__navbar-burger">
             {/* close icon */}
             <HiX onClick={() => setToggle(false)} />
             <ul>
@@ -64,7 +61,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         )}
       </div>
     </nav>
