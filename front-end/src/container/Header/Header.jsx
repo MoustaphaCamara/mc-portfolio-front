@@ -18,7 +18,7 @@ const scaleVariants = {
   },
 };
 
-const technologies = [images.next, images.react, images.node];
+const technologies = [images.next, images.react, images.nodejs];
 const Header = () => {
   return (
     <div className="app__header app__flex">

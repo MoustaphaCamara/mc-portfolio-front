@@ -6,7 +6,7 @@ import git from "../assets/git.svg";
 import github from "../assets/github.svg";
 import html from "../assets/html.svg";
 import javascript from "../assets/javascript.svg";
-import node from "../assets/node.svg";
+import nodejs from "../assets/nodejs.svg";
 import react from "../assets/react.svg";
 import redux from "../assets/redux.svg";
 import sass from "../assets/sass.svg";
@@ -35,7 +35,7 @@ export default {
   git,
   html,
   javascript,
-  node,
+  nodejs,
   react,
   redux,
   sass,
