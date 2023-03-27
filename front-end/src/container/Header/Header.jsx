@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 
 import { images } from "../../constants";
 
@@ -18,7 +18,7 @@ const scaleVariants = {
   },
 };
 
-const technologies = [images.flutter, images.redux, images.sass];
+const technologies = [images.next, images.react, images.node];
 const Header = () => {
   return (
     <div className="app__header app__flex">
@@ -29,15 +29,15 @@ const Header = () => {
       >
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-            <span>👋</span>
+            <span>{"<salut />"}</span>
             <div style={{ marginLeft: 20 }}>
-              <p className="p-text">Salut, moi c'est</p>
+              <p className="p-text">Moi c'est</p>
               <h1 className="head-text">Moustapha</h1>
             </div>
           </div>
           <div className="tag-cmp app__flex">
             <p className="p-text">Développeur Web</p>
-            <p className="p-text">Web Mobile</p>
+            <p className="p-text">Développeur Mobile</p>
           </div>
         </div>
       </motion.div>
@@ -49,14 +49,6 @@ const Header = () => {
         whileInView={{ opacity: [0, 1] }}
       >
         <img src={images.profile} alt="profile-bg" />
-        {/* profile background */}
-        <motion.img
-          className="overlay_circle"
-          transition={{ duration: 1, ease: "easeInOut" }}
-          whileInView={{ scale: [0, 1] }}
-          src={images.circle}
-          alt="profile_circle"
-        />
       </motion.div>
 
       {/* profile circles*/}
@@ -75,4 +67,9 @@ const Header = () => {
   );
 };
 
-export default AppWrap(Header, "accueil");
+export default MotionWrap(Header, "app__darkbg");
+// export default AppWrap(
+//   MotionWrap(Header, "app__header"),
+//   "accueil",
+//   "app__whitebg"
+// );

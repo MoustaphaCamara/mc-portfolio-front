@@ -6,7 +6,7 @@
 
   padding: 1rem 2rem;
 
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.45);
 
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -20,7 +20,10 @@
   justify-content: start;
   align-items: center;
   img {
-    width: 90px;
+    filter: invert(81%) sepia(52%) saturate(373%) hue-rotate(145deg)
+      brightness(94%) contrast(95%);
+
+    width: 40px;
     @media screen and (min-width: 2000px) {
       width: 200px;
     }
@@ -49,7 +52,7 @@
       transition: all 0.3s ease-in-out;
     }
     a {
-      color: var(--gray-color);
+      color: var(--white-color);
       text-decoration: none;
       flex-direction: column;
       text-transform: uppercase;
@@ -57,12 +60,12 @@
 
       transition: all 0.3s ease-in-out;
       &:hover {
-        color: var(--secondary-color);
+        color: var(--blue-color);
       }
     }
     &:hover {
       div {
-        border-top: 5px solid var(--secondary-color);
+        border-top: 5px solid var(--blue-color);
       }
     }
   }

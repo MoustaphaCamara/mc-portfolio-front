@@ -15,9 +15,9 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        un développeur <span> junior</span> <br />
-        ne cesse d'<span>apprendre</span>
+        A <span>propos</span> de <span>moi</span>
       </h2>
+      <p className="p-text">CV en pdf, qui suis je, reconversion etc</p>
       <div className="app__profiles">
         {abouts.map((about, index) => (
           <motion.div
@@ -42,9 +42,9 @@ const About = () => {
     </>
   );
 };
-
-export default AppWrap(
-  MotionWrap(About, "app__about"),
-  "a propos",
-  "app__whitebg"
-);
+export default MotionWrap(About, "app__about");
+// export default AppWrap(
+//   MotionWrap(About, "app__about"),
+//   "a propos",
+//   "app_whitebg"
+// );

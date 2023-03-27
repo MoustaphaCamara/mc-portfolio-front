@@ -43,68 +43,29 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Allons prendre un café et discutons</h2>
+      <h2 className="head-text">Contactez moi</h2>
       <div className="app__footer-cards">
         <div className="app__footer-card">
-          <img src={images.email} alt="email" />
+          <i className="fa-solid fa-envelope"></i>
           <a href="mailto:cmr.mous@gmail.com" className="p-text">
             cmr.mous@gmail.com
           </a>
         </div>
         <div className="app__footer-card">
-          <img src={images.mobile} alt="mobile" />
+          <i className="fa-brands fa-linkedin"></i>
+          <img src={images.linkedin} alt="mobile" />
           <a href="tel:+33 (7) 01 02 03 04" className="p-text">
             +33 (7) 01 02 03 04
           </a>
         </div>
       </div>
-
-      {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
-          <div className="app__flex">
-            <input
-              className="p-text"
-              type="text"
-              placeholder="Ton nom"
-              name="name"
-              value={name}
-              onChange={handleChangeInput}
-            />
-          </div>
-          <div className="app__flex">
-            <input
-              className="p-text"
-              type="email"
-              placeholder="Ton email"
-              name="email"
-              value={email}
-              onChange={handleChangeInput}
-            />
-          </div>
-          <div>
-            <textarea
-              className="p-text"
-              placeholder="Ton message"
-              value={message}
-              name="message"
-              onChange={handleChangeInput}
-            ></textarea>
-          </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>
-            {loading ? "Envoi..." : "Envoyer"}
-          </button>
-        </div>
-      ) : (
-        <div>
-          <h3 className="head-text">Merci pour votre message !</h3>
-        </div>
-      )}
+      <div className="copyright">
+        <p className="p-text">@2023 Moustapha</p>
+        <p className="p-text">Tous droits reservés</p>
+      </div>
     </>
   );
 };
+// export default MotionWrap(Footer, "app__footer app__whitebg");
 
-export default AppWrap(
-  MotionWrap(Footer, "app__footer"),
-  "contact",
-  "app__whitebg"
-);
+export default AppWrap(MotionWrap(Footer, "app__footer"), "contact");

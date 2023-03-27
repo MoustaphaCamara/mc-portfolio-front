@@ -2,9 +2,36 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
+  min-height: 50vh;
+  padding: 2rem 0;
+  background: radial-gradient(
+        circle,
+        transparent 20%,
+        var(--dark-purple-color) 20%,
+        var(--dark-purple-color) 80%,
+        transparent 80%,
+        transparent
+      )
+      0% 0% / 104px 104px,
+    radial-gradient(
+        circle,
+        transparent 20%,
+        var(--dark-purple-color) 20%,
+        var(--dark-purple-color) 80%,
+        transparent 80%,
+        transparent
+      )
+      52px 52px / 104px 104px,
+    linear-gradient(var(--purple-color) 1px, transparent 1px) 0px -1px / 52px 52px,
+    linear-gradient(
+        90deg,
+        var(--purple-color) 1px,
+        var(--dark-purple-color) 1px
+      ) -1px 0px / 52px 52px var(--dark-purple-color);
+  background-size: 104px 104px, 104px 104px, 52px 52px, 52px 52px;
+  background-color: var(--dark-purple-color);
 }
 .app__skills-container {
-  width: 80%;
   margin-top: 3rem;
   display: flex;
   flex-direction: row;
@@ -87,7 +114,6 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 1rem;
 }
 
 .app__skills-exp-works {
@@ -104,7 +130,6 @@
     }
     p {
       font-weight: 400;
-      color: var(--gray-color);
       motion-path: 5px;
     }
   }
@@ -112,9 +137,8 @@
 
 .app__skills-exp-year {
   margin-right: 3rem;
-
   p {
-    color: var(--secondary-color);
+    color: var(--white-color);
   }
   @media screen and (max-width: 450px) {
     margin-right: 1rem;

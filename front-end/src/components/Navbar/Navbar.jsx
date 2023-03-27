@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
 import { images } from "../../constants";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
@@ -15,9 +15,25 @@ export const navList = [
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [navTop, setNavTop] = useState(0);
+  var lastScroll = 0;
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > lastScroll) {
+        setNavTop(-70);
+      } else {
+        setNavTop(0);
+      }
+      lastScroll = window.scrollY;
+    });
+  }, []);
 
   return (
-    <nav className="app__navbar">
+    <nav
+      className="app__navbar"
+      style={{ top: navTop, transition: "all 1s ease" }}
+    >
       <div className="app__navbar-logo">
         <img src={images.logo} alt="logo-portfolio" />
       </div>

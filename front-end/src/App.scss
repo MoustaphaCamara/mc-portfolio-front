@@ -1,5 +1,5 @@
 .app {
-  background-color: var(--primary-color);
+  background-color: var(--dark-purple-color);
   font-family: var(--font-base);
 }
 
@@ -9,6 +9,9 @@
 
 .app__primarybg {
   background-color: var(--primary-color);
+}
+.app__darkbg {
+  background-color: var(--dark-purple-color);
 }
 
 .app__container {
@@ -47,7 +50,6 @@
 
   p {
     text-transform: uppercase;
-    color: var(--black-color);
   }
 }
 
@@ -55,11 +57,11 @@
   font-size: 2.75rem;
   font-weight: 800;
   text-align: center;
-  color: var(--black-color);
+  color: var(--orange-color);
   text-transform: capitalize;
 
   span {
-    color: var(--secondary-color);
+    color: var(--primary-color);
   }
 
   @media screen and (min-width: 2000px) {
@@ -74,7 +76,7 @@
 .p-text {
   font-size: 0.8rem;
   text-align: left;
-  color: var(--gray-color);
+  color: var(--white-color);
   line-height: 1.5;
 
   @media screen and (min-width: 2000px) {
@@ -85,7 +87,7 @@
 .bold-text {
   font-size: 1rem;
   font-weight: 800;
-  color: var(--black-color);
+  color: var(--orange-color);
   text-align: left;
 
   @media screen and (min-width: 2000px) {

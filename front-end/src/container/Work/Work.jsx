@@ -114,9 +114,10 @@ const Work = () => {
     </>
   );
 };
+export default MotionWrap(Work, "app__works app__darkbg");
 
-export default AppWrap(
-  MotionWrap(Work, "app__works"),
-  "portfolio",
-  "app__primarybg"
-);
+// export default AppWrap(
+//   MotionWrap(Work, "app__works"),
+//   "portfolio",
+//   "app__primarybg"
+// );
