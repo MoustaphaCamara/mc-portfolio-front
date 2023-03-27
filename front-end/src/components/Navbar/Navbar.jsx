@@ -51,7 +51,7 @@ const Navbar = () => {
         {toggle && (
           <motion.div
             whileInView={{ x: [300, 0], opacity: [0, 1] }} //300 à 0 x-position
-            transition={{ duration: 0.8, ease: "backInOut" }}
+            transition={{ duration: 0.8, ease: "linear", x: { duration: 1 } }}
           >
             {/* close icon */}
             <HiX onClick={() => setToggle(false)} />

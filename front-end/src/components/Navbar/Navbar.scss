@@ -20,9 +20,10 @@
   justify-content: start;
   align-items: center;
   img {
-    filter: invert(81%) sepia(52%) saturate(373%) hue-rotate(145deg)
-      brightness(94%) contrast(95%);
-
+    // SVG color
+    filter: invert(72%) sepia(7%) saturate(3020%) hue-rotate(332deg)
+      brightness(91%) contrast(91%);
+    // used https://codepen.io/sosuke/pen/Pjoqqp
     width: 40px;
     @media screen and (min-width: 2000px) {
       width: 200px;

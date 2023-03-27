@@ -14,10 +14,8 @@ const About = () => {
       typeSpeed: 15,
       backSpeed: 0,
       smartBackspace: false,
+      loop: false,
     });
-    return () => {
-      typed.destroy();
-    };
   };
 
   useEffect(() => {
