@@ -17,11 +17,13 @@ import nuxt from "../assets/nuxt.svg";
 import mysql from "../assets/mysql.svg";
 import photoshop from "../assets/photoshop.svg";
 import express from "../assets/express.svg";
+import sanity from "../assets/sanity.svg";
 
 import profile from "../assets/profile.png";
 import logo from "../assets/logo-mc.svg";
 
 export default {
+  sanity,
   express,
   photoshop,
   github,

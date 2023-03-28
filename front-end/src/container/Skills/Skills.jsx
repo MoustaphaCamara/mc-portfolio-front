@@ -22,7 +22,6 @@ const Skills = () => {
   const fetchData = (query) => {
     client.fetch(query).then((data) => {
       setSkills(data);
-      console.log(data);
     });
   };
   useEffect(() => {
@@ -43,7 +42,7 @@ const Skills = () => {
           <div
             className="app__skills-filter-item"
             key={index}
-            onClick={(e) => setFilter(item)}
+            onClick={() => setFilter(item)}
           >
             {item}
           </div>
