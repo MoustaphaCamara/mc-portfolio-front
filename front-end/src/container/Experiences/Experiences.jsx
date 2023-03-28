@@ -101,15 +101,10 @@ const Experiences = () => {
                     transition={{ duration: 0.5 }}
                     className="app__skills-exp-work"
                     key={work.name}
-                    data-tooltip-id={work.name}
-                    data-tooltip-content={work.desc}
-                    data-tooltip-place="top"
-                    data-tooltip-variant="light"
                   >
                     <h4 className="bold-text">{work.name}</h4>
                     <p className="p-text">{work.company}</p>
                   </motion.div>
-                  <Tooltip id={work.name} className="skills-tooltip" />
                 </>
               ))}
             </motion.div>
@@ -119,5 +114,4 @@ const Experiences = () => {
     </div>
   );
 };
-
-export default Experiences;
+export default MotionWrap(Experiences, "app__experiences app__darkbg");
