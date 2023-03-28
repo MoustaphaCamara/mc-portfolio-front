@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Tooltip } from "react-tooltip";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -11,6 +10,10 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
 import { images } from "../../constants";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
 
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
@@ -35,8 +38,62 @@ const Skills = () => {
       <h2 className="head-text">Compétences & Expérience</h2>
 
       <div className="app__skills-container">
+        {/* item 1 */}
+        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "gray" }}>
+          <CardMedia
+            component="img"
+            alt="test"
+            height="120"
+            image={images.figma}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Front-end
+            </Typography>
+            <Typography gutterBottom variant="body2" component="div">
+              <img src={images.html} alt="" width="50px" />
+              <img src={images.css} alt="" width="50px" />
+              <img src={images.javascript} alt="" width="50px" />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At neque
+              mollitia velit explicabo perferendis blanditiis molestiae enim
+              reiciendis impedit! Minus.
+            </Typography>
+          </CardContent>
+        </Card>
+        {/* eo item1 */}
+        <div className="app__skills-item">
+          <h4 className="head-text">front</h4>
+          <div className="icons-container">
+            <img src={images.react} alt="" />
+          </div>
+        </div>
+        <div className="app__skills-item">
+          <h4 className="head-text">back</h4>
+          <div className="icons-container">
+            <img src={images.react} alt="" />
+          </div>
+        </div>
+        <div className="app__skills-item">
+          <h4 className="head-text">framework-libs</h4>
+          <div className="icons-container">
+            <img src={images.react} alt="" />
+          </div>
+        </div>
+        <div className="app__skills-item">
+          <h4 className="head-text">server-stack & outils</h4>
+          <div className="icons-container">
+            <img src={images.react} alt="" />
+          </div>
+        </div>
+
+        <div className="app__skills-item">
+          <h4 className="head-text">design</h4>
+          <div className="icons-container">
+            <img src={images.react} alt="" />
+          </div>
+        </div>
         {/* COMPETENCES */}
-        <motion.div className="app__skills-list">
+        {/* <motion.div className="app__skills-list">
           {skills?.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
@@ -53,9 +110,9 @@ const Skills = () => {
               <p className="p-text">{skill.name}</p>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
-        {/* EXPERIENCES ENTREPRISE */}
+        {/* EXPERIENCES ENTREPRISE
         <motion.div className="app__skills-exp">
           <VerticalTimeline>
             <VerticalTimelineElement
@@ -124,8 +181,8 @@ const Skills = () => {
                 </li>
               </ul>
             </VerticalTimelineElement>
-          </VerticalTimeline>
-          {/* {experiences?.map((experience) => (
+          </VerticalTimeline> */}
+        {/* {experiences?.map((experience) => (
             <motion.div className="app__skills-exp-item" key={experience.year}>
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
@@ -152,7 +209,7 @@ const Skills = () => {
               </motion.div>
             </motion.div>
           ))} */}
-        </motion.div>
+        {/* </motion.div> */}
       </div>
     </div>
   );
