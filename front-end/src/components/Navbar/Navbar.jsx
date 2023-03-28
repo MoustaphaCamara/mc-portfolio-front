@@ -3,6 +3,7 @@ import "./Navbar.scss";
 import { images } from "../../constants";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
+import Modal from "./Modal";
 
 export const navList = [
   "accueil",
@@ -30,41 +31,30 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className="app__navbar"
-      style={{ top: navTop, transition: "all 1s ease" }}
-    >
-      <div className="app__navbar-logo">
-        <img src={images.logo} alt="logo-portfolio" />
+    <div>
+      <div
+        className="app__navbar"
+        style={{ top: navTop, transition: "all 1s ease" }}
+      >
+        <div className="app__navbar-logo">
+          <img src={images.logo} alt="logo-portfolio" />
+        </div>
+        <div className="app__navbar-links">
+          <ul>
+            {navList.map((item) => (
+              <li className="app__flex" key={`link-${item}`}>
+                <div />
+                <a href={`#${item}`}>{item}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="app__navbar-burger">
+          <i className="fa-solid fa-bars" onClick={() => setToggle(true)}></i>
+        </div>
       </div>
-      <ul className="app__navbar-links">
-        {navList.map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
-            <div />
-            <a href={`#${item}`}>{item}</a>
-          </li>
-        ))}
-      </ul>
-
-      <div className="app__navbar-menu">
-        <HiMenuAlt4 onClick={() => setToggle(true)} />
-        {toggle && (
-          <div className="app__navbar-burger">
-            {/* close icon */}
-            <HiX onClick={() => setToggle(false)} />
-            <ul>
-              {navList.map((item) => (
-                <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    </nav>
+      {toggle && <Modal setToggle={setToggle} />}
+    </div>
   );
 };
 
