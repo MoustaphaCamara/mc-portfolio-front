@@ -47,7 +47,7 @@ const Work = () => {
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
-            className={`app__work-filter-item app__flex p-text ${
+            className={`app__btn app__flex p-text ${
               activeFilter === item ? "item-active" : ""
             }`}
           >

@@ -8,17 +8,19 @@ import "./Skills.scss";
 const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [filter, setFilter] = useState("tout afficher");
+  const [active, setActive] = useState("tout afficher");
 
   const queryList = [
     "tout afficher",
     "frontend",
     "backend",
-    "frameworks",
     "database",
+    "frameworks",
     "tools",
     "design",
   ];
 
+  // postman ovhcloud netlify
   const fetchData = (query) => {
     client.fetch(query).then((data) => {
       setSkills(data);
@@ -40,9 +42,14 @@ const Skills = () => {
       <div className="app__skills-filter">
         {queryList.map((item, index) => (
           <div
-            className="app__skills-filter-item"
+            className={`app__skills-filter-item app__btn ${
+              active === item ? "app__btn-active" : ""
+            }`}
             key={index}
-            onClick={() => setFilter(item)}
+            onClick={() => {
+              setFilter(item);
+              setActive(item);
+            }}
           >
             {item}
           </div>
@@ -67,6 +74,20 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+      </div>
+      <h3 className="head-text">[..., complémentaires]</h3>
+      <div className="app__skills-complementary">
+        <div className="app__skills-complementary-items">
+          <p className="p-text">
+            Anglais Courant - Espagnol C1 - Méthode AGILE - SCRUM{" "}
+          </p>
+        </div>
+        <div className="app__skills-complementary-desktop">
+          <p className="p-text">
+            Suite Office(Word, Excel, PowerPoint, Outlook, Teams) - RoundCube -
+            Buzzee CRM - SAGE Commercial - Comet SAP
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -34,6 +34,11 @@
 #competences {
   width: 80%;
   margin: 0 auto;
+  h3 {
+    font-size: 2rem;
+    margin: 2rem auto;
+    text-transform: lowercase;
+  }
 }
 .app__skills-filter {
   display: flex;
@@ -44,28 +49,8 @@
 
   margin: 4rem 0 2rem;
 }
-.app__skills-filter-item {
-  text-transform: capitalize;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  background: white;
-  color: black;
-  font-weight: 100;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 0.5rem;
 
-  &:hover {
-    background-color: var(--orange-color);
-    color: white;
-    transform: translateY(-3px);
-  }
-
-  @media screen and (min-width: 2000px) {
-    padding: 1rem 2rem;
-    border-radius: 0.85rem;
-  }
-}
+// container
 .app__skills-container {
   margin-top: 3rem;
 
@@ -130,3 +115,18 @@
     }
   }
 }
+.app__skills-complementary {
+  background: var(--purple-color);
+  padding: 16px;
+  border-radius: 16px 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .p-text {
+    text-align: center;
+    letter-spacing: 1.5px;
+  }
+}
+
+// filter item
