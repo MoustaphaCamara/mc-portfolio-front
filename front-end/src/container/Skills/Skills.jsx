@@ -39,12 +39,16 @@ const Skills = () => {
 
       <div className="app__skills-container">
         {/* item 1 */}
-        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "gray" }}>
+        <Card
+          className="app__skills-item"
+          sx={{ maxWidth: 345 }}
+          style={{ backgroundColor: "rgba(255,255,255,.5)" }}
+        >
           <CardMedia
             component="img"
             alt="test"
             height="120"
-            image={images.figma}
+            image="https://img.freepik.com/free-photo/html-css-collage-concept_23-2150061955.jpg?w=1380&t=st=1679968299~exp=1679968899~hmac=51508d2e845a148a1e942b2438fd308ee6de6bff1f7dc6ca7f0a0b41f8c21a40"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -54,14 +58,107 @@ const Skills = () => {
               <img src={images.html} alt="" width="50px" />
               <img src={images.css} alt="" width="50px" />
               <img src={images.javascript} alt="" width="50px" />
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At neque
-              mollitia velit explicabo perferendis blanditiis molestiae enim
-              reiciendis impedit! Minus.
             </Typography>
           </CardContent>
         </Card>
         {/* eo item1 */}
-        <div className="app__skills-item">
+        {/* item 1 */}
+        <Card
+          className="app__skills-item"
+          sx={{ maxWidth: 345 }}
+          style={{ backgroundColor: "rgba(255,255,255,.5)" }}
+        >
+          <CardMedia
+            component="img"
+            alt="test"
+            height="120"
+            image="https://img.freepik.com/free-photo/html-css-collage-concept_23-2150061955.jpg?w=1380&t=st=1679968299~exp=1679968899~hmac=51508d2e845a148a1e942b2438fd308ee6de6bff1f7dc6ca7f0a0b41f8c21a40"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Back-end
+            </Typography>
+            <Typography gutterBottom variant="body2" component="div">
+              <img src={images.nodejs} alt="" width="50px" />
+              <img src={images.express} alt="" width="50px" />
+              <img src={images.mysql} alt="" width="50px" />
+            </Typography>
+          </CardContent>
+        </Card>
+        {/* eo item1 */}
+        {/* item 1 */}
+        <Card
+          className="app__skills-item"
+          sx={{ maxWidth: 345 }}
+          style={{ backgroundColor: "rgba(255,255,255,.5)" }}
+        >
+          <CardMedia
+            component="img"
+            alt="test"
+            height="120"
+            image="https://img.freepik.com/free-photo/html-css-collage-concept_23-2150061955.jpg?w=1380&t=st=1679968299~exp=1679968899~hmac=51508d2e845a148a1e942b2438fd308ee6de6bff1f7dc6ca7f0a0b41f8c21a40"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Back-end
+            </Typography>
+            <Typography gutterBottom variant="body2" component="div">
+              <img src={images.nodejs} alt="" width="50px" />
+              <img src={images.express} alt="" width="50px" />
+              <img src={images.mysql} alt="" width="50px" />
+            </Typography>
+          </CardContent>
+        </Card>
+        {/* eo item1 */}
+        {/* item 1 */}
+        <Card
+          className="app__skills-item"
+          sx={{ maxWidth: 345 }}
+          style={{ backgroundColor: "rgba(255,255,255,.5)" }}
+        >
+          <CardMedia
+            component="img"
+            alt="test"
+            height="120"
+            image="https://img.freepik.com/free-photo/html-css-collage-concept_23-2150061955.jpg?w=1380&t=st=1679968299~exp=1679968899~hmac=51508d2e845a148a1e942b2438fd308ee6de6bff1f7dc6ca7f0a0b41f8c21a40"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Back-end
+            </Typography>
+            <Typography gutterBottom variant="body2" component="div">
+              <img src={images.nodejs} alt="" width="50px" />
+              <img src={images.express} alt="" width="50px" />
+              <img src={images.mysql} alt="" width="50px" />
+            </Typography>
+          </CardContent>
+        </Card>
+        {/* eo item1 */}
+        {/* item 1 */}
+        <Card
+          className="app__skills-item"
+          sx={{ maxWidth: 345 }}
+          style={{ backgroundColor: "rgba(255,255,255,.5)" }}
+        >
+          <CardMedia
+            component="img"
+            alt="test"
+            height="120"
+            image="https://img.freepik.com/free-photo/html-css-collage-concept_23-2150061955.jpg?w=1380&t=st=1679968299~exp=1679968899~hmac=51508d2e845a148a1e942b2438fd308ee6de6bff1f7dc6ca7f0a0b41f8c21a40"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Back-end
+            </Typography>
+            <Typography gutterBottom variant="body2" component="div">
+              <img src={images.nodejs} alt="" width="50px" />
+              <img src={images.express} alt="" width="50px" />
+              <img src={images.mysql} alt="" width="50px" />
+            </Typography>
+          </CardContent>
+        </Card>
+        {/* eo item1 */}
+        {/* <div className="app__skills-item">
           <h4 className="head-text">front</h4>
           <div className="icons-container">
             <img src={images.react} alt="" />
@@ -91,7 +188,7 @@ const Skills = () => {
           <div className="icons-container">
             <img src={images.react} alt="" />
           </div>
-        </div>
+        </div> */}
         {/* COMPETENCES */}
         {/* <motion.div className="app__skills-list">
           {skills?.map((skill) => (
