@@ -9,19 +9,22 @@ const Footer = () => {
           <h2 className="head-text">Contactez moi</h2>
           <ul className="app__footer-icons-list">
             <li>
-              <a href="#">
+              <a
+                href="https://www.linkedin.com/in/camara-moustapha/"
+                target="_blank"
+              >
                 <span className="app__footer-icons-line"></span>
                 <i className="fa-brands fa-linkedin"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://github.com/MoustaphaCamara" target="_blank">
                 <span className="app__footer-icons-line"></span>
                 <i className="fa-brands fa-github"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="mailto:cmr.mous@gmail.com">
                 <span className="app__footer-icons-line"></span>
                 <i className="fa-solid fa-envelope"></i>
               </a>

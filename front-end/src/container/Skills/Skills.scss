@@ -31,24 +31,55 @@
   background-size: 104px 104px, 104px 104px, 52px 52px, 52px 52px;
   background-color: var(--dark-purple-color);
 }
-.app__skills-container {
-  margin-top: 3rem;
+#competences {
+  width: 80%;
+  margin: 0 auto;
+}
+.app__skills-filter {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin: 4rem 0 2rem;
+}
+.app__skills-filter-item {
+  text-transform: capitalize;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  color: black;
+  font-weight: 100;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+
+  &:hover {
+    background-color: var(--orange-color);
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  @media screen and (min-width: 2000px) {
+    padding: 1rem 2rem;
+    border-radius: 0.85rem;
+  }
+}
+.app__skills-container {
+  margin-top: 3rem;
 
   @media screen and (max-width: 900px) {
     width: 100%;
-    flex-direction: column;
   }
 }
 .app__skills-list {
   flex: 1;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
 
-  margin-right: 5rem;
   @media screen and (max-width: 900px) {
     margin-right: 0;
     justify-content: center;
@@ -73,8 +104,11 @@
       height: 50%;
     }
 
+    box-shadow: 0 0 6px var(--blue-color);
+
     &:hover {
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 0 12px var(--white-color);
+      transform: translateY(3px);
     }
     @media screen and (min-width: 2000px) {
       width: 150px;
@@ -95,56 +129,4 @@
       margin-top: 1rem;
     }
   }
-}
-
-.app__skills-exp {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  @media screen and (max-width: 900px) {
-    margin-top: 2rem;
-  }
-}
-
-.app__skills-exp-item {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.app__skills-exp-works {
-  flex: 1;
-  .app__skills-exp-work {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-    cursor: pointer;
-    h4 {
-      font-weight: 500;
-    }
-    p {
-      font-weight: 400;
-      motion-path: 5px;
-    }
-  }
-}
-
-.app__skills-exp-year {
-  margin-right: 3rem;
-  p {
-    color: var(--white-color);
-  }
-  @media screen and (max-width: 450px) {
-    margin-right: 1rem;
-  }
-}
-
-.skills-tooltip {
-  max-width: 300px;
 }
