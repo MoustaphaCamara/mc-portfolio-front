@@ -27,7 +27,7 @@ const About = () => {
   }, []);
 
   return (
-    <>
+    <div id="a-propos">
       <h2 className="head-text">
         A <span>propos</span> de <span>moi</span>
       </h2>
@@ -43,7 +43,7 @@ const About = () => {
           voir cv (pdf)
         </motion.a>
       </div>
-    </>
+    </div>
   );
 };
 export default MotionWrap(About, "app__about app_darkbg");

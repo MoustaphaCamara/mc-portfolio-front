@@ -7,10 +7,9 @@ import Modal from "./Modal";
 
 export const navList = [
   "accueil",
-  "a propos",
-  "portfolio",
+  "a-propos",
   "competences",
-  "temoignages",
+  "portfolio",
   "contact",
 ];
 
@@ -44,7 +43,7 @@ const Navbar = () => {
             {navList.map((item) => (
               <li className="app__flex" key={`link-${item}`}>
                 <div />
-                <a href={`#${item}`}>{item}</a>
+                <a href={`#${item}`}>{item.replace("-", " ")}</a>
               </li>
             ))}
           </ul>

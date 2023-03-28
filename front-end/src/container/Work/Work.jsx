@@ -38,7 +38,7 @@ const Work = () => {
   };
 
   return (
-    <>
+    <div id="portfolio">
       <h2 className="head-text">
         mon <span> portfolio</span>
       </h2>
@@ -110,7 +110,7 @@ const Work = () => {
           </div>
         ))}
       </motion.div>
-    </>
+    </div>
   );
 };
 export default MotionWrap(Work, "app__works app__darkbg");

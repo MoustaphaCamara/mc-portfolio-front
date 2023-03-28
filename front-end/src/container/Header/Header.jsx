@@ -21,7 +21,7 @@ const scaleVariants = {
 const technologies = [images.next, images.react, images.nodejs];
 const Header = () => {
   return (
-    <div className="app__header app__flex">
+    <div className="app__header app__flex" id="accueil">
       <motion.div
         transition={{ duration: 0.5 }}
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}

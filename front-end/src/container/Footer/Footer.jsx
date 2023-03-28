@@ -3,7 +3,7 @@ import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <>
+    <div id="contact">
       <div className="app__footer app__darkbg app_flex">
         <div className="app__footer-contact-container">
           <h2 className="head-text">Contactez moi</h2>
@@ -32,7 +32,7 @@ const Footer = () => {
           <p className="p-text">©2023 MC</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

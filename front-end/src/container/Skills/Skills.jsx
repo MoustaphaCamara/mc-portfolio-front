@@ -31,7 +31,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <>
+    <div id="competences">
       <h2 className="head-text">Compétences & Expérience</h2>
 
       <div className="app__skills-container">
@@ -154,7 +154,7 @@ const Skills = () => {
           ))} */}
         </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 

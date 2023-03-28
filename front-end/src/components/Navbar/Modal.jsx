@@ -12,7 +12,7 @@ const Modal = ({ setToggle }) => {
             <div />
 
             <a href={`#${item}`} onClick={() => setToggle(false)}>
-              {item}
+              {item.replace("-", " ")}
             </a>
           </li>
         ))}
