@@ -43,12 +43,12 @@ const Work = () => {
         mon <span> portfolio</span>
       </h2>
       <div className="app__work-filter">
-        {["React", "Vue", "Vanilla", "Tout afficher"].map((item, index) => (
+        {["Tout afficher", "React", "Vue", "Vanilla"].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
-            className={`app__btn app__flex p-text ${
-              activeFilter === item ? "item-active" : ""
+            className={`app__btn  ${
+              activeFilter === item ? "app__btn-active" : ""
             }`}
           >
             {item}
