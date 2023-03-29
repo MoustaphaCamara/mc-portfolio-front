@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 import { MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
-import "./Work.scss";
+import "./Portfolio.scss";
 
-const Work = () => {
+const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("Tout afficher");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
@@ -113,4 +113,4 @@ const Work = () => {
     </div>
   );
 };
-export default MotionWrap(Work, "app__works app__darkbg");
+export default MotionWrap(Portfolio, "app__works app__darkbg");
