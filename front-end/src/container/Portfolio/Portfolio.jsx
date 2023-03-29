@@ -61,7 +61,7 @@ const Portfolio = () => {
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
-            className={`app__btn  ${
+            className={`app__btn ${
               activeFilter === item ? "app__btn-active" : ""
             }`}
           >
@@ -95,21 +95,26 @@ const Portfolio = () => {
                   <img src={images.react} alt="react" /> */}
                   {work.title}
                 </h4>
-                <p className="p-text" style={{ marginTop: 10 }}>
-                  {work.description}
-                </p>
-                {/* <div className="app__work-tag app__flex">
-                  <p className="p-text">{work.tags[0]}</p>
-                </div> */}
-                <a
-                  href={work.sourceCode}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="app__portfolio-item-link"
-                >
-                  <i className="fa-brands fa-github"></i> &#10147; code source
-                  du projet
-                </a>
+                <p style={{ marginTop: 10 }}>{work.description}</p>
+                {/* technos utilisées : mapper les tags */}
+                <div className="app__portfolio-links">
+                  <a
+                    href={work.sourceCode}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="app__portfolio-link-item"
+                  >
+                    <AiFillGithub /> code source
+                  </a>
+                  <a
+                    href={work.sourceCode}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="app__portfolio-link-item"
+                  >
+                    <AiFillEye /> visiter
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
