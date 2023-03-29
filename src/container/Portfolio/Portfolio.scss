@@ -10,6 +10,10 @@
   background-size: 200px 200px;
   background-color: var(--light-purple-color);
 }
+.slick-slider {
+  width: 90%;
+  margin: 0 auto;
+}
 .app__portfolio-filter {
   display: flex;
   flex-direction: row;

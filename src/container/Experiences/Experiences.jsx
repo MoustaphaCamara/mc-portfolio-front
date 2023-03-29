@@ -26,7 +26,7 @@ const Experiences = () => {
 
   return (
     <div id="experiences">
-      <h2 className="head-text">Expériences</h2>
+      {/* <h2 className="head-text">Expériences</h2>
       <motion.div className="app__skills-exp">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
@@ -57,7 +57,6 @@ const Experiences = () => {
               }
               iconClassName={"test"}
             >
-              {/* content */}
               <div>
                 <motion.div
                   whileInView={{ opacity: [0, 1] }}
@@ -70,12 +69,11 @@ const Experiences = () => {
                   <h4 className="bold-text">{experience.occupation}</h4>
                   <p className="p-text">{experience.description}</p>
                 </motion.div>
-                {/* end of content */}
               </div>
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };

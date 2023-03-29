@@ -69,6 +69,7 @@ const Portfolio = () => {
           </div>
         ))}
       </div>
+
       <Slider {...settings}>
         {filterWork.map((work, index) => (
           <motion.div
@@ -87,16 +88,8 @@ const Portfolio = () => {
                 </div>
               </div>
               <div className="app__portfolio-item-description">
-                <h4 className="head-text">
-                  {/* rendre dynamique --> dans bdd ajouter techno utilisées pour chaque projet via TAGS  */}
-                  {/* tags actuels = techno pour filtrage, faire mm système de filtrage que partie SKILLS et laisser tags pour les technos (multichoix) */}
-                  {/* <img src={images.sass} alt="sass" />
-                  <img src={images.vue} alt="vue" />
-                  <img src={images.react} alt="react" /> */}
-                  {work.title}
-                </h4>
+                <h4 className="head-text">{work.title}</h4>
                 <p style={{ marginTop: 10 }}>{work.description}</p>
-                {/* technos utilisées : mapper les tags */}
                 <div className="app__portfolio-links">
                   <a
                     href={work.sourceCode}
@@ -124,3 +117,18 @@ const Portfolio = () => {
   );
 };
 export default MotionWrap(Portfolio, "app__portfolio app__darkbg");
+
+{
+  /* rendre dynamique --> dans bdd ajouter techno utilisées pour chaque projet via TAGS  */
+}
+{
+  /* tags actuels = techno pour filtrage, faire mm système de filtrage que partie SKILLS et laisser tags pour les technos (multichoix) */
+}
+{
+  /* <img src={images.sass} alt="sass" />
+                  <img src={images.vue} alt="vue" />
+                  <img src={images.react} alt="react" /> */
+}
+{
+  /* technos utilisées : mapper les tags */
+}
