@@ -4,18 +4,6 @@
   min-height: 50vh;
   flex-direction: column;
   padding-top: 2rem;
-  // background: linear-gradient(
-  //   180deg,
-  //   var(--dark-purple-color) 0%,
-  //   var(--dark-purple-color) 0%,
-  //   var(--light-purple-color) 40%,
-  //   var(--light-purple-color) 50%,
-  //   var(--dark-purple-color) 94%
-  // );
-
-  background-image: radial-gradient(var(--purple-color) 2px, transparent 2px);
-  background-size: 52px 52px;
-  background-color: var(--dark-purple-color);
 }
 
 .app__profiles {

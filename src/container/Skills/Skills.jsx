@@ -20,7 +20,6 @@ const Skills = () => {
     "design",
   ];
 
-  // postman ovhcloud netlify
   const fetchData = (query) => {
     client.fetch(query).then((data) => {
       setSkills(data);
@@ -80,13 +79,12 @@ const Skills = () => {
       <div className="app__skills-complementary">
         <div className="app__skills-complementary-items">
           <p className="p-text">
-            Anglais Courant - Espagnol C1 - Méthode AGILE - SCRUM{" "}
+            Anglais C1 - Espagnol C1 - Méthode AGILE - SCRUM
           </p>
         </div>
         <div className="app__skills-complementary-desktop">
           <p className="p-text">
-            Suite Office(Word, Excel, PowerPoint, Outlook, Teams) - RoundCube -
-            Buzzee CRM - SAGE Commercial - Comet SAP
+            RoundCube - Buzzee CRM - SAGE Commercial - Comet SAP
           </p>
         </div>
       </div>

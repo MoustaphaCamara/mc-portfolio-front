@@ -6,6 +6,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-image: radial-gradient(var(--purple-color) 2px, transparent 2px);
+  background-size: 52px 52px;
+  background-color: var(--dark-purple-color);
 }
 
 // icons

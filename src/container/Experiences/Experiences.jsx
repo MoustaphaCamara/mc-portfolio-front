@@ -9,10 +9,8 @@ import { BsPersonWorkspace } from "react-icons/bs";
 import { IoLogoReact } from "react-icons/io5";
 import { GiRobe } from "react-icons/gi";
 import { MdVaccines } from "react-icons/md";
-import { MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import "./Experiences.scss";
-// import { images } from "../../constants";
 
 const Experiences = () => {
   const [experiences, setExperiences] = useState([]);
@@ -78,4 +76,3 @@ const Experiences = () => {
   );
 };
 export default Experiences;
-// export default MotionWrap(Experiences, "app__experiences app__darkbg");
