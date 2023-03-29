@@ -16,6 +16,13 @@
   list-style: none;
   flex-wrap: wrap;
   justify-content: center;
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+    width: 150px;
+    text-align: center;
+    margin: 2rem auto;
+    gap: 2rem;
+  }
 }
 
 .app__footer-icons-list li {
