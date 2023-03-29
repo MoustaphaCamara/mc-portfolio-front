@@ -8,7 +8,6 @@ import "./Portfolio.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { images } from "../../constants";
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("Tout afficher");
@@ -26,7 +25,7 @@ const Portfolio = () => {
   };
 
   useEffect(() => {
-    const query = "*[_type == 'works']";
+    const query = "*[_type == 'works'] | order(releaseDate desc)";
 
     client.fetch(query).then((data) => {
       setWorks(data);
@@ -45,7 +44,6 @@ const Portfolio = () => {
         setFilterWork(works);
       } else {
         setFilterWork(works.filter((work) => work.tags.includes(item)));
-        console.log(works.filter((work) => work.tags.includes(item)));
       }
     }, 500);
   };
@@ -57,7 +55,14 @@ const Portfolio = () => {
       </h2>
 
       <div className="app__portfolio-filter">
-        {["Tout afficher", "React", "Vue", "Vanilla"].map((item, index) => (
+        {[
+          "Tout afficher",
+          "React",
+          "Vue",
+          "Javascript",
+          "Typescript",
+          "SASS",
+        ].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -73,6 +78,7 @@ const Portfolio = () => {
       <Slider {...settings}>
         {filterWork.map((work, index) => (
           <motion.div
+            key={index}
             animate={animateCard}
             transition={{
               duration: 0.5,
@@ -90,6 +96,14 @@ const Portfolio = () => {
               <div className="app__portfolio-item-description">
                 <h4 className="head-text">{work.title}</h4>
                 <p style={{ marginTop: 10 }}>{work.description}</p>
+                <p style={{ color: "var(--orange-color)" }}>
+                  Technologies utilisées :
+                </p>
+                <div className="app__portfolio-icons">
+                  {work.icon.map((icon, index) => (
+                    <img src={urlFor(icon)} alt={work.name} key={index} />
+                  ))}
+                </div>
                 <div className="app__portfolio-links">
                   <a
                     href={work.sourceCode}
@@ -97,15 +111,15 @@ const Portfolio = () => {
                     rel="noreferrer"
                     className="app__portfolio-link-item"
                   >
-                    <AiFillGithub /> code source
+                    <AiFillGithub /> Code source
                   </a>
                   <a
-                    href={work.sourceCode}
+                    href={work.projectLink}
                     target="_blank"
                     rel="noreferrer"
                     className="app__portfolio-link-item"
                   >
-                    <AiFillEye /> visiter
+                    <AiFillEye /> Visiter
                   </a>
                 </div>
               </div>
@@ -117,18 +131,3 @@ const Portfolio = () => {
   );
 };
 export default MotionWrap(Portfolio, "app__portfolio app__darkbg");
-
-{
-  /* rendre dynamique --> dans bdd ajouter techno utilisées pour chaque projet via TAGS  */
-}
-{
-  /* tags actuels = techno pour filtrage, faire mm système de filtrage que partie SKILLS et laisser tags pour les technos (multichoix) */
-}
-{
-  /* <img src={images.sass} alt="sass" />
-                  <img src={images.vue} alt="vue" />
-                  <img src={images.react} alt="react" /> */
-}
-{
-  /* technos utilisées : mapper les tags */
-}

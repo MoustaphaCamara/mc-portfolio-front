@@ -26,11 +26,12 @@ const Experiences = () => {
 
   return (
     <div id="experiences">
-      {/* <h2 className="head-text">Expériences</h2>
-      <motion.div className="app__skills-exp">
+      <h2 className="head-text">Expériences</h2>
+      <div className="app__skills-exp">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <VerticalTimelineElement
+              key={index}
               className="vertical-timeline-element--work"
               contentStyle={{
                 background: "var(--purple-color)",
@@ -55,7 +56,6 @@ const Experiences = () => {
                   <BsPersonWorkspace />
                 )
               }
-              iconClassName={"test"}
             >
               <div>
                 <motion.div
@@ -73,8 +73,9 @@ const Experiences = () => {
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
-      </motion.div> */}
+      </div>
     </div>
   );
 };
-export default MotionWrap(Experiences, "app__experiences app__darkbg");
+export default Experiences;
+// export default MotionWrap(Experiences, "app__experiences app__darkbg");

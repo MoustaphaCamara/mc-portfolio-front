@@ -38,7 +38,7 @@ const About = () => {
         <p className="app__profile-item typed">{data.description}</p>
         {/* <p className=" app__profile-item typed" ref={el}></p> */}
         <motion.a
-          href="./src/assets/pdf/CV_Moustapha-Camara.pdf"
+          href="./assets/CV_Moustapha-Camara.pdf"
           target="_blank"
           className="btn btn-action"
           whileInView={{ opacity: [0, 1] }}

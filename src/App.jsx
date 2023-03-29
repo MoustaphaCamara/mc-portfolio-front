@@ -5,12 +5,12 @@ import {
   Footer,
   Header,
   Skills,
-  Testimonials,
+  Hobbies,
+  Experiences,
   Portfolio,
 } from "./container";
 import { Navbar } from "./components";
 import "./App.scss";
-import Experiences from "./container/Experiences/Experiences";
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
       <Skills />
       <Experiences />
       <Portfolio />
-      {/* <Testimonials /> */}
+      <Hobbies />
       <Footer />
     </div>
   );

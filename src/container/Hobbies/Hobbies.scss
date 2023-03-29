@@ -1,9 +1,10 @@
-.app__testimonial {
+.app__hobbies {
   flex: 1;
   width: 100%;
   flex-direction: column;
+  margin-top: 3.5rem;
 }
-.app__testimonial-item {
+.app__hobbies-item {
   max-width: 690px;
   margin: 0 auto;
   min-height: 320px;
@@ -14,9 +15,9 @@
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    border-radius: 20%;
     object-fit: cover;
   }
   @media screen and (min-width: 2000px) {
@@ -33,7 +34,7 @@
     flex-direction: column;
   }
 }
-.app__testimonial-content {
+.app__hobbies-content {
   flex: 1;
   height: 100%;
 
@@ -46,13 +47,14 @@
   align-items: flex-start;
 
   p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 2rem;
     font-family: var(--font-base);
   }
   h4 {
     font-weight: 600;
-    margin-top: 2rem;
+    font-size: 1.5rem;
+    margin: 2rem 0;
   }
 
   h5 {
@@ -62,7 +64,7 @@
   }
 }
 
-.app__testimonial-btns {
+.app__hobbies-btns {
   flex-direction: row;
   margin-top: 1rem;
   div {
@@ -82,7 +84,7 @@
     }
   }
 }
-.app__testimonial-brands {
+.app__hobbies-brands {
   flex-wrap: wrap;
   motion-path: 2rem;
   div {
