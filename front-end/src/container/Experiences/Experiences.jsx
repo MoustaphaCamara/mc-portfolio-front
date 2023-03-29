@@ -21,7 +21,6 @@ const Experiences = () => {
     const query = "*[_type == 'experiences'] | order(year desc)";
     client.fetch(query).then((data) => {
       setExperiences(data);
-      console.log(data);
     });
   }, []);
 
