@@ -5,12 +5,25 @@ import { motion } from "framer-motion";
 import { MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Portfolio.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { images } from "../../constants";
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("Tout afficher");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
+
+  var settings = {
+    dots: true,
+    dotsClass: "slick-dots",
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   useEffect(() => {
     const query = "*[_type == 'works']";
@@ -42,7 +55,8 @@ const Portfolio = () => {
       <h2 className="head-text">
         mon <span> portfolio</span>
       </h2>
-      <div className="app__work-filter">
+
+      <div className="app__portfolio-filter">
         {["Tout afficher", "React", "Vue", "Vanilla"].map((item, index) => (
           <div
             key={index}
@@ -55,62 +69,53 @@ const Portfolio = () => {
           </div>
         ))}
       </div>
-      <motion.div
-        animate={animateCard}
-        transition={{
-          duration: 0.5,
-          delayChildren: 0.5,
-        }}
-        className="app__work-portfolio"
-      >
+      <Slider {...settings}>
         {filterWork.map((work, index) => (
-          <div className="app__work-item app__flex" key={index}>
-            <div className="app__work-img app__flex">
-              <img src={urlFor(work.imgUrl)} alt={work.name} />
-              <motion.div
-                whileHover={{ opacity: [0, 1] }}
-                transition={{
-                  duration: 0.25,
-                  ease: "easeInOut",
-                  staggerChildren: 0.5,
-                }}
-                className="app__work-hover app__flex"
-              >
-                <a href={work.projectLink} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
-                  >
-                    <AiFillEye />
-                  </motion.div>
+          <motion.div
+            animate={animateCard}
+            transition={{
+              duration: 0.5,
+              delayChildren: 0.5,
+            }}
+          >
+            <div className="app__portfolio-item" key={index}>
+              <div className="app__portfolio-item-picture-container">
+                <div className="app__portfolio-item-picture">
+                  <a href={work.projectLink} target="_blank" rel="noreferrer">
+                    <img src={urlFor(work.imgUrl)} alt={work.name} />
+                  </a>
+                </div>
+              </div>
+              <div className="app__portfolio-item-description">
+                <h4 className="head-text">
+                  {/* rendre dynamique --> dans bdd ajouter techno utilisées pour chaque projet via TAGS  */}
+                  {/* tags actuels = techno pour filtrage, faire mm système de filtrage que partie SKILLS et laisser tags pour les technos (multichoix) */}
+                  {/* <img src={images.sass} alt="sass" />
+                  <img src={images.vue} alt="vue" />
+                  <img src={images.react} alt="react" /> */}
+                  {work.title}
+                </h4>
+                <p className="p-text" style={{ marginTop: 10 }}>
+                  {work.description}
+                </p>
+                {/* <div className="app__work-tag app__flex">
+                  <p className="p-text">{work.tags[0]}</p>
+                </div> */}
+                <a
+                  href={work.sourceCode}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="app__portfolio-item-link"
+                >
+                  <i className="fa-brands fa-github"></i> &#10147; code source
+                  du projet
                 </a>
-                <a href={work.sourceCode} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
-                  >
-                    <AiFillGithub />
-                  </motion.div>
-                </a>
-              </motion.div>
-            </div>
-            <div className="app__work-content app__flex">
-              <h4 className="bold-text">{work.title}</h4>
-              <p className="p-text" style={{ marginTop: 10 }}>
-                {work.description}
-              </p>
-              <div className="app__work-tag app__flex">
-                <p className="p-text">{work.tags[0]}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </motion.div>
+      </Slider>
     </div>
   );
 };
-export default MotionWrap(Portfolio, "app__works app__darkbg");
+export default MotionWrap(Portfolio, "app__portfolio app__darkbg");
