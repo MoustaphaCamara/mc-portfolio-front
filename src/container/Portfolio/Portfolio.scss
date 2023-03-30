@@ -80,6 +80,9 @@
   margin: 10px 8px;
   color: #aca49c;
   text-align: center;
+  @media screen and (max-width: 568px) {
+    width: 100%;
+  }
 }
 .app__portfolio-item-picture {
   height: auto;
