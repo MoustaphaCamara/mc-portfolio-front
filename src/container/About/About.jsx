@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./About.scss";
-import { client } from "../../client";
+import { urlFor, client } from "../../client";
 import { MotionWrap } from "../../wrapper";
 import Typed from "typed.js";
 
 const About = () => {
   const el = React.useRef(null);
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
 
   const generateTyped = (data) => {
     // typed removed bc not a good experience for mobile version (the text appearing displaces the rest of the page)
@@ -24,7 +24,7 @@ const About = () => {
   useEffect(() => {
     const query = "*[_type == 'about']";
     client.fetch(query).then((data) => {
-      setData(data[0]);
+      setData(data);
       // generateTyped(data);
     });
   }, []);
@@ -35,7 +35,12 @@ const About = () => {
         A <span>propos</span> de <span>moi</span>
       </h2>
       <div className="app__profiles">
-        <p className="app__profile-item typed">{data.description}</p>
+        {data?.map((item, index) => (
+          <div className="app__profile-item" key={index}>
+            <img src={urlFor(item.imgUrl)} alt="who-am-i" />
+            <p>{item.description}</p>
+          </div>
+        ))}
         {/* <p className=" app__profile-item typed" ref={el}></p> */}
         <motion.a
           href="./assets/CV_Moustapha-Camara.pdf"
