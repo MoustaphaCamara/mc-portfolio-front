@@ -2,7 +2,7 @@
   "name": "front-end",
   "homepage": "https://moustaphacamara.fr",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -21,7 +21,6 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-slick": "^0.29.0",
-    "react-tooltip": "^5.10.1",
     "react-vertical-timeline-component": "^3.6.0",
     "slick-carousel": "^1.8.1",
     "typed.js": "^2.0.14"
