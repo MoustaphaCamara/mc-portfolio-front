@@ -13,6 +13,12 @@
 .slick-slider {
   width: 90%;
   margin: 0 auto;
+  @media screen and (max-width: 550px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 360px) {
+    width: 70%;
+  }
 }
 .app__portfolio-filter {
   display: flex;
