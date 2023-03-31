@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 import { MotionWrap } from "../../wrapper";
@@ -22,7 +21,8 @@ const Hobbies = () => {
   const current = hobbies[currentIndex];
 
   return (
-    <>
+    <div id="hobbies">
+      <h2 className="head-text">Hobbies</h2>
       {hobbies.length && (
         <>
           <div className="app__hobbies-item app__flex">
@@ -56,7 +56,7 @@ const Hobbies = () => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 export default MotionWrap(Hobbies, "app__hobbies");

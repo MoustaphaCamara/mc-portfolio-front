@@ -10,6 +10,7 @@ export const navList = [
   "a-propos",
   "competences",
   "portfolio",
+  "hobbies",
   "contact",
 ];
 
