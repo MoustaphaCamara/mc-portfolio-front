@@ -14,6 +14,12 @@ const Hobbies = () => {
   };
   useEffect(() => {
     const query = "*[_type == 'hobbies']";
+    /**
+     * custom hook 
+     * loading
+     * data
+     * error
+     */
     client.fetch(query).then((data) => {
       setHobbies(data);
     });

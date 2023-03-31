@@ -20,6 +20,7 @@ const settings = {
 };
 
 const Portfolio = () => {
+  // custom hook to keep consistency across filters
   const [activeFilter, setActiveFilter] = useState("Tout afficher");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
@@ -29,6 +30,7 @@ const Portfolio = () => {
     const query = "*[_type == 'works'] | order(releaseDate desc)";
 
     client.fetch(query).then((data) => {
+      // why having 2 states, they look similar
       setWorks(data);
       setFilterWork(data);
     });
@@ -56,6 +58,7 @@ const Portfolio = () => {
       </h2>
 
       <div className="app__portfolio-filter">
+        {/* can be declared in const */}
         {[
           "Tout afficher",
           "React",

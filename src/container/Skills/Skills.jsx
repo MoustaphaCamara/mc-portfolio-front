@@ -7,9 +7,11 @@ import "./Skills.scss";
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
+  // filter & active same state ?
   const [filter, setFilter] = useState("tout afficher");
   const [active, setActive] = useState("tout afficher");
 
+  // can be declared outside the component to avoid recreating the const at every render
   const queryList = [
     "tout afficher",
     "frontend",
@@ -41,6 +43,7 @@ const Skills = () => {
       <div className="app__skills-filter">
         {queryList.map((item, index) => (
           <div
+            // util like clsx
             className={`app__skills-filter-item app__btn ${
               active === item ? "app__btn-active" : ""
             }`}
