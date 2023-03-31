@@ -43,7 +43,6 @@ const Navbar = () => {
         <div className="app__navbar-links">
           <ul>
             {navList.map((item) => (
-              // can use stack from mui 
               <li className="app__flex" key={`link-${item}`}>
                 <div />
                 {/* i18n / content dict to handle wording (same in modal) */}
