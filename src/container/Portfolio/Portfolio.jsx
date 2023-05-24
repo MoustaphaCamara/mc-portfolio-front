@@ -1,28 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
+import Slider from "react-slick";
 
 import { MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
+
 import "./Portfolio.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+
+const settings = {
+  dots: true,
+  dotsClass: "slick-dots",
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("Tout afficher");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
-
-  var settings = {
-    dots: true,
-    dotsClass: "slick-dots",
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   useEffect(() => {
     const query = "*[_type == 'works'] | order(releaseDate desc)";
