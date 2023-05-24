@@ -9,23 +9,10 @@ const About = () => {
   const el = React.useRef(null);
   const [data, setData] = useState([]);
 
-  const generateTyped = (data) => {
-    // typed removed bc not a good experience for mobile version (the text appearing displaces the rest of the page)
-    const typed = new Typed(el.current, {
-      strings: [data.description],
-      typeSpeed: 10,
-      backSpeed: 0,
-      smartBackspace: false,
-      loop: false,
-      showCursor: false,
-    });
-  };
-
   useEffect(() => {
     const query = "*[_type == 'about']";
     client.fetch(query).then((data) => {
       setData(data);
-      // generateTyped(data);
     });
   }, []);
 
@@ -41,7 +28,6 @@ const About = () => {
             <p>{item.description}</p>
           </div>
         ))}
-        {/* <p className=" app__profile-item typed" ref={el}></p> */}
         <motion.a
           href="./assets/CV_Moustapha-Camara.pdf"
           target="_blank"
