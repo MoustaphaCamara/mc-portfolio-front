@@ -22,6 +22,13 @@ const Experiences = () => {
     });
   }, []);
 
+  const companyIcons = {
+    "ACTA (Arc Europe)": <BsPersonWorkspace />,
+    "bsOft.fr": <IoLogoReact />,
+    "Ponsard & Dumas": <GiRobe />,
+    "MSD Vaccins": <MdVaccines />,
+  };
+
   return (
     <div id="experiences">
       <h2 className="head-text">Expériences</h2>
@@ -43,17 +50,7 @@ const Experiences = () => {
                 background: "var(--light-purple-color)",
                 color: "#fff",
               }}
-              icon={
-                experience.company === "bsOft.fr" ? (
-                  <IoLogoReact />
-                ) : experience.company === "Ponsard & Dumas" ? (
-                  <GiRobe />
-                ) : experience.company === "MSD Vaccins" ? (
-                  <MdVaccines />
-                ) : (
-                  <BsPersonWorkspace />
-                )
-              }
+              icon={companyIcons[experience.company]}
             >
               <div>
                 <motion.div
