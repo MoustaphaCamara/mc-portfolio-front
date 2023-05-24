@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import "./Navbar.scss";
+import React, { useEffect, useRef, useState } from "react";
 import { images } from "../../constants";
-import { HiMenuAlt4, HiX } from "react-icons/hi";
-import { motion } from "framer-motion";
+
 import Modal from "./Modal";
+
+import "./Navbar.scss";
 
 export const navList = [
   "accueil",
@@ -17,16 +17,16 @@ export const navList = [
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [navTop, setNavTop] = useState(0);
-  var lastScroll = 0;
+  const lastScroll = useRef(0);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > lastScroll) {
+      if (window.scrollY > lastScroll.current) {
         setNavTop(-70);
       } else {
         setNavTop(0);
       }
-      lastScroll = window.scrollY;
+      lastScroll.current = window.scrollY;
     });
   }, []);
 

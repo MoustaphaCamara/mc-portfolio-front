@@ -12,7 +12,6 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.11.14",
     "@sanity/client": "^5.3.2",
     "@sanity/image-url": "^1.0.2",
     "framer-motion": "^10.9.1",
