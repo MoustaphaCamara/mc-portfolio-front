@@ -3,10 +3,8 @@ import { motion } from "framer-motion";
 import "./About.scss";
 import { urlFor, client } from "../../client";
 import { MotionWrap } from "../../wrapper";
-import Typed from "typed.js";
 
 const About = () => {
-  const el = React.useRef(null);
   const [data, setData] = useState([]);
 
   useEffect(() => {
