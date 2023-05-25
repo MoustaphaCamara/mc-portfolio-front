@@ -5,20 +5,20 @@ import { MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
 
+const queryList = [
+  "tout afficher",
+  "frontend",
+  "backend",
+  "database",
+  "frameworks",
+  "tools",
+  "design",
+];
+
 const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [filter, setFilter] = useState("tout afficher");
   const [active, setActive] = useState("tout afficher");
-
-  const queryList = [
-    "tout afficher",
-    "frontend",
-    "backend",
-    "database",
-    "frameworks",
-    "tools",
-    "design",
-  ];
 
   const fetchData = (query) => {
     client.fetch(query).then((data) => {
