@@ -19,6 +19,15 @@ const settings = {
   slidesToScroll: 1,
 };
 
+const filterButtons = [
+  "Tout afficher",
+  "React",
+  "Vue",
+  "Javascript",
+  "Typescript",
+  "SASS",
+];
+
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("Tout afficher");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
@@ -56,22 +65,15 @@ const Portfolio = () => {
       </h2>
 
       <div className="app__portfolio-filter">
-        {[
-          "Tout afficher",
-          "React",
-          "Vue",
-          "Javascript",
-          "Typescript",
-          "SASS",
-        ].map((item, index) => (
+        {filterButtons.map((filter, index) => (
           <div
             key={index}
-            onClick={() => handleWorkFilter(item)}
+            onClick={() => handleWorkFilter(filter)}
             className={`app__btn ${
-              activeFilter === item ? "app__btn-active" : ""
+              activeFilter === filter ? "app__btn-active" : ""
             }`}
           >
-            {item}
+            {filter}
           </div>
         ))}
       </div>
