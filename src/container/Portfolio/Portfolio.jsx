@@ -37,10 +37,18 @@ const Portfolio = () => {
   useEffect(() => {
     const query = "*[_type == 'works'] | order(releaseDate desc)";
 
-    client.fetch(query).then((data) => {
-      setWorks(data);
-      setFilterWork(data);
-    });
+    async function fetchData() {
+      try {
+        const response = await client.fetch(query);
+        setWorks(response);
+        setFilterWork(response);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        console.log("fetched");
+      }
+    }
+    fetchData();
   }, []);
 
   const handleWorkFilter = (item) => {
