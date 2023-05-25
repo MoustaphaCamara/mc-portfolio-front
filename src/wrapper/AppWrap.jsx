@@ -1,5 +1,6 @@
 import React from "react";
 
+// file seems to be unused
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
     return (

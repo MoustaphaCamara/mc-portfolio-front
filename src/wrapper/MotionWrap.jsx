@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// can use simple parent component as there is no extra logic
 const MotionWrap = (Component, classNames) =>
   function HOC() {
     return (

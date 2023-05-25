@@ -20,6 +20,7 @@ const Navbar = () => {
   const lastScroll = useRef(0);
 
   useEffect(() => {
+    // ??
     window.addEventListener("scroll", () => {
       if (window.scrollY > lastScroll.current) {
         setNavTop(-70);
@@ -44,6 +45,7 @@ const Navbar = () => {
             {navList.map((item) => (
               <li className="app__flex" key={`link-${item}`}>
                 <div />
+                {/* i18n / content dict to handle wording (same in modal) */}
                 <a href={`#${item}`}>{item.replace("-", " ")}</a>
               </li>
             ))}
