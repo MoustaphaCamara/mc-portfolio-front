@@ -10,7 +10,15 @@ import { IoLogoReact } from "react-icons/io5";
 import { GiRobe } from "react-icons/gi";
 import { MdVaccines } from "react-icons/md";
 import { client } from "../../client";
+
 import "./Experiences.scss";
+
+const companyIcons = {
+  "ACTA (Arc Europe)": <BsPersonWorkspace />,
+  "bsOft.fr": <IoLogoReact />,
+  "Ponsard & Dumas": <GiRobe />,
+  "MSD Vaccins": <MdVaccines />,
+};
 
 const Experiences = () => {
   const [experiences, setExperiences] = useState([]);
@@ -21,13 +29,6 @@ const Experiences = () => {
       setExperiences(data);
     });
   }, []);
-
-  const companyIcons = {
-    "ACTA (Arc Europe)": <BsPersonWorkspace />,
-    "bsOft.fr": <IoLogoReact />,
-    "Ponsard & Dumas": <GiRobe />,
-    "MSD Vaccins": <MdVaccines />,
-  };
 
   return (
     <div id="experiences">
