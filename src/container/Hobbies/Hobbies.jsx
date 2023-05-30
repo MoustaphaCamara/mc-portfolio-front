@@ -1,29 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 import { MotionWrap } from "../../wrapper";
-import { urlFor, client } from "../../client";
+import { urlFor } from "../../client";
 import "./Hobbies.scss";
+import useFetch from "../../hooks/useFetch";
 
 const Hobbies = () => {
-  const [hobbies, setHobbies] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleClick = (index) => {
     setCurrentIndex(index);
   };
-  useEffect(() => {
-    const query = "*[_type == 'hobbies']";
-    client.fetch(query).then((data) => {
-      setHobbies(data);
-    });
-  }, []);
-  const current = hobbies[currentIndex];
+  const { data, error, loading } = useFetch("*[_type == 'hobbies']");
+  if (error) {
+    console.log(error);
+  }
+  const current = data && data[currentIndex];
 
   return (
     <div id="hobbies">
       <h2 className="head-text">Hobbies</h2>
-      {hobbies.length && (
+      {data && (
         <>
           <div className="app__hobbies-item app__flex">
             <img src={urlFor(current.imgUrl)} alt="hobby" />
@@ -37,7 +35,7 @@ const Hobbies = () => {
               className="app__flex"
               onClick={() =>
                 handleClick(
-                  currentIndex === 0 ? hobbies.length - 1 : currentIndex - 1
+                  currentIndex === 0 ? data.length - 1 : currentIndex - 1
                 )
               }
             >
@@ -47,7 +45,7 @@ const Hobbies = () => {
               className="app__flex"
               onClick={() =>
                 handleClick(
-                  currentIndex === hobbies.length - 1 ? 0 : currentIndex + 1
+                  currentIndex === data.length - 1 ? 0 : currentIndex + 1
                 )
               }
             >
