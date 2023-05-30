@@ -3,16 +3,13 @@ import { motion } from "framer-motion";
 import "./About.scss";
 import { urlFor, client } from "../../client";
 import { MotionWrap } from "../../wrapper";
+import useFetch from "../../hooks/useFetch";
 
 const About = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const query = "*[_type == 'about']";
-    client.fetch(query).then((data) => {
-      setData(data);
-    });
-  }, []);
+  const { data, loading, error } = useFetch("*[_type == 'about']");
+  if (error) {
+    console.log(error);
+  }
 
   return (
     <div id="a-propos">
