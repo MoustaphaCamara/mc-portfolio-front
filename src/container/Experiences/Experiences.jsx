@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   VerticalTimeline,
@@ -9,9 +9,9 @@ import { BsPersonWorkspace } from "react-icons/bs";
 import { IoLogoReact } from "react-icons/io5";
 import { GiRobe } from "react-icons/gi";
 import { MdVaccines } from "react-icons/md";
-import { client } from "../../client";
 
 import "./Experiences.scss";
+import useFetch from "../../hooks/useFetch";
 
 const companyIcons = {
   "ACTA (Arc Europe)": <BsPersonWorkspace />,
@@ -21,21 +21,17 @@ const companyIcons = {
 };
 
 const Experiences = () => {
-  const [experiences, setExperiences] = useState([]);
-
-  useEffect(() => {
-    const query = "*[_type == 'experiences'] | order(year desc)";
-    client.fetch(query).then((data) => {
-      setExperiences(data);
-    });
-  }, []);
+  const { data, loading, error } = useFetch(
+    "*[_type == 'experiences'] | order(year desc)"
+  );
+  if (error) console.log(error);
 
   return (
     <div id="experiences">
       <h2 className="head-text">Expériences</h2>
       <div className="app__skills-exp">
         <VerticalTimeline>
-          {experiences.map((experience, index) => (
+          {data?.map((experience, index) => (
             <VerticalTimelineElement
               key={index}
               className="vertical-timeline-element--work"
