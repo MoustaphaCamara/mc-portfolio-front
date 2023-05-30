@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import { client } from "../client";
 
 export default function useFetch(query) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     (async function () {
       try {
@@ -16,7 +16,8 @@ export default function useFetch(query) {
       } finally {
         setLoading(false);
       }
-    });
+    })();
+    //https://usefulangle.com/post/248/javascript-async-anonymous-function-iife
   }, [query]);
 
   return { data, error, loading };
