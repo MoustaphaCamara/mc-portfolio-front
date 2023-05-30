@@ -13,9 +13,7 @@ const Hobbies = () => {
     setCurrentIndex(index);
   };
   const { data, error, loading } = useFetch("*[_type == 'hobbies']");
-  if (error) {
-    console.log(error);
-  }
+  if (error) console.log(error);
   const current = data && data[currentIndex];
 
   return (
