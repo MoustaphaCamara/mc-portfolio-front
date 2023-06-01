@@ -29,16 +29,17 @@ const filterButtons = [
   "Typescript",
   "SASS",
 ];
+const defaultQuery = `*[_type == "works"] | order(releaseDate desc)`;
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("tout afficher");
-  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState(defaultQuery);
   const { data, loading, error } = useFetch(query);
   if (error) console.log(error);
+
   useEffect(() => {
     if (filter === "tout afficher") {
-      setQuery(`*[_type == "works"] | order(releaseDate desc)`);
+      setQuery(defaultQuery);
     } else {
       setQuery(
         `*[_type == "works" && "${filter}" in tags] | order(releaseDate desc)`
@@ -48,10 +49,6 @@ const Portfolio = () => {
 
   const handleWorkFilter = (item) => {
     setFilter(item);
-    setAnimateCard([{ y: 100, opacity: 0 }]);
-    setTimeout(() => {
-      setAnimateCard([{ y: 0, opacity: 1 }]);
-    }, 500);
   };
 
   return (
@@ -77,11 +74,9 @@ const Portfolio = () => {
         {data?.map((work, index) => (
           <motion.div
             key={index}
-            animate={animateCard}
-            transition={{
-              duration: 0.5,
-              delayChildren: 0.5,
-            }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: [-40, 0] }}
+            transition={{ duration: 0.5 }}
           >
             <div className="app__portfolio-item" key={index}>
               <div className="app__portfolio-item-picture-container">
