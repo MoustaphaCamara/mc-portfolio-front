@@ -21,7 +21,7 @@ const settings = {
 };
 
 const filterButtons = [
-  "Tout afficher",
+  "tout afficher",
   "React",
   "Vue",
   "Javascript",
@@ -30,14 +30,14 @@ const filterButtons = [
 ];
 
 const Portfolio = () => {
-  const [filter, setFilter] = useState("Tout afficher");
+  const [filter, setFilter] = useState("tout afficher");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [query, setQuery] = useState();
   const { data, loading, error } = useFetch(query);
   if (error) console.log(error);
-
+  // créer custom hook pour filter
   useEffect(() => {
-    if (filter === "Tout afficher") {
+    if (filter === "tout afficher") {
       setQuery(`*[_type == "works"] | order(releaseDate desc)`);
     } else {
       setQuery(
