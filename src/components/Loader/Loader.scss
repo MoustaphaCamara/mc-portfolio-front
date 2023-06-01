@@ -10,7 +10,14 @@
   animation: loader 0.7s infinite linear;
 }
 @keyframes loader {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
   to {
+    opacity: 0;
     transform: rotate(360deg);
   }
 }
