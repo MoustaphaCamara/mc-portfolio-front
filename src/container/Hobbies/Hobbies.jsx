@@ -5,6 +5,7 @@ import { MotionWrap } from "../../wrapper";
 import { urlFor } from "../../client";
 import "./Hobbies.scss";
 import useFetch from "../../hooks/useFetch";
+import Loader from "../../components/Loader/Loader";
 
 const Hobbies = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,6 +20,7 @@ const Hobbies = () => {
   return (
     <div id="hobbies">
       <h2 className="head-text">Hobbies</h2>
+      {loading && <Loader />}
       {data && (
         <>
           <div className="app__hobbies-item app__flex">

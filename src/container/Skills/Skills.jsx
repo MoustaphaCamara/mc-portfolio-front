@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import "react-vertical-timeline-component/style.min.css";
 import { MotionWrap } from "../../wrapper";
 import { urlFor } from "../../client";
-import "./Skills.scss";
 import useFetch from "../../hooks/useFetch";
+import Loader from "../../components/Loader/Loader";
+
+import "react-vertical-timeline-component/style.min.css";
+import "./Skills.scss";
 
 const queryList = [
   "tout afficher",
@@ -51,6 +53,7 @@ const Skills = () => {
       </div>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
+          {loading && <Loader />}
           {data?.map((skill) => (
             <motion.div
               initial={{ opacity: 0, y: 10 }}

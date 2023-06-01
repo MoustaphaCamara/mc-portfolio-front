@@ -12,7 +12,7 @@ import { MdVaccines } from "react-icons/md";
 
 import "./Experiences.scss";
 import useFetch from "../../hooks/useFetch";
-
+import Loader from "../../components/Loader/Loader";
 const companyIcons = {
   "ACTA (Arc Europe)": <BsPersonWorkspace />,
   "bsOft.fr": <IoLogoReact />,
@@ -31,6 +31,7 @@ const Experiences = () => {
       <h2 className="head-text">Expériences</h2>
       <div className="app__skills-exp">
         <VerticalTimeline>
+          {loading && <Loader />}
           {data?.map((experience, index) => (
             <VerticalTimelineElement
               key={index}

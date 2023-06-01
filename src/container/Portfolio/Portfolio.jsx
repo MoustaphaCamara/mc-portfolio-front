@@ -5,11 +5,12 @@ import Slider from "react-slick";
 
 import { MotionWrap } from "../../wrapper";
 import { urlFor } from "../../client";
+import useFetch from "../../hooks/useFetch";
+import Loader from "../../components/Loader/Loader";
 
 import "./Portfolio.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import useFetch from "../../hooks/useFetch";
 
 const settings = {
   dots: true,
@@ -35,7 +36,6 @@ const Portfolio = () => {
   const [query, setQuery] = useState();
   const { data, loading, error } = useFetch(query);
   if (error) console.log(error);
-  // créer custom hook pour filter
   useEffect(() => {
     if (filter === "tout afficher") {
       setQuery(`*[_type == "works"] | order(releaseDate desc)`);
@@ -73,6 +73,7 @@ const Portfolio = () => {
       </div>
 
       <Slider {...settings}>
+        {loading && <Loader />}
         {data?.map((work, index) => (
           <motion.div
             key={index}
