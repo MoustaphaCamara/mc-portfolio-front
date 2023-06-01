@@ -47,10 +47,6 @@ const Portfolio = () => {
     }
   }, [filter]);
 
-  const handleWorkFilter = (item) => {
-    setFilter(item);
-  };
-
   return (
     <div id="portfolio">
       <h2 className="head-text">
@@ -61,7 +57,7 @@ const Portfolio = () => {
         {filterButtons.map((item, index) => (
           <div
             key={index}
-            onClick={() => handleWorkFilter(item)}
+            onClick={() => setFilter(item)}
             className={`app__btn ${filter === item ? "app__btn-active" : ""}`}
           >
             {item}
