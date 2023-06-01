@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 import { MotionWrap } from "../../wrapper";
-import { urlFor, client } from "../../client";
+import { urlFor } from "../../client";
 import "./Skills.scss";
+import useFetch from "../../hooks/useFetch";
 
 const queryList = [
   "tout afficher",
@@ -16,22 +17,17 @@ const queryList = [
 ];
 
 const Skills = () => {
-  const [skills, setSkills] = useState([]);
   const [filter, setFilter] = useState("tout afficher");
-  const [active, setActive] = useState("tout afficher");
+  const [query, setQuery] = useState("*[_type == 'skills']");
 
-  const fetchData = (query) => {
-    client.fetch(query).then((data) => {
-      setSkills(data);
-    });
-  };
+  const { data, loading, error } = useFetch(query);
+  if (error) console.log(error);
+
   useEffect(() => {
     if (filter === "tout afficher") {
-      const query = `*[_type == 'skills']`;
-      fetchData(query);
+      setQuery(`*[_type == 'skills']`);
     } else {
-      const query = `*[_type == 'skills' && category == "${filter}"]`;
-      fetchData(query);
+      setQuery(`*[_type == 'skills' && category == "${filter}"]`);
     }
   }, [filter]);
 
@@ -42,12 +38,11 @@ const Skills = () => {
         {queryList.map((item, index) => (
           <div
             className={`app__skills-filter-item app__btn ${
-              active === item ? "app__btn-active" : ""
+              filter === item ? "app__btn-active" : ""
             }`}
             key={index}
             onClick={() => {
               setFilter(item);
-              setActive(item);
             }}
           >
             {item}
@@ -56,7 +51,7 @@ const Skills = () => {
       </div>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
-          {skills?.map((skill) => (
+          {data?.map((skill) => (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: [-40, 0] }}
