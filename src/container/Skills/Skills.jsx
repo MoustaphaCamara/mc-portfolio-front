@@ -19,7 +19,7 @@ const queryList = [
 ];
 
 const Skills = () => {
-  const [filter, setFilter] = useState("tout afficher");
+  const [filter, setFilter] = useState("frameworks");
   const [query, setQuery] = useState("*[_type == 'skills']");
 
   const { data, loading, error } = useFetch(query);
