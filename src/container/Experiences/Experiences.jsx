@@ -6,7 +6,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { BsPersonWorkspace } from "react-icons/bs";
-import { IoLogoReact } from "react-icons/io5";
+import { IoLogoReact, IoLogoVue } from "react-icons/io5";
 import { GiRobe } from "react-icons/gi";
 import { MdVaccines } from "react-icons/md";
 
@@ -14,10 +14,11 @@ import "./Experiences.scss";
 import useFetch from "../../hooks/useFetch";
 import Loader from "../../components/Loader/Loader";
 const companyIcons = {
-  "ACTA (Arc Europe)": <BsPersonWorkspace />,
   "bsOft.fr": <IoLogoReact />,
   "Ponsard & Dumas": <GiRobe />,
   "MSD Vaccins": <MdVaccines />,
+  HelloCSE: <IoLogoVue />,
+  "ACTA (Arc Europe)": <BsPersonWorkspace />,
 };
 
 const Experiences = () => {
@@ -60,7 +61,8 @@ const Experiences = () => {
                     {experience.company}
                   </h3>
                   <h4 className="bold-text">{experience.occupation}</h4>
-                  <p className="p-text">{experience.description}</p>
+                  <span className="bold-text">{experience.contract}</span>
+                  <p className="p-text"> {experience.description}</p>
                 </motion.div>
               </div>
             </VerticalTimelineElement>
