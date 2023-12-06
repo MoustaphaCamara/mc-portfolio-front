@@ -5,7 +5,7 @@ import Modal from "./Modal";
 
 import "./Navbar.scss";
 
-export const navList = [
+export const navList : string[] = [
   "accueil",
   "a-propos",
   "competences",
@@ -15,12 +15,12 @@ export const navList = [
 ];
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
-  const [navTop, setNavTop] = useState(0);
-  const lastScroll = useRef(0);
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [navTop, setNavTop] = useState<number>(0);
+  const lastScroll = useRef<number>(0);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
+  useEffect(():void => {
+    window.addEventListener("scroll", ():void => {
       if (window.scrollY > lastScroll.current) {
         setNavTop(-70);
       } else {

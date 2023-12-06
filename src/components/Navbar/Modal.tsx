@@ -1,13 +1,13 @@
 import React from "react";
 import "./Modal.scss";
 
-import { navList } from "./Navbar";
+import { navList } from "./Navbar.tsx";
 
 const Modal = ({ setToggle }) => {
   return (
     <div className="app__modal" onClick={() => setToggle(false)}>
       <ul className="app__modal-links">
-        {navList.map((item) => (
+        {navList.map((item:string) => (
           <li key={item}>
             <div />
 

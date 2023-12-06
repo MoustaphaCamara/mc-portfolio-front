@@ -1,5 +1,5 @@
 import React from "react";
-import { navList } from "./Navbar/Navbar";
+import { navList } from "./Navbar/Navbar.js";
 const NavigationDots = ({ active }) => {
   return (
     <div className="app__navigation">
