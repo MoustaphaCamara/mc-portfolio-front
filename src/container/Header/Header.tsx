@@ -18,7 +18,7 @@ const scaleVariants = {
   },
 };
 
-const technologies = [images.next, images.react, images.nodejs, images.sanity];
+const technologies:any[] = [images.next, images.react, images.nodejs, images.sanity];
 const Header = () => {
   return (
     <div className="app__header app__flex" id="accueil">
