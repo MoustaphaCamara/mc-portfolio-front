@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { MotionWrap } from "../../wrapper";
-import { urlFor } from "../../client";
-import useFetch from "../../hooks/useFetch";
+import { urlFor } from "../../client.ts";
+import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
 
 import "react-vertical-timeline-component/style.min.css";

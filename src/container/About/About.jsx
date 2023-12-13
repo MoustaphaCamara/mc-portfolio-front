@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./About.scss";
-import { urlFor } from "../../client";
+import { urlFor } from "../../client.ts";
 import { MotionWrap } from "../../wrapper";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
 
 const About = () => {

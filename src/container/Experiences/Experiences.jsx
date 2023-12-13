@@ -11,7 +11,7 @@ import { GiRobe } from "react-icons/gi";
 import { MdVaccines } from "react-icons/md";
 
 import "./Experiences.scss";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
 const companyIcons = {
   "bsOft.fr": <IoLogoReact />,

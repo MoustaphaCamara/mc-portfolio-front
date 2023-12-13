@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 
 import { MotionWrap } from "../../wrapper";
-import { urlFor } from "../../client";
-import useFetch from "../../hooks/useFetch";
+import { urlFor } from "../../client.ts";
+import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
 
 import "./Portfolio.scss";

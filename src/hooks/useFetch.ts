@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { client } from "../client";
+import { client } from "../client.ts";
 
-export default function useFetch(query) {
+export default function useFetch(query):{data: null | object, error: null |  object, loading: null |  false} {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
