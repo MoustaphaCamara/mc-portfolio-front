@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 import { MotionWrap } from "../../wrapper";
@@ -6,6 +5,7 @@ import { urlFor } from "../../client.ts";
 import "./Hobbies.scss";
 import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
+import {useState} from "react";
 
 const Hobbies = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,4 +1,3 @@
-import React from "react";
 import { navList } from "./Navbar/Navbar.js";
 const NavigationDots = ({ active }) => {
   return (
