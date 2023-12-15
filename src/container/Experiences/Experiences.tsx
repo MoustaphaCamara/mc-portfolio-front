@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
   VerticalTimeline,
@@ -17,7 +16,7 @@ const companyIcons = {
   "bsOft.fr": <IoLogoReact />,
   "Ponsard & Dumas": <GiRobe />,
   "MSD Vaccins": <MdVaccines />,
-  HelloCSE: <IoLogoVue />,
+  "HelloCSE": <IoLogoVue />,
   "ACTA (Arc Europe)": <BsPersonWorkspace />,
 };
 
