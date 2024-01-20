@@ -15,7 +15,6 @@ const queryList = [
   "database",
   "frameworks",
   "tools",
-  "design",
 ];
 
 const Skills = () => {
