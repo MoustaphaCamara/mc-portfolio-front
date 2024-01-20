@@ -2,7 +2,7 @@ import { navList } from "./Navbar/Navbar.js";
 const NavigationDots = ({ active }) => {
   return (
     <div className="app__navigation">
-      {navList.map((item, index) => (
+      {navList.map((item:string, index:number) => (
         <a
           href={`#${item}`}
           key={item + index}
