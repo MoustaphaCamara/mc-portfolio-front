@@ -4,6 +4,7 @@ import { urlFor } from "../../client.ts";
 import { MotionWrap } from "../../wrapper";
 import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
+import {NavList} from "../../constants/navList.ts";
 
 interface Image {
     imgUrl: string;
@@ -15,7 +16,7 @@ const About = () => {
   if (error) console.log(error);
 
   return (
-    <div id="a-propos">
+    <div id={NavList.ABOUT}>
       <h2 className="head-text">
         A <span>propos</span> de <span>moi</span>
       </h2>

@@ -1,8 +1,9 @@
 import "./Footer.scss";
+import {NavList} from "../../constants/navList.ts";
 
 const Footer = () => {
   return (
-    <div id="contact">
+    <div id={NavList.CONTACT}>
       <div className="app__footer app__darkbg app_flex">
         <div className="app__footer-contact-container">
           <h2 className="head-text">Contactez moi</h2>

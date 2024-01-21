@@ -5,6 +5,7 @@ import { MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
 
 import "./Header.scss";
+import {NavList} from "../../constants/navList.ts";
 
 const scaleVariants = {
   whileInView: {
@@ -20,7 +21,7 @@ const scaleVariants = {
 const technologies:any[] = [images.next, images.react, images.nodejs, images.sanity];
 const Header = () => {
   return (
-    <div className="app__header app__flex" id="accueil">
+    <div className="app__header app__flex" id={NavList.HOMEPAGE}>
       <motion.div
         transition={{ duration: 0.5 }}
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}

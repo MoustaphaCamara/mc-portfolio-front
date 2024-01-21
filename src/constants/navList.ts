@@ -1,4 +1,4 @@
-enum NavList {
+export enum NavList {
     HOMEPAGE = "accueil",
     ABOUT = "a-propos",
     SKILLS = "competences",

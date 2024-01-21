@@ -7,6 +7,7 @@ import Loader from "../../components/Loader/Loader";
 
 import "react-vertical-timeline-component/style.min.css";
 import "./Skills.scss";
+import {NavList} from "../../constants/navList.ts";
 
 const queryList = [
   "tout afficher",
@@ -34,7 +35,7 @@ const Skills = () => {
   }, [filter]);
 
   return (
-    <div id="competences">
+    <div id={NavList.SKILLS}>
       <h2 className="head-text">Compétences</h2>
       <div className="app__skills-filter">
         {queryList.map((item, index) => (

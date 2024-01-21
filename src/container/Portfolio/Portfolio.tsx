@@ -11,6 +11,7 @@ import Loader from "../../components/Loader/Loader";
 import "./Portfolio.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {NavList} from "../../constants/navList.ts";
 
 const settings = {
   dots: true,
@@ -48,7 +49,7 @@ const Portfolio = () => {
   }, [filter]);
 
   return (
-    <div id="portfolio">
+    <div id={NavList.PORTFOLIO}>
       <h2 className="head-text">
         mon <span> portfolio</span>
       </h2>

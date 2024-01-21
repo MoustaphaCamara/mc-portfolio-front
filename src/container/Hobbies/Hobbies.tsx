@@ -6,6 +6,7 @@ import "./Hobbies.scss";
 import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
 import {useState} from "react";
+import {NavList} from "../../constants/navList.ts";
 
 const Hobbies = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,7 +19,7 @@ const Hobbies = () => {
   const current = data && data[currentIndex];
 
   return (
-    <div id="hobbies">
+    <div id={NavList.HOBBIES}>
       <h2 className="head-text">Hobbies</h2>
       {loading && <Loader />}
       {data && (
