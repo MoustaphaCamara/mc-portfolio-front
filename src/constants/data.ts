@@ -1,4 +1,5 @@
 export interface SanityData {
+    bgColor: string;
     title: string;
     description: string;
     name: string;
