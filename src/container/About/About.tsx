@@ -5,9 +5,15 @@ import { MotionWrap } from "../../wrapper";
 import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
 
+interface Image {
+    imgUrl: string;
+    description: string
+    title: string
+}
 const About = () => {
   const { data, loading, error } = useFetch("*[_type == 'about']");
   if (error) console.log(error);
+  console.log(data);
 
   return (
     <div id="a-propos">
@@ -16,7 +22,7 @@ const About = () => {
       </h2>
       <div className="app__profiles">
         {loading && <Loader />}
-        {data?.map((item, index) => (
+        {data?.map((item: Image, index: number) => (
           <div className="app__profile-item" key={index}>
             <img src={urlFor(item.imgUrl)} alt="who-am-i" />
             <p>{item.description}</p>
