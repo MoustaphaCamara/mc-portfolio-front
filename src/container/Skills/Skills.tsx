@@ -4,19 +4,20 @@ import { MotionWrap } from "../../wrapper";
 import { urlFor } from "../../client.ts";
 import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
-
 import "react-vertical-timeline-component/style.min.css";
 import "./Skills.scss";
 import {NavList} from "../../constants/navList.ts";
+import {SanityData} from "../../constants/data.ts";
+import * as Filter from "../../constants/filters.ts";
 
-const queryList = [
-  "tout afficher",
-  "frontend",
-  "backend",
-  "database",
-  "frameworks",
-  "tools",
-  "design",
+const queryList:string[] = [
+  Filter.Skills.ALL,
+  Filter.Skills.FRONT,
+  Filter.Skills.BACK,
+  Filter.Skills.DB,
+  Filter.Skills.FRAMEWORK,
+  Filter.Skills.TOOLS,
+  Filter.Skills.DESIGN,
 ];
 
 const Skills = () => {
@@ -55,7 +56,7 @@ const Skills = () => {
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
           {loading && <Loader />}
-          {data?.map((skill) => (
+          {data?.map((skill: SanityData) => (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: [-40, 0] }}

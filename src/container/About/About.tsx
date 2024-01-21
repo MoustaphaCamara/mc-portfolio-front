@@ -5,12 +5,8 @@ import { MotionWrap } from "../../wrapper";
 import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
 import {NavList} from "../../constants/navList.ts";
+import {SanityData} from "../../constants/data.ts";
 
-interface Image {
-    imgUrl: string;
-    description: string
-    title: string
-}
 const About = () => {
   const { data, loading, error } = useFetch("*[_type == 'about']");
   if (error) console.log(error);
@@ -22,7 +18,7 @@ const About = () => {
       </h2>
       <div className="app__profiles">
         {loading && <Loader />}
-        {data?.map((item: Image, index: number) => (
+        {data?.map((item: SanityData, index: number) => (
           <div className="app__profile-item" key={index}>
             <img src={urlFor(item.imgUrl)} alt="who-am-i" />
             <p>{item.description}</p>

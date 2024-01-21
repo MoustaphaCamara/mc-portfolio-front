@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { client } from "../client.ts";
+import {SanityData} from "../constants/data.ts";
 
 export type ApiResponse = {
   data: any;
@@ -8,7 +9,7 @@ export type ApiResponse = {
 };
 
 export default function useFetch (query: string):ApiResponse {
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<SanityData|undefined>();
   const [error, setError] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {

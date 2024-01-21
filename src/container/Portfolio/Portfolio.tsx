@@ -12,6 +12,9 @@ import "./Portfolio.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {NavList} from "../../constants/navList.ts";
+import {SanityData} from "../../constants/data.ts";
+import * as Filter from "../../constants/filters.ts";
+
 
 const settings = {
   dots: true,
@@ -22,13 +25,13 @@ const settings = {
   slidesToScroll: 1,
 };
 
-const filterButtons = [
-  "tout afficher",
-  "React",
-  "Vue",
-  "Javascript",
-  "Typescript",
-  "SASS",
+const filterButtons:string[] = [
+    Filter.Portfolio.ALL,
+    Filter.Portfolio.REACT,
+    Filter.Portfolio.VUE,
+    Filter.Portfolio.JS,
+    Filter.Portfolio.TS,
+    Filter.Portfolio.SASS,
 ];
 const defaultQuery = `*[_type == "works"] | order(releaseDate desc)`;
 
@@ -68,7 +71,7 @@ const Portfolio = () => {
 
       <Slider {...settings}>
         {loading && <Loader />}
-        {data?.map((work, index) => (
+        {data?.map((work: SanityData, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 10 }}
@@ -90,7 +93,7 @@ const Portfolio = () => {
                   Technologies utilisées :
                 </p>
                 <div className="app__portfolio-icons">
-                  {work.icon.map((icon, index) => (
+                  {work.icon?.map((icon, index) => (
                     <img src={urlFor(icon)} alt={work.name} key={index} />
                   ))}
                 </div>

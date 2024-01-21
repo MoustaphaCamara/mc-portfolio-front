@@ -12,6 +12,7 @@ import { MdVaccines } from "react-icons/md";
 import "./Experiences.scss";
 import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
+import {SanityData} from "../../constants/data.ts";
 const companyIcons = {
   "bsOft.fr": <IoLogoReact />,
   "Ponsard & Dumas": <GiRobe />,
@@ -32,7 +33,7 @@ const Experiences = () => {
       <div className="app__skills-exp">
         <VerticalTimeline>
           {loading && <Loader />}
-          {data?.map((experience, index) => (
+          {data?.map((experience: SanityData, index) => (
             <VerticalTimelineElement
               key={index}
               className="vertical-timeline-element--work"
