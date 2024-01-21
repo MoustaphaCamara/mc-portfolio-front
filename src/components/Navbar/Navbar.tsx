@@ -1,18 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import { images } from "../../constants";
-
+import { useEffect, useRef, useState } from "react";
 import Modal from "./Modal";
-
+import {images} from "../../constants";
+import {navList} from "../../constants/navList.ts";
 import "./Navbar.scss";
 
-export const navList : string[] = [
-  "accueil",
-  "a-propos",
-  "competences",
-  "portfolio",
-  "hobbies",
-  "contact",
-];
 
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);

@@ -1,4 +1,4 @@
-import { navList } from "./Navbar/Navbar.js";
+import {navList} from "../constants/navList.ts";
 const NavigationDots = ({ active }) => {
   return (
     <div className="app__navigation">
