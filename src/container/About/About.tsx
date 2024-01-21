@@ -13,7 +13,6 @@ interface Image {
 const About = () => {
   const { data, loading, error } = useFetch("*[_type == 'about']");
   if (error) console.log(error);
-  console.log(data);
 
   return (
     <div id="a-propos">
