@@ -1,13 +1,16 @@
-import React from "react";
 import "./Modal.scss";
+import {Dispatch, FC, SetStateAction} from "react";
+import {navList} from "../../constants/navList.ts";
 
-import { navList } from "./Navbar";
+interface ModalProps {
+    setToggle: Dispatch<SetStateAction<boolean>>
+}
 
-const Modal = ({ setToggle }) => {
+const Modal: FC<ModalProps> = ({ setToggle }) => {
   return (
     <div className="app__modal" onClick={() => setToggle(false)}>
       <ul className="app__modal-links">
-        {navList.map((item) => (
+        {navList.map((item:string) => (
           <li key={item}>
             <div />
 
