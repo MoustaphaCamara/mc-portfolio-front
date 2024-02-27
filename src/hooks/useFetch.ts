@@ -3,12 +3,12 @@ import { client } from "../client.ts";
 import {SanityData} from "../constants/data.ts";
 
 export type ApiResponse = {
-  data: any;
+  data: SanityData;
   error: Error;
   loading: Boolean;
 };
 
-export default function useFetch (query: string):ApiResponse {
+export default function useFetch (query: string):ApiResponse[] {
   const [data, setData] = useState<SanityData|undefined>();
   const [error, setError] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
@@ -26,5 +26,5 @@ export default function useFetch (query: string):ApiResponse {
       }
     })();
   }, [query]);
-  return { data, error,loading };
+  return <ApiResponse[]>{data, error, loading};
 }
