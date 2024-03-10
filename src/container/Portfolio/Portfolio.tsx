@@ -12,6 +12,8 @@ import "slick-carousel/slick/slick-theme.css";
 import {NavList} from "../../constants/navList.ts";
 import {SanityData} from "../../constants/data.ts";
 import * as Filter from "../../constants/filters.ts";
+import Button from "../../components/Button.tsx";
+import {Queries} from "../../constants/queries.ts";
 
 const settings = {
     dots: true,
@@ -30,20 +32,20 @@ const filterButtons: string[] = [
     Filter.Portfolio.TS,
     Filter.Portfolio.SASS,
 ];
-const defaultQuery = `*[_type == "works"] | order(releaseDate desc)`;
 
 const Portfolio = () => {
     const [filter, setFilter] = useState("tout afficher");
-    const [query, setQuery] = useState(defaultQuery);
+    const [query, setQuery] = useState<Queries | string>(Queries.PORTFOLIO);
+
     const {data, loading, error} = useFetch(query);
     if (error) console.log(error);
 
     useEffect(() => {
         if (filter === "tout afficher") {
-            setQuery(defaultQuery);
+            setQuery(Queries.PORTFOLIO);
         } else {
             setQuery(
-                `*[_type == "works" && "${filter}" in tags] | order(releaseDate desc)`
+                `*[_type == 'works' && '${filter}' in tags] | order(releaseDate desc)`
             );
         }
     }, [filter]);
@@ -55,14 +57,12 @@ const Portfolio = () => {
             </h2>
 
             <div className="app__portfolio-filter">
-                {filterButtons.map((item, index) => (
-                    <div
+                {filterButtons.map((item:string, index:number) => (
+                    <Button
                         key={index}
-                        onClick={() => setFilter(item)}
-                        className={`app__btn ${filter === item ? "app__btn-active" : ""}`}
-                    >
-                        {item}
-                    </div>
+                        content={item}
+                        status={filter}
+                        setStatus={setFilter}/>
                 ))}
             </div>
 
