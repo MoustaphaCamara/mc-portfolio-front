@@ -6,13 +6,14 @@ import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
 import {useState} from "react";
 import {NavList} from "../../constants/navList.ts";
+import {Queries} from "../../constants/queries.ts";
 
 const Hobbies = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const handleClick = (index) => {
         setCurrentIndex(index);
     };
-    const {data, error, loading} = useFetch("*[_type == 'hobbies']");
+    const {data, error, loading} = useFetch<Queries>(Queries.HOBBIES);
     if (error) console.log(error);
     const current = data && data[currentIndex];
 
