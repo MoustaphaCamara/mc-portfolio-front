@@ -45,6 +45,3 @@ export default {
   profile,
   logo,
 };
-
-// faire un export const de chaque value puis les utiliser dans le projet when needed
-// export const CANVA = "../assets/canva.svg"

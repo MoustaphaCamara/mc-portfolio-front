@@ -32,7 +32,6 @@ const filterButtons: string[] = [
     Filter.Portfolio.TS,
     Filter.Portfolio.SASS,
 ];
-// const defaultQuery = `*[_type == "works"] | order(releaseDate desc)`;
 
 const Portfolio = () => {
     const [filter, setFilter] = useState("tout afficher");
