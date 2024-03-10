@@ -9,6 +9,8 @@ import "./Skills.scss";
 import {NavList} from "../../constants/navList.ts";
 import {SanityData} from "../../constants/data.ts";
 import * as Filter from "../../constants/filters.ts";
+import Button from "../../components/Button.tsx";
+import {Queries} from "../../constants/queries.ts";
 
 const queryList: string[] = [
     Filter.Skills.ALL,
@@ -21,14 +23,14 @@ const queryList: string[] = [
 ];
 const Skills = () => {
     const [filter, setFilter] = useState("frameworks");
-    const [query, setQuery] = useState("*[_type == 'skills']");
+    const [query, setQuery] = useState<Queries | string>(Queries.SKILLS);
 
     const {data, loading, error} = useFetch(query);
     if (error) console.log(error);
 
     useEffect(() => {
         if (filter === "tout afficher") {
-            setQuery(`*[_type == 'skills']`);
+            setQuery(Queries.SKILLS);
         } else {
             setQuery(`*[_type == 'skills' && category == "${filter}"]`);
         }
@@ -38,18 +40,12 @@ const Skills = () => {
         <div id={NavList.SKILLS}>
             <h2 className="head-text">Compétences</h2>
             <div className="app__skills-filter">
-                {queryList.map((item, index) => (
-                    <div
-                        className={`app__skills-filter-item app__btn ${
-                            filter === item ? "app__btn-active" : ""
-                        }`}
+                {queryList.map((item:string, index:number) => (
+                    <Button
                         key={index}
-                        onClick={() => {
-                            setFilter(item);
-                        }}
-                    >
-                        {item}
-                    </div>
+                        content={item}
+                        status={filter}
+                        setStatus={setFilter}/>
                 ))}
             </div>
             <div className="app__skills-container">

@@ -13,6 +13,8 @@ import "./Experiences.scss";
 import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
 import {SanityData} from "../../constants/data.ts";
+import {Queries} from "../../constants/queries.ts";
+
 const companyIcons = {
   "bsOft.fr": <IoLogoReact />,
   "Ponsard & Dumas": <GiRobe />,
@@ -22,8 +24,8 @@ const companyIcons = {
 };
 
 const Experiences = () => {
-  const { data, loading, error } = useFetch(
-    "*[_type == 'experiences'] | order(year desc)"
+  const { data, loading, error } = useFetch<Queries>(
+    Queries.EXPERIENCES
   );
   if (error) console.log(error);
 

@@ -6,9 +6,10 @@ import useFetch from "../../hooks/useFetch.ts";
 import Loader from "../../components/Loader/Loader";
 import {NavList} from "../../constants/navList.ts";
 import {SanityData} from "../../constants/data.ts";
+import {Queries} from "../../constants/queries.ts";
 
 const About = () => {
-  const { data, loading, error } = useFetch("*[_type == 'about']");
+  const { data, loading, error } = useFetch<Queries>(Queries.ABOUT);
   if (error) console.log(error);
 
   return (
