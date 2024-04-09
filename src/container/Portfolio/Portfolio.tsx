@@ -57,7 +57,7 @@ const Portfolio = () => {
             </h2>
 
             <div className="app__portfolio-filter">
-                {filterButtons.map((item:string, index:number) => (
+                {filterButtons.map((item: string, index: number) => (
                     <Button
                         key={index}
                         content={item}
