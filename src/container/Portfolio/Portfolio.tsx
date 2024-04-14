@@ -58,11 +58,12 @@ const Portfolio = () => {
 
             <div className="app__portfolio-filter">
                 {filterButtons.map((item: string, index: number) => (
-                    <Button
-                        key={index}
-                        content={item}
-                        status={filter}
-                        setStatus={setFilter}/>
+                    <div key={index}>
+                        <Button
+                            content={item}
+                            status={filter}
+                            setStatus={setFilter}/>
+                    </div>
                 ))}
             </div>
 

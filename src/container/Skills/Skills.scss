@@ -5,25 +5,23 @@
   min-height: 50vh;
   padding: 2rem 0;
   background: radial-gradient(
-        circle,
-        transparent 20%,
-        var(--dark-purple-color) 20%,
-        var(--dark-purple-color) 80%,
-        transparent 80%,
-        transparent
-      )
-      0% 0% / 104px 104px,
-    radial-gradient(
-        circle,
-        transparent 20%,
-        var(--dark-purple-color) 20%,
-        var(--dark-purple-color) 80%,
-        transparent 80%,
-        transparent
-      )
-      52px 52px / 104px 104px,
-    linear-gradient(var(--purple-color) 1px, transparent 1px) 0px -1px / 52px 52px,
-    linear-gradient(
+                  circle,
+                  transparent 20%,
+                  var(--dark-purple-color) 20%,
+                  var(--dark-purple-color) 80%,
+                  transparent 80%,
+                  transparent
+  ) 0 0 / 104px 104px,
+  radial-gradient(
+                  circle,
+                  transparent 20%,
+                  var(--dark-purple-color) 20%,
+                  var(--dark-purple-color) 80%,
+                  transparent 80%,
+                  transparent
+  ) 52px 52px / 104px 104px,
+  linear-gradient(var(--purple-color) 1px, transparent 1px) 0px -1px / 52px 52px,
+  linear-gradient(
         90deg,
         var(--purple-color) 1px,
         var(--dark-purple-color) 1px
@@ -31,15 +29,18 @@
   background-size: 104px 104px, 104px 104px, 52px 52px, 52px 52px;
   background-color: var(--dark-purple-color);
 }
+
 #competences {
   width: 80%;
   margin: 0 auto;
+
   h3 {
     font-size: 2rem;
     margin: 2rem auto;
     text-transform: lowercase;
   }
 }
+
 .app__skills-filter {
   display: flex;
   flex-direction: row;
@@ -58,6 +59,7 @@
     width: 100%;
   }
 }
+
 .app__skills-list {
   flex: 1;
   display: flex;
@@ -71,6 +73,7 @@
     align-items: center;
   }
 }
+
 .app__skills-item {
   flex-direction: column;
   text-align: center;
@@ -84,6 +87,7 @@
     background-color: white;
     transition: 0.3s all ease;
     margin: 0.8rem;
+
     img {
       width: 50%;
       height: 50%;
@@ -95,6 +99,7 @@
       box-shadow: 0 0 12px var(--white-color);
       transform: translateY(3px);
     }
+
     @media screen and (min-width: 2000px) {
       width: 150px;
       height: 150px;
@@ -104,10 +109,12 @@
       height: 70px;
     }
   }
+
   p {
     font-weight: 500;
     margin-top: 0.5rem;
   }
+
   @media screen and (min-width: 2000px) {
     margin: 1rem 2rem;
     p {
@@ -115,6 +122,7 @@
     }
   }
 }
+
 .app__skills-complementary {
   background: var(--purple-color);
   padding: 16px;
@@ -123,6 +131,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   .p-text {
     text-align: center;
     letter-spacing: 1.5px;

@@ -1,7 +1,14 @@
-const Button = ({index, content, setStatus, status }) => {
+import React from "react";
+
+type ButtonProps = {
+    content: string;
+    setStatus: React.Dispatch<React.SetStateAction<string>>;
+    status: string;
+};
+
+const Button = ({content, status, setStatus}: ButtonProps) => {
     return (
         <div
-            key={index}
             onClick={() => setStatus(content)}
             className={`app__btn ${status === content ? "app__btn-active" : ""}`}
         >

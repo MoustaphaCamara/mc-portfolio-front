@@ -11,29 +11,34 @@
   backdrop-filter: blur(3px);
   background: rgba(255, 255, 255, 0.4);
 }
+
 .app__modal-links {
   list-style: none;
   text-align: center;
+
   li {
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
+
     div {
-      width: 0px;
-      height: 0px;
+      width: 0;
+      height: 0;
       border-bottom: 10px solid transparent;
       border-right: 10px solid transparent;
       border-top: 10px solid transparent;
       transition: all 0.2s ease-in-out;
       margin-right: 12px;
     }
+
     &:hover {
       div {
         border-left: 10px solid var(--blue-color);
       }
     }
   }
+
   li a {
     font-size: 1.5rem;
     text-decoration: none;
@@ -42,6 +47,7 @@
     line-height: 3.5rem;
     font-weight: 700;
     transition: all 0.2s ease;
+
     &:hover {
       letter-spacing: 3px;
       color: var(--blue-color);
