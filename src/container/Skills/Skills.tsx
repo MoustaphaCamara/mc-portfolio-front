@@ -22,7 +22,7 @@ const queryList: string[] = [
     Filter.Skills.DESIGN,
 ];
 const Skills = () => {
-    const [filter, setFilter] = useState("frameworks");
+    const [filter, setFilter] = useState("backend");
     const [query, setQuery] = useState<Queries | string>(Queries.SKILLS);
 
     const {data, loading, error} = useFetch(query);
@@ -40,7 +40,7 @@ const Skills = () => {
         <div id={NavList.SKILLS}>
             <h2 className="head-text">Compétences</h2>
             <div className="app__skills-filter">
-                {queryList.map((item:string, index:number) => (
+                {queryList.map((item: string, index: number) => (
                     <Button
                         key={index}
                         content={item}
