@@ -57,12 +57,13 @@ const Portfolio = () => {
             </h2>
 
             <div className="app__portfolio-filter">
-                {filterButtons.map((item:string, index:number) => (
-                    <Button
-                        key={index}
-                        content={item}
-                        status={filter}
-                        setStatus={setFilter}/>
+                {filterButtons.map((item: string, index: number) => (
+                    <div key={index}>
+                        <Button
+                            content={item}
+                            status={filter}
+                            setStatus={setFilter}/>
+                    </div>
                 ))}
             </div>
 

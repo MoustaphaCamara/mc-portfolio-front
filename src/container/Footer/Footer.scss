@@ -41,7 +41,7 @@
 }
 
 .app__footer-icons-list a::before {
-  font-family: "FontAwesome";
+  font-family: "FontAwesome", serif;
   position: absolute;
   height: 0;
   overflow: hidden;
@@ -93,12 +93,14 @@
 .app__footer-icons-list li:hover .app__footer-icons-line {
   transform: translateY(84px);
 }
+
 .app__footer-contact-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
 }
+
 .app__footer-copyright-container {
   padding: 2rem 0 0;
 
@@ -109,6 +111,7 @@
   @media screen and (max-width: 500px) {
     padding: 2rem;
   }
+
   p {
     text-transform: uppercase;
   }

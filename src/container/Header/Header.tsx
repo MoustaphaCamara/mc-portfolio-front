@@ -15,7 +15,7 @@ const scaleVariants = {
     },
 };
 
-const technologies: any[] = [images.next, images.react, images.nodejs, images.sanity];
+const technologies: any[] = [images.react, images.laravel, images.nuxt, images.vue];
 const Header = () => {
     return (
         <div className="app__header app__flex" id={NavList.HOMEPAGE}>
@@ -33,7 +33,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="tag-cmp app__flex">
-                        <p className="p-text">Développeur Web</p>
+                        <p className="p-text">développeur full stack</p>
                     </div>
                 </div>
             </motion.div>
@@ -43,7 +43,7 @@ const Header = () => {
                 transition={{duration: 0.5, delayChildren: 0.5}}
                 whileInView={{opacity: [0, 1]}}
             >
-                <img src={images.profile} alt="profile-bg"/>
+                <img src={images.profile as string} alt="profile-bg"/>
             </motion.div>
 
             <motion.div
