@@ -1,6 +1,7 @@
 import { createClient } from "@sanity/client";
-import * as imageUrl from "@sanity/image-url";
-const imageUrlBuilder = imageUrl;
+import imageUrlBuilder from "@sanity/image-url";
+// const imageUrlBuilder = imageUrl;
+
 
 export const client = createClient({
   projectId: import.meta.env.VITE_REACT_APP_SANITY_PROJECT_ID,
