@@ -1,146 +1,146 @@
 .app__skills {
-	flex: 1;
-	width: 100%;
-	flex-direction: column;
-	min-height: 50vh;
-	padding: 2rem 0;
-	background:
-		radial-gradient(
-				circle,
-				transparent 20%,
-				var(--dark-purple-color) 20%,
-				var(--dark-purple-color) 80%,
-				transparent 80%,
-				transparent
-			)
-			0 0 / 104px 104px,
-		radial-gradient(
-				circle,
-				transparent 20%,
-				var(--dark-purple-color) 20%,
-				var(--dark-purple-color) 80%,
-				transparent 80%,
-				transparent
-			)
-			52px 52px / 104px 104px,
-		linear-gradient(var(--purple-color) 1px, transparent 1px) 0px -1px / 52px 52px,
-		linear-gradient(
-				90deg,
-				var(--purple-color) 1px,
-				var(--dark-purple-color) 1px
-			) -1px 0px / 52px 52px var(--dark-purple-color);
-	background-size:
-		104px 104px,
-		104px 104px,
-		52px 52px,
-		52px 52px;
-	background-color: var(--dark-purple-color);
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  min-height: 50vh;
+  padding: 2rem 0;
+  background:
+    radial-gradient(
+        circle,
+        transparent 20%,
+        var(--dark-purple-color) 20%,
+        var(--dark-purple-color) 80%,
+        transparent 80%,
+        transparent
+      )
+      0 0 / 104px 104px,
+    radial-gradient(
+        circle,
+        transparent 20%,
+        var(--dark-purple-color) 20%,
+        var(--dark-purple-color) 80%,
+        transparent 80%,
+        transparent
+      )
+      52px 52px / 104px 104px,
+    linear-gradient(var(--purple-color) 1px, transparent 1px) 0px -1px / 52px 52px,
+    linear-gradient(
+        90deg,
+        var(--purple-color) 1px,
+        var(--dark-purple-color) 1px
+      ) -1px 0px / 52px 52px var(--dark-purple-color);
+  background-size:
+    104px 104px,
+    104px 104px,
+    52px 52px,
+    52px 52px;
+  background-color: var(--dark-purple-color);
 }
 
 #competences {
-	width: 80%;
-	margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 
-	h3 {
-		font-size: 2rem;
-		margin: 2rem auto;
-		text-transform: lowercase;
-	}
+  h3 {
+    font-size: 2rem;
+    margin: 2rem auto;
+    text-transform: lowercase;
+  }
 }
 
 .app__skills-filter {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 
-	margin: 4rem 0 2rem;
+  margin: 4rem 0 2rem;
 }
 
 // container
 .app__skills-container {
-	margin-top: 3rem;
+  margin-top: 3rem;
 
-	@media screen and (max-width: 900px) {
-		width: 100%;
-	}
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
 }
 
 .app__skills-list {
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	flex-wrap: wrap;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 
-	@media screen and (max-width: 900px) {
-		margin-right: 0;
-		justify-content: center;
-		align-items: center;
-	}
+  @media screen and (max-width: 900px) {
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .app__skills-item {
-	flex-direction: column;
-	text-align: center;
-	margin: 1px;
-	transition: all 0.3s ease;
+  flex-direction: column;
+  text-align: center;
+  margin: 1px;
+  transition: all 0.3s ease;
 
-	div {
-		width: 90px;
-		height: 90px;
-		border-radius: 50%;
-		background-color: white;
-		transition: 0.3s all ease;
-		margin: 0.8rem;
+  div {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.3s all ease;
+    margin: 0.8rem;
 
-		img {
-			width: 50%;
-			height: 50%;
-		}
+    img {
+      width: 50%;
+      height: 50%;
+    }
 
-		box-shadow: 0 0 6px var(--blue-color);
+    box-shadow: 0 0 6px var(--blue-color);
 
-		&:hover {
-			box-shadow: 0 0 12px var(--white-color);
-			transform: translateY(3px);
-		}
+    &:hover {
+      box-shadow: 0 0 12px var(--white-color);
+      transform: translateY(3px);
+    }
 
-		@media screen and (min-width: 2000px) {
-			width: 150px;
-			height: 150px;
-		}
-		@media screen and (max-width: 1200px) {
-			width: 70px;
-			height: 70px;
-		}
-	}
+    @media screen and (min-width: 2000px) {
+      width: 150px;
+      height: 150px;
+    }
+    @media screen and (max-width: 1200px) {
+      width: 70px;
+      height: 70px;
+    }
+  }
 
-	p {
-		font-weight: 500;
-		margin-top: 0.5rem;
-	}
+  p {
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
 
-	@media screen and (min-width: 2000px) {
-		margin: 1rem 2rem;
-		p {
-			margin-top: 1rem;
-		}
-	}
+  @media screen and (min-width: 2000px) {
+    margin: 1rem 2rem;
+    p {
+      margin-top: 1rem;
+    }
+  }
 }
 
 .app__skills-complementary {
-	background: var(--purple-color);
-	padding: 16px;
-	border-radius: 16px 0 16px 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  background: var(--purple-color);
+  padding: 16px;
+  border-radius: 16px 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-	.p-text {
-		text-align: center;
-		letter-spacing: 1.5px;
-	}
+  .p-text {
+    text-align: center;
+    letter-spacing: 1.5px;
+  }
 }
