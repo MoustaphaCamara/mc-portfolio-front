@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { MotionWrap } from '../../wrapper';
 import { images } from '../../constants';
@@ -15,7 +16,7 @@ const scaleVariants = {
   },
 };
 
-const technologies: any[] = [
+const technologies: object[] = [
   images.react,
   images.laravel,
   images.nuxt,
@@ -32,7 +33,7 @@ const Header = () => {
           <div className="badge-cmp app__flex">
             <span>{'<salut />'}</span>
             <div style={{ marginLeft: 20 }}>
-              <p className="p-text">Moi c'est</p>
+              <p className="p-text">Moi c&apos;est</p>
               <h1 className="head-text">Moustapha</h1>
             </div>
           </div>

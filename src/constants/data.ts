@@ -10,5 +10,5 @@ export interface SanityData {
   contract: string;
   projectLink: string;
   sourceCode: string;
-  icon: any;
+  icon: string;
 }

@@ -1,5 +1,5 @@
+import React, { Dispatch, FC, SetStateAction } from 'react';
 import './Modal.scss';
-import { Dispatch, FC, SetStateAction } from 'react';
 import { navList } from '../../constants/navList.ts';
 
 interface ModalProps {

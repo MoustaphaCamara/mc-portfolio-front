@@ -6,12 +6,12 @@ import { Queries } from '../constants/queries.ts';
 export type ApiResponse = {
   data: SanityData;
   error: Error;
-  loading: Boolean;
+  loading: boolean;
 };
 
 export default function useFetch(query: Queries | string): ApiResponse[] {
   const [data, setData] = useState<SanityData | undefined>();
-  const [error, setError] = useState<any>();
+  const [error, setError] = useState<string | null>();
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
     (async function (): Promise<void> {
