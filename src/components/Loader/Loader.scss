@@ -1,24 +1,24 @@
 .loader {
-  position: absolute;
-  margin: auto;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  box-sizing: border-box;
-  border-top: 6px solid white;
-  border-left: 6px solid white;
-  border-right: 8px solid transparent;
-  animation: loader 0.7s infinite linear;
+	position: absolute;
+	margin: auto;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	box-sizing: border-box;
+	border-top: 6px solid white;
+	border-left: 6px solid white;
+	border-right: 8px solid transparent;
+	animation: loader 0.7s infinite linear;
 }
 @keyframes loader {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    transform: rotate(360deg);
-  }
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		transform: rotate(360deg);
+	}
 }
