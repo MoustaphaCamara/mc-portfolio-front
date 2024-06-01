@@ -6,7 +6,7 @@ import {
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { BsPersonWorkspace } from 'react-icons/bs';
-import { IoLogoReact, IoLogoVue } from 'react-icons/io5';
+import {IoLogoLaravel, IoLogoReact, IoLogoVue} from 'react-icons/io5';
 import { GiRobe } from 'react-icons/gi';
 import { MdVaccines } from 'react-icons/md';
 
@@ -20,7 +20,7 @@ const companyIcons = {
   'bsOft.fr': <IoLogoReact />,
   'Ponsard & Dumas': <GiRobe />,
   'MSD Vaccins': <MdVaccines />,
-  HelloCSE: <IoLogoVue />,
+  HelloCSE: <IoLogoLaravel />,
   'ACTA (Arc Europe)': <BsPersonWorkspace />,
 };
 
