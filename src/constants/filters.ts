@@ -6,6 +6,7 @@ export enum Portfolio {
   TS = 'Typescript',
   SASS = 'SASS',
 }
+
 export enum Skills {
   ALL = 'tout afficher',
   FRONT = 'frontend',
@@ -13,5 +14,4 @@ export enum Skills {
   DB = 'database',
   FRAMEWORK = 'frameworks',
   TOOLS = 'tools',
-  DESIGN = 'design',
 }

@@ -27,22 +27,24 @@ const About = () => {
             <p>{item.description}</p>
           </div>
         ))}
-        <motion.a
-          href={files.cv_fr as string}
-          target="_blank"
-          className="btn btn-action"
-          whileInView={{ opacity: [0, 1] }}
-          transition={{ duration: 0.5 }}>
-          cv (fr)
-        </motion.a>
-        <motion.a
-          href={files.cv_en as string}
-          target="_blank"
-          className="btn btn-action"
-          whileInView={{ opacity: [0, 1] }}
-          transition={{ duration: 0.5 }}>
-          cv (en)
-        </motion.a>
+        <div className="curriculum">
+          <motion.a
+            href={files.cv_fr as string}
+            target="_blank"
+            className="btn btn-action"
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 0.5 }}>
+            cv (fr)
+          </motion.a>
+          <motion.a
+            href={files.cv_en as string}
+            target="_blank"
+            className="btn btn-action"
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 0.5 }}>
+            cv (en)
+          </motion.a>
+        </div>
       </div>
     </div>
   );

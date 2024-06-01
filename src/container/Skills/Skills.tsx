@@ -19,7 +19,6 @@ const queryList: string[] = [
   Filter.Skills.DB,
   Filter.Skills.FRAMEWORK,
   Filter.Skills.TOOLS,
-  Filter.Skills.DESIGN,
 ];
 const Skills = () => {
   const [filter, setFilter] = useState('backend');
