@@ -15,6 +15,15 @@
   margin-top: 2rem;
 }
 
+.curriculum {
+  display: flex;
+  gap: 2rem;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
+}
+
 .app__profile-item {
   position: relative;
 
@@ -49,6 +58,7 @@
     width: 40%;
     margin: 0 auto;
   }
+
   p {
     font-size: 1rem;
     line-height: 1.9rem;
@@ -75,6 +85,7 @@
     );
     transition: all 0.5s ease;
   }
+
   &:hover::after {
     opacity: 0;
   }
