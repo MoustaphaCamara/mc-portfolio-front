@@ -7,7 +7,7 @@ import Loader from '../../components/Loader/Loader';
 import 'react-vertical-timeline-component/style.min.css';
 import './Skills.scss';
 import { NavList } from '../../constants/navList.ts';
-import { SanityData } from '../../constants/data.ts';
+import { SanityData } from '../../shared/interfaces/data.ts';
 import * as Filter from '../../constants/filters.ts';
 import Button from '../../components/Button.tsx';
 import { Queries } from '../../constants/queries.ts';
@@ -41,12 +41,13 @@ const Skills = () => {
       <h2 className="head-text">Compétences</h2>
       <div className="app__skills-filter">
         {queryList.map((item: string, index: number) => (
-          <Button
-            key={index}
-            content={item}
-            status={filter}
-            setStatus={setFilter}
-          />
+            <div key={index}>
+              <Button
+                content={item}
+                status={filter}
+                setStatus={setFilter}
+              />
+            </div>
         ))}
       </div>
       <div className="app__skills-container">

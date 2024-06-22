@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { client } from '../client.ts';
-import { SanityData } from '../constants/data.ts';
+import { SanityData } from '../shared/interfaces/data.ts';
 import { Queries } from '../constants/queries.ts';
 
 export type ApiResponse = {
