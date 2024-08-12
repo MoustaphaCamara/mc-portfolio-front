@@ -7,7 +7,7 @@ import { MotionWrap } from '../../wrapper';
 import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
 import { NavList } from '../../constants/navList.ts';
-import { SanityData } from '../../constants/data.ts';
+import { SanityData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
 
 const About = () => {

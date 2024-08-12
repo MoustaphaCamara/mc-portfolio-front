@@ -10,7 +10,7 @@ import './Portfolio.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { NavList } from '../../constants/navList.ts';
-import { SanityData } from '../../constants/data.ts';
+import { SanityData } from '../../shared/interfaces/data.ts';
 import * as Filter from '../../constants/filters.ts';
 import Button from '../../components/Button.tsx';
 import { Queries } from '../../constants/queries.ts';
