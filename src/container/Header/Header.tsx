@@ -16,7 +16,7 @@ const scaleVariants = {
   },
 };
 
-const technologies: object[] = [
+const technologies: object[string] = [
   images.react,
   images.laravel,
   images.nuxt,

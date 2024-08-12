@@ -20,6 +20,7 @@ const queryList: string[] = [
   Filter.Skills.FRAMEWORK,
   Filter.Skills.TOOLS,
 ];
+
 const Skills = () => {
   const [filter, setFilter] = useState('backend');
   const [query, setQuery] = useState<Queries | string>(Queries.SKILLS);
@@ -40,13 +41,9 @@ const Skills = () => {
       <h2 className="head-text">Compétences</h2>
       <div className="app__skills-filter">
         {queryList.map((item: string, index: number) => (
-            <div key={index}>
-              <Button
-                content={item}
-                status={filter}
-                setStatus={setFilter}
-              />
-            </div>
+          <div key={index}>
+            <Button content={item} status={filter} setStatus={setFilter} />
+          </div>
         ))}
       </div>
       <div className="app__skills-container">

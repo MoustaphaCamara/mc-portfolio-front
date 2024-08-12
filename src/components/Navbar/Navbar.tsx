@@ -30,7 +30,7 @@ const Navbar = () => {
         </div>
         <div className="app__navbar-links">
           <ul>
-            {navList.map((item) => (
+            {navList.map((item: string) => (
               <li className="app__flex" key={`link-${item}`}>
                 <div />
                 <a href={`#${item}`}>{item.replace('-', ' ')}</a>
