@@ -4,14 +4,14 @@ import { SanityData } from '../shared/interfaces/data.ts';
 import { Queries } from '../constants/queries.ts';
 
 export type ApiResponse = {
-  data: SanityData;
+  data: SanityData[];
   error: Error;
   loading: boolean;
 };
 
-export default function useFetch(query: Queries | string): ApiResponse[] {
-  const [data, setData] = useState<SanityData | undefined>();
-  const [error, setError] = useState<string | null>();
+export default function useFetch(query: Queries | string): ApiResponse {
+  const [data, setData] = useState<SanityData[] | undefined>();
+  const [error, setError] = useState<string | unknown>();
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
     (async function (): Promise<void> {
@@ -27,5 +27,5 @@ export default function useFetch(query: Queries | string): ApiResponse[] {
       }
     })();
   }, [query]);
-  return <ApiResponse[]>{ data, error, loading };
+  return <ApiResponse>(<unknown>{ data, error, loading });
 }

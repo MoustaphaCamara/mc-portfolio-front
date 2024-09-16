@@ -1,4 +1,3 @@
-import React from 'react';
 import { navList } from '../constants/navList.ts';
 
 const NavigationDots = ({ active }: string) => {

@@ -37,7 +37,7 @@ const Skills = () => {
   }, [filter]);
 
   return (
-    <div id={NavList.SKILLS}>
+    <div id={NavList.Skills}>
       <h2 className="head-text">Compétences</h2>
       <div className="app__skills-filter">
         {queryList.map((item: string, index: number) => (

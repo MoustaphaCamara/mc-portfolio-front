@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import { MotionWrap } from '../../wrapper';
 import { urlFor } from '../../client.ts';
@@ -9,17 +9,17 @@ import { NavList } from '../../constants/navList.ts';
 import { Queries } from '../../constants/queries.ts';
 
 const Hobbies = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const handleClick = (index) => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const handleClick = (index: number) => {
     setCurrentIndex(index);
   };
-  const { data, error, loading } = useFetch<Queries>(Queries.HOBBIES);
+  const { data, error, loading } = useFetch(Queries.HOBBIES);
   if (error) console.log(error);
   const current = data && data[currentIndex];
 
   return (
-    <div id={NavList.HOBBIES}>
-      <h2 className="head-text">Hobbies</h2>
+    <div id={NavList.Hobbies}>
+      <h2 className="head-text">Loisirs</h2>
       {loading && <Loader />}
       {data && (
         <>

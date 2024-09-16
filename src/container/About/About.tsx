@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import files from '../../constants/files.ts';
 import './About.scss';
@@ -11,11 +10,11 @@ import { SanityData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
 
 const About = () => {
-  const { data, loading, error } = useFetch<Queries>(Queries.ABOUT);
+  const { data, loading, error } = useFetch(Queries.ABOUT);
   if (error) console.log(error);
 
   return (
-    <div id={NavList.ABOUT}>
+    <div id={NavList.About}>
       <h2 className="head-text">
         A <span>propos</span> de <span>moi</span>
       </h2>

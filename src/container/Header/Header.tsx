@@ -24,7 +24,7 @@ const technologies: object[string] = [
 ];
 const Header = () => {
   return (
-    <div className="app__header app__flex" id={NavList.HOMEPAGE}>
+    <div className="app__header app__flex" id={NavList.Homepage}>
       <motion.div
         transition={{ duration: 0.5 }}
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}

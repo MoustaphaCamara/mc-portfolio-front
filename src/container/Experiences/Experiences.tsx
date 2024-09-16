@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import {
   VerticalTimeline,
@@ -25,7 +24,7 @@ const companyIcons = {
 };
 
 const Experiences = () => {
-  const { data, loading, error } = useFetch<Queries>(Queries.EXPERIENCES);
+  const { data, loading, error } = useFetch(Queries.EXPERIENCES);
   if (error) console.log(error);
 
   return (

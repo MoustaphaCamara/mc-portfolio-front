@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
@@ -51,7 +51,7 @@ const Portfolio = () => {
   }, [filter]);
 
   return (
-    <div id={NavList.PORTFOLIO}>
+    <div id={NavList.Portfolio}>
       <h2 className="head-text">
         mon <span> portfolio</span>
       </h2>
