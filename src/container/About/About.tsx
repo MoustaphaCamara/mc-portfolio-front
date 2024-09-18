@@ -10,7 +10,7 @@ import { SanityData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
 
 const About = () => {
-  const { data, loading, error } = useFetch(Queries.ABOUT);
+  const { data, loading, error } = useFetch<SanityData>(Queries.About);
   if (error) console.log(error);
 
   return (
@@ -20,7 +20,7 @@ const About = () => {
       </h2>
       <div className="app__profiles">
         {loading && <Loader />}
-        {data?.map((item: SanityData, index: number) => (
+        {data?.map((item, index: number) => (
           <div className="app__profile-item" key={index}>
             <img src={urlFor(item.imgUrl)} alt="who-am-i" />
             <p>{item.description}</p>

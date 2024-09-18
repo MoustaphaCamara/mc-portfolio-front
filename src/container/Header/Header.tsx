@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { MotionWrap } from '../../wrapper';
 import { images } from '../../constants';
@@ -16,7 +15,7 @@ const scaleVariants = {
   },
 };
 
-const technologies: object[string] = [
+const technologies: string[] = [
   images.react,
   images.laravel,
   images.nuxt,

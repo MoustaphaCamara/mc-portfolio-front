@@ -1,7 +1,7 @@
 export enum Queries {
-  ABOUT = "*[_type == 'about']",
-  EXPERIENCES = "*[_type == 'experiences'] | order(year desc)",
-  HOBBIES = "*[_type == 'hobbies']",
-  PORTFOLIO = "*[_type == 'works'] | order(releaseDate desc)",
-  SKILLS = "*[_type == 'skills']",
+  About = "*[_type == 'about']",
+  Experiences = "*[_type == 'experiences'] | order(year desc)",
+  Hobbies = "*[_type == 'hobbies']",
+  Portfolio = "*[_type == 'works'] | order(releaseDate desc)",
+  Skills = "*[_type == 'skills']",
 }

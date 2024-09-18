@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { MotionWrap } from '../../wrapper';
 import { urlFor } from '../../client.ts';
@@ -13,24 +13,24 @@ import Button from '../../components/Button.tsx';
 import { Queries } from '../../constants/queries.ts';
 
 const queryList: string[] = [
-  Filter.Skills.ALL,
-  Filter.Skills.FRONT,
-  Filter.Skills.BACK,
-  Filter.Skills.DB,
-  Filter.Skills.FRAMEWORK,
-  Filter.Skills.TOOLS,
+  Filter.Skills.All,
+  Filter.Skills.Front,
+  Filter.Skills.Back,
+  Filter.Skills.Db,
+  Filter.Skills.Framework,
+  Filter.Skills.Tools,
 ];
 
 const Skills = () => {
   const [filter, setFilter] = useState('backend');
-  const [query, setQuery] = useState<Queries | string>(Queries.SKILLS);
+  const [query, setQuery] = useState<Queries | string>(Queries.Skills);
 
-  const { data, loading, error } = useFetch(query);
+  const { data, loading, error } = useFetch<SanityData>(query);
   if (error) console.log(error);
 
   useEffect(() => {
     if (filter === 'tout afficher') {
-      setQuery(Queries.SKILLS);
+      setQuery(Queries.Skills);
     } else {
       setQuery(`*[_type == 'skills' && category == "${filter}"]`);
     }
@@ -49,7 +49,7 @@ const Skills = () => {
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
           {loading && <Loader />}
-          {data?.map((skill: SanityData) => (
+          {data?.map((skill) => (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: [-40, 0] }}
