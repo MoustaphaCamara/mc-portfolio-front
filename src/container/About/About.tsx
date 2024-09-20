@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import files from '../../constants/files.ts';
 import './About.scss';
@@ -7,21 +6,21 @@ import { MotionWrap } from '../../wrapper';
 import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
 import { NavList } from '../../constants/navList.ts';
-import { SanityData } from '../../shared/interfaces/data.ts';
+import { AboutData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
 
 const About = () => {
-  const { data, loading, error } = useFetch<Queries>(Queries.ABOUT);
+  const { data, loading, error } = useFetch<AboutData>(Queries.About);
   if (error) console.log(error);
 
   return (
-    <div id={NavList.ABOUT}>
+    <div id={NavList.About}>
       <h2 className="head-text">
         A <span>propos</span> de <span>moi</span>
       </h2>
       <div className="app__profiles">
         {loading && <Loader />}
-        {data?.map((item: SanityData, index: number) => (
+        {data?.map((item, index: number) => (
           <div className="app__profile-item" key={index}>
             <img src={urlFor(item.imgUrl)} alt="who-am-i" />
             <p>{item.description}</p>

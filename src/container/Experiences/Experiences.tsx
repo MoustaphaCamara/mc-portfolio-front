@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import {
   VerticalTimeline,
@@ -13,10 +12,15 @@ import { MdVaccines } from 'react-icons/md';
 import './Experiences.scss';
 import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
-import { SanityData } from '../../shared/interfaces/data.ts';
+import { ExperienceData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
+import React from 'react';
 
-const companyIcons = {
+type CompanyIcons = {
+  [key: string]: React.JSX.Element;
+};
+
+const companyIcons: CompanyIcons = {
   'bsOft.fr': <IoLogoReact />,
   'Ponsard & Dumas': <GiRobe />,
   'MSD Vaccins': <MdVaccines />,
@@ -25,7 +29,9 @@ const companyIcons = {
 };
 
 const Experiences = () => {
-  const { data, loading, error } = useFetch<Queries>(Queries.EXPERIENCES);
+  const { data, loading, error } = useFetch<ExperienceData>(
+    Queries.Experiences,
+  );
   if (error) console.log(error);
 
   return (
@@ -34,7 +40,7 @@ const Experiences = () => {
       <div className="app__skills-exp">
         <VerticalTimeline>
           {loading && <Loader />}
-          {data?.map((experience: SanityData, index) => (
+          {data?.map((experience, index) => (
             <VerticalTimelineElement
               key={index}
               className="vertical-timeline-element--work"

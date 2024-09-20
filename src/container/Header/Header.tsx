@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { MotionWrap } from '../../wrapper';
 import { images } from '../../constants';
@@ -16,7 +15,7 @@ const scaleVariants = {
   },
 };
 
-const technologies: object[string] = [
+const technologies: string[] = [
   images.react,
   images.laravel,
   images.nuxt,
@@ -24,7 +23,7 @@ const technologies: object[string] = [
 ];
 const Header = () => {
   return (
-    <div className="app__header app__flex" id={NavList.HOMEPAGE}>
+    <div className="app__header app__flex" id={NavList.Homepage}>
       <motion.div
         transition={{ duration: 0.5 }}
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}

@@ -1,19 +1,19 @@
 export enum NavList {
-  HOMEPAGE = 'accueil',
-  ABOUT = 'a-propos',
-  SKILLS = 'competences',
-  EXPERIENCES = 'experiences',
-  PORTFOLIO = 'portfolio',
-  HOBBIES = 'hobbies',
-  CONTACT = 'contact',
+  Homepage = 'accueil',
+  About = 'a-propos',
+  Skills = 'competences',
+  Experiences = 'experiences',
+  Portfolio = 'portfolio',
+  Hobbies = 'loisirs',
+  Contact = 'contact',
 }
 
 export const navList: string[] = [
-  NavList.HOMEPAGE,
-  NavList.ABOUT,
-  NavList.SKILLS,
-  NavList.EXPERIENCES,
-  NavList.PORTFOLIO,
-  NavList.HOBBIES,
-  NavList.CONTACT,
+  NavList.Homepage,
+  NavList.About,
+  NavList.Skills,
+  NavList.Experiences,
+  NavList.Portfolio,
+  NavList.Hobbies,
+  NavList.Contact,
 ];

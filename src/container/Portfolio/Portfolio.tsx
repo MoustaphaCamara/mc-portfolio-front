@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
@@ -10,10 +10,10 @@ import './Portfolio.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { NavList } from '../../constants/navList.ts';
-import { SanityData } from '../../shared/interfaces/data.ts';
 import * as Filter from '../../constants/filters.ts';
 import Button from '../../components/Button.tsx';
 import { Queries } from '../../constants/queries.ts';
+import { WorkData } from '../../shared/interfaces/data.ts';
 
 const settings = {
   dots: true,
@@ -25,24 +25,24 @@ const settings = {
 };
 
 const filterButtons: string[] = [
-  Filter.Portfolio.ALL,
-  Filter.Portfolio.REACT,
-  Filter.Portfolio.VUE,
-  Filter.Portfolio.JS,
-  Filter.Portfolio.TS,
-  Filter.Portfolio.SASS,
+  Filter.Portfolio.All,
+  Filter.Portfolio.React,
+  Filter.Portfolio.Vue,
+  Filter.Portfolio.Js,
+  Filter.Portfolio.Ts,
+  Filter.Portfolio.Sass,
 ];
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('tout afficher');
-  const [query, setQuery] = useState<Queries | string>(Queries.PORTFOLIO);
+  const [query, setQuery] = useState<Queries | string>(Queries.Portfolio);
 
-  const { data, loading, error } = useFetch(query);
+  const { data, loading, error } = useFetch<WorkData>(query);
   if (error) console.log(error);
 
   useEffect(() => {
     if (filter === 'tout afficher') {
-      setQuery(Queries.PORTFOLIO);
+      setQuery(Queries.Portfolio);
     } else {
       setQuery(
         `*[_type == 'works' && '${filter}' in tags] | order(releaseDate desc)`,
@@ -51,7 +51,7 @@ const Portfolio = () => {
   }, [filter]);
 
   return (
-    <div id={NavList.PORTFOLIO}>
+    <div id={NavList.Portfolio}>
       <h2 className="head-text">
         mon <span> portfolio</span>
       </h2>
@@ -66,7 +66,7 @@ const Portfolio = () => {
 
       <Slider {...settings}>
         {loading && <Loader />}
-        {data?.map((work: SanityData, index) => (
+        {data?.map((work, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 10 }}
@@ -76,7 +76,7 @@ const Portfolio = () => {
               <div className="app__portfolio-item-picture-container">
                 <div className="app__portfolio-item-picture">
                   <a href={work.projectLink} target="_blank" rel="noreferrer">
-                    <img src={urlFor(work.imgUrl)} alt={work.name} />
+                    <img src={urlFor(work.imgUrl)} alt={work.title} />
                   </a>
                 </div>
               </div>
@@ -88,7 +88,7 @@ const Portfolio = () => {
                 </p>
                 <div className="app__portfolio-icons">
                   {work.icon?.map((icon, index) => (
-                    <img src={urlFor(icon)} alt={work.name} key={index} />
+                    <img src={urlFor(icon)} alt={work.title} key={index} />
                   ))}
                 </div>
                 <div className="app__portfolio-links">
