@@ -12,7 +12,7 @@ import { MdVaccines } from 'react-icons/md';
 import './Experiences.scss';
 import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
-import { SanityData } from '../../shared/interfaces/data.ts';
+import { ExperienceData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
 import React from 'react';
 
@@ -29,7 +29,9 @@ const companyIcons: CompanyIcons = {
 };
 
 const Experiences = () => {
-  const { data, loading, error } = useFetch<SanityData>(Queries.Experiences);
+  const { data, loading, error } = useFetch<ExperienceData>(
+    Queries.Experiences,
+  );
   if (error) console.log(error);
 
   return (

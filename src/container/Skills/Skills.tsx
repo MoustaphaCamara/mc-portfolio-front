@@ -7,7 +7,7 @@ import Loader from '../../components/Loader/Loader';
 import 'react-vertical-timeline-component/style.min.css';
 import './Skills.scss';
 import { NavList } from '../../constants/navList.ts';
-import { SanityData } from '../../shared/interfaces/data.ts';
+import { SkillData } from '../../shared/interfaces/data.ts';
 import * as Filter from '../../constants/filters.ts';
 import Button from '../../components/Button.tsx';
 import { Queries } from '../../constants/queries.ts';
@@ -25,7 +25,7 @@ const Skills = () => {
   const [filter, setFilter] = useState('backend');
   const [query, setQuery] = useState<Queries | string>(Queries.Skills);
 
-  const { data, loading, error } = useFetch<SanityData>(query);
+  const { data, loading, error } = useFetch<SkillData>(query);
   if (error) console.log(error);
 
   useEffect(() => {

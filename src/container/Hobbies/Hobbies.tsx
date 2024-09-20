@@ -7,14 +7,14 @@ import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
 import { NavList } from '../../constants/navList.ts';
 import { Queries } from '../../constants/queries.ts';
-import { SanityData } from '../../shared/interfaces/data.ts';
+import { HobbiesData } from '../../shared/interfaces/data.ts';
 
 const Hobbies = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const handleClick = (index: number) => {
     setCurrentIndex(index);
   };
-  const { data, error, loading } = useFetch<SanityData>(Queries.Hobbies);
+  const { data, error, loading } = useFetch<HobbiesData>(Queries.Hobbies);
   if (error) console.log(error);
   const current = data && data[currentIndex];
 

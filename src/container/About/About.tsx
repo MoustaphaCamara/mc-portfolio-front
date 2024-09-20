@@ -6,11 +6,11 @@ import { MotionWrap } from '../../wrapper';
 import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
 import { NavList } from '../../constants/navList.ts';
-import { SanityData } from '../../shared/interfaces/data.ts';
+import { AboutData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
 
 const About = () => {
-  const { data, loading, error } = useFetch<SanityData>(Queries.About);
+  const { data, loading, error } = useFetch<AboutData>(Queries.About);
   if (error) console.log(error);
 
   return (
