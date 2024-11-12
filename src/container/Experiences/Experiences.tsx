@@ -15,12 +15,14 @@ import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
 import { SanityData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
+import { DiPhp } from 'react-icons/di';
 
 const companyIcons = {
+  'Deltablot':<DiPhp />,
   'bsOft.fr': <IoLogoReact />,
   'Ponsard & Dumas': <GiRobe />,
   'MSD Vaccins': <MdVaccines />,
-  HelloCSE: <IoLogoLaravel />,
+  'HelloCSE': <IoLogoLaravel />,
   'ACTA (Arc Europe)': <BsPersonWorkspace />,
 };
 
