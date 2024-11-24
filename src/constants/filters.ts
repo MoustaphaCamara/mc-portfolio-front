@@ -1,17 +1,17 @@
 export enum Portfolio {
-  ALL = 'tout afficher',
-  REACT = 'React',
-  VUE = 'Vue',
-  JS = 'Javascript',
-  TS = 'Typescript',
-  SASS = 'SASS',
+  All = 'tout afficher',
+  React = 'React',
+  Vue = 'Vue',
+  Js = 'Javascript',
+  Ts = 'Typescript',
+  Sass = 'SASS',
 }
 
 export enum Skills {
-  ALL = 'tout afficher',
-  FRONT = 'frontend',
-  BACK = 'backend',
-  DB = 'database',
-  FRAMEWORK = 'frameworks',
-  TOOLS = 'tools',
+  All = 'tout afficher',
+  Front = 'frontend',
+  Back = 'backend',
+  Db = 'database',
+  Framework = 'frameworks',
+  Tools = 'tools',
 }

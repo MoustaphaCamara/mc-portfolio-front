@@ -1,10 +1,10 @@
-import React from 'react';
 import './Footer.scss';
 import { NavList } from '../../constants/navList.ts';
 
+const currentYear = new Date().getFullYear();
 const Footer = () => {
   return (
-    <div id={NavList.CONTACT}>
+    <div id={NavList.Contact}>
       <div className="app__footer app__darkbg app_flex">
         <div className="app__footer-contact-container">
           <h2 className="head-text">Contactez moi</h2>
@@ -36,7 +36,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="app__footer-copyright-container">
-          <p className="p-text">©2023 MC</p>
+          <p className="p-text">©{currentYear} MC</p>
         </div>
       </div>
     </div>

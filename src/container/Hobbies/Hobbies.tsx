@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import { MotionWrap } from '../../wrapper';
 import { urlFor } from '../../client.ts';
@@ -7,27 +7,28 @@ import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
 import { NavList } from '../../constants/navList.ts';
 import { Queries } from '../../constants/queries.ts';
+import { HobbiesData } from '../../shared/interfaces/data.ts';
 
 const Hobbies = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const handleClick = (index) => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const handleClick = (index: number) => {
     setCurrentIndex(index);
   };
-  const { data, error, loading } = useFetch<Queries>(Queries.HOBBIES);
+  const { data, error, loading } = useFetch<HobbiesData>(Queries.Hobbies);
   if (error) console.log(error);
   const current = data && data[currentIndex];
 
   return (
-    <div id={NavList.HOBBIES}>
-      <h2 className="head-text">Hobbies</h2>
+    <div id={NavList.Hobbies}>
+      <h2 className="head-text">Loisirs</h2>
       {loading && <Loader />}
       {data && (
         <>
           <div className="app__hobbies-item app__flex">
-            <img src={urlFor(current.imgUrl)} alt="hobby" />
+            <img src={urlFor(current?.imgUrl ?? '')} alt="hobby" />
             <div className="app__hobbies-content">
-              <h4 className="bold-text">{current.name}</h4>
-              <p className="p-text">{current.description}</p>
+              <h4 className="bold-text">{current?.name}</h4>
+              <p className="p-text">{current?.description}</p>
             </div>
           </div>
           <div className="app__hobbies-btns app__flex">

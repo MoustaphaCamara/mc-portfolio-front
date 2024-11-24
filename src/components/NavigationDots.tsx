@@ -1,7 +1,10 @@
-import React from 'react';
 import { navList } from '../constants/navList.ts';
 
-const NavigationDots = ({ active }: string) => {
+interface NavigationDotsProps {
+  active: string;
+}
+
+const NavigationDots = ({ active }: NavigationDotsProps) => {
   return (
     <div className="app__navigation">
       {navList.map((item: string, index: number) => (
