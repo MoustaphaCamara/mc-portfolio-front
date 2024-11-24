@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import {
   VerticalTimeline,
@@ -12,26 +13,21 @@ import { MdVaccines } from 'react-icons/md';
 import './Experiences.scss';
 import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
-import { ExperienceData } from '../../shared/interfaces/data.ts';
+import { SanityData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
-import React from 'react';
+import { DiPhp } from 'react-icons/di';
 
-type CompanyIcons = {
-  [key: string]: React.JSX.Element;
-};
-
-const companyIcons: CompanyIcons = {
+const companyIcons = {
+  'Deltablot':<DiPhp />,
   'bsOft.fr': <IoLogoReact />,
   'Ponsard & Dumas': <GiRobe />,
   'MSD Vaccins': <MdVaccines />,
-  HelloCSE: <IoLogoLaravel />,
+  'HelloCSE': <IoLogoLaravel />,
   'ACTA (Arc Europe)': <BsPersonWorkspace />,
 };
 
 const Experiences = () => {
-  const { data, loading, error } = useFetch<ExperienceData>(
-    Queries.Experiences,
-  );
+  const { data, loading, error } = useFetch<Queries>(Queries.EXPERIENCES);
   if (error) console.log(error);
 
   return (
@@ -40,7 +36,7 @@ const Experiences = () => {
       <div className="app__skills-exp">
         <VerticalTimeline>
           {loading && <Loader />}
-          {data?.map((experience, index) => (
+          {data?.map((experience: SanityData, index) => (
             <VerticalTimelineElement
               key={index}
               className="vertical-timeline-element--work"
