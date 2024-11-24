@@ -3,6 +3,7 @@ import { MotionWrap } from '../../wrapper';
 import { images } from '../../constants';
 import './Header.scss';
 import { NavList } from '../../constants/navList.ts';
+import { useTranslation } from 'react-i18next';
 
 const scaleVariants = {
   whileInView: {
@@ -22,6 +23,7 @@ const technologies: string[] = [
   images.vue,
 ];
 const Header = () => {
+  const { t } = useTranslation();
   return (
     <div className="app__header app__flex" id={NavList.Homepage}>
       <motion.div
@@ -30,14 +32,14 @@ const Header = () => {
         className="app__header-info">
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-            <span>{'<salut />'}</span>
+            <span>{t('header.hello')}</span>
             <div style={{ marginLeft: 20 }}>
-              <p className="p-text">Moi c&apos;est</p>
-              <h1 className="head-text">Moustapha</h1>
+              <p className="p-text">{t('header.welcome')}</p>
+              <h1 className="head-text">{t('header.title')}</h1>
             </div>
           </div>
           <div className="tag-cmp app__flex">
-            <p className="p-text">développeur full stack</p>
+            <p className="p-text">{t('header.occupation')}</p>
           </div>
         </div>
       </motion.div>

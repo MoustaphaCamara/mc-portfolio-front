@@ -8,16 +8,16 @@ import Loader from '../../components/Loader/Loader';
 import { NavList } from '../../constants/navList.ts';
 import { AboutData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
   const { data, loading, error } = useFetch<AboutData>(Queries.About);
   if (error) console.log(error);
+  const { t } = useTranslation();
 
   return (
     <div id={NavList.About}>
-      <h2 className="head-text">
-        A <span>propos</span> de <span>moi</span>
-      </h2>
+      <h2 className="head-text">{t('about.title')}</h2>
       <div className="app__profiles">
         {loading && <Loader />}
         {data?.map((item, index: number) => (
@@ -33,7 +33,7 @@ const About = () => {
             className="btn btn-action"
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}>
-            cv (fr)
+            {t('about.curriculumFR')}
           </motion.a>
           <motion.a
             href={files.cv_en as string}
@@ -41,7 +41,7 @@ const About = () => {
             className="btn btn-action"
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}>
-            cv (en)
+            {t('about.curriculumEN')}
           </motion.a>
         </div>
       </div>

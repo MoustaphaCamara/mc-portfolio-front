@@ -1,3 +1,7 @@
 {
+  "header": {
+    "hello": "<hi />"
+  },
+  "moustapha": "Mouss-en",
   "navbar": "hi man"
 }

@@ -1,3 +1,9 @@
 {
+  "header": {
+    "hello": "<Hey />",
+    "welcome": "Bienvenue sur mon ",
+    "title": "Portfolio"
+  },
+  "moustapha": "Mouss-es",
   "navbar": "hola"
 }

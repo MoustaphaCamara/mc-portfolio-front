@@ -1,3 +1,34 @@
 {
-  "navbar": "Cc"
+  "header": {
+    "title": "Portfolio",
+    "hello": "<Hey />",
+    "welcome": "Bienvenue sur mon ",
+    "occupation": "Développeur full stack"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "curriculumFR": "cv (fr)",
+    "curriculumEN": "cv (en)"
+  },
+  "skills": {
+    "title": "Compétences",
+    "titleAdditional": "[..., complémentaires]",
+    "additionalFirstLine": "Français : natif",
+    "additionalSecondLine": "Anglais, Espagnol, Wolof : bilingue"
+  },
+  "experiences": {
+    "title": "Expériences"
+  },
+  "projects": {
+    "title": "Projets",
+    "languagesUsed": "Technologies utilisées :",
+    "sourceCode": "Code source",
+    "visit": "Visiter"
+  },
+  "hobbies": {
+    "title": "Loisirs"
+  },
+  "contact": {
+    "title": "Mes réseaux :"
+  }
 }
