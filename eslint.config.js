@@ -5,7 +5,7 @@ import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
 
 export default [
   {
-    ignores: ['/home/mouss/mc-portfolio-front/.prettierrc.cjs'],
+    ignores: ['../.prettierrc.cjs'],
     languageOptions: { globals: globals.browser },
     plugins: {
       react: pluginReactConfig,
@@ -15,7 +15,7 @@ export default [
     },
     settings: {
       react: {
-        version: 'detect', // Détecte automatiquement la version de React
+        version: 'detect'
       },
     },
   },
