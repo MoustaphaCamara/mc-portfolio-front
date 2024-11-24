@@ -5,6 +5,7 @@ import { navList } from '../../constants/navList.ts';
 import './Navbar.scss';
 import { useTranslation } from 'react-i18next';
 
+// todo : styling of buttons & translate title enums
 const langs = {
   fr: { nativeName: 'FR'},
   en: { nativeName: 'EN'},

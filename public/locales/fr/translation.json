@@ -1,14 +1,13 @@
 {
   "header": {
+    "welcome": "Bienvenue sur mon ",
     "title": "Portfolio",
     "hello": "<Hey />",
-    "welcome": "Bienvenue sur mon ",
     "occupation": "Développeur full stack"
   },
   "about": {
     "title": "À propos de moi",
-    "curriculumFR": "cv (fr)",
-    "curriculumEN": "cv (en)"
+    "curriculum": "Télécharger cv"
   },
   "skills": {
     "title": "Compétences",

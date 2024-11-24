@@ -13,7 +13,9 @@ import { useTranslation } from 'react-i18next';
 const About = () => {
   const { data, loading, error } = useFetch<AboutData>(Queries.About);
   if (error) console.log(error);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const selectedCV = currentLang === 'fr' ? files.cv_fr : files.cv_en;
 
   return (
     <div id={NavList.About}>
@@ -28,20 +30,13 @@ const About = () => {
         ))}
         <div className="curriculum">
           <motion.a
-            href={files.cv_fr as string}
+            href={selectedCV as string}
             target="_blank"
             className="btn btn-action"
             whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 0.5 }}>
-            {t('about.curriculumFR')}
-          </motion.a>
-          <motion.a
-            href={files.cv_en as string}
-            target="_blank"
-            className="btn btn-action"
-            whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 0.5 }}>
-            {t('about.curriculumEN')}
+            transition={{ duration: 0.5 }}
+          >
+            {t('about.curriculum')}
           </motion.a>
         </div>
       </div>
