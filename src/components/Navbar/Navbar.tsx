@@ -46,12 +46,15 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-                {Object.keys(langs).map((lang) => (
-                  <button type="submit" key={lang} onClick={() => i18n.changeLanguage(lang)}
-                          disabled={i18n.resolvedLanguage === lang}>
-                    {langs[lang].nativeName}
-                  </button>
-                ))}
+              {Object.keys(langs).map((lang) => (
+                <button
+                  className={`app__btn ${i18n.resolvedLanguage === lang ? 'app__btn-active' : ''}`}
+                  key={lang}
+                  onClick={() => i18n.changeLanguage(lang)}
+                  disabled={i18n.resolvedLanguage === lang}>
+                  {langs[lang].nativeName}
+                </button>
+              ))}
             </li>
           </ul>
         </div>
