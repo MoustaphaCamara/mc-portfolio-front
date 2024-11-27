@@ -1,9 +1,33 @@
 {
   "header": {
+    "welcome": "Bienvenido en mi ",
+    "title": "Portfolio",
     "hello": "<Hey />",
-    "welcome": "Bienvenue sur mon ",
-    "title": "Portfolio"
+    "occupation": "Full stack DevOps engineer"
   },
-  "moustapha": "Mouss-es",
-  "navbar": "hola"
+  "about": {
+    "title": "Sobre mí",
+    "curriculum": "Descargar cv"
+  },
+  "skills": {
+    "title": "Competencias",
+    "titleAdditional": "[..., otras habilidades]",
+    "additionalFirstLine": "Francés : nativo",
+    "additionalSecondLine": "Español, Inglés, Wolof : bilingüe"
+  },
+  "experiences": {
+    "title": "Experiencias"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "languagesUsed": "Technologías :",
+    "sourceCode": "Código",
+    "visit": "Visitar"
+  },
+  "hobbies": {
+    "title": "Actividades"
+  },
+  "contact": {
+    "title": "Redes sociales :"
+  }
 }

@@ -3,7 +3,7 @@
     "welcome": "Welcome to my ",
     "title": "Portfolio",
     "hello": "<Hey />",
-    "occupation": "Full stack engineer"
+    "occupation": "Full stack DevOps engineer"
   },
   "about": {
     "title": "About me",
@@ -20,7 +20,7 @@
   },
   "projects": {
     "title": "Projects",
-    "languagesUsed": "Langs used :",
+    "languagesUsed": "Languages :",
     "sourceCode": "Source code",
     "visit": "Visit"
   },
