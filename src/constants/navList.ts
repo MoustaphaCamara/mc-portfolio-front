@@ -7,13 +7,3 @@ export enum NavList {
   Hobbies = 'loisirs',
   Contact = 'contact',
 }
-
-export const navList: string[] = [
-  NavList.Homepage,
-  NavList.About,
-  NavList.Skills,
-  NavList.Experiences,
-  NavList.Portfolio,
-  NavList.Hobbies,
-  NavList.Contact,
-];

@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
 import { images } from '../../constants';
-import { navList } from '../../constants/navList.ts';
 import './Navbar.scss';
 import { useTranslation } from 'react-i18next';
+import { $SpecialObject } from 'i18next/typescript/helpers';
 
 // todo : styling of buttons & translate title enums
 const langs = {
@@ -29,6 +29,7 @@ const Navbar = () => {
   }, []);
 
   const { i18n } = useTranslation();
+  const navList: $SpecialObject = i18n.t('navList', { returnObjects:true });
   return (
     <div>
       <div

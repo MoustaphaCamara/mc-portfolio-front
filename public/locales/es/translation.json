@@ -29,5 +29,14 @@
   },
   "contact": {
     "title": "Redes sociales :"
-  }
+  },
+  "navList": [
+    "accueil",
+    "sobre-mi",
+    "competencias",
+    "experiencias",
+    "portfolio",
+    "actividades",
+    "contact"
+  ]
 }

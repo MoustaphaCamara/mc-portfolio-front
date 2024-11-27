@@ -29,5 +29,14 @@
   },
   "contact": {
     "title": "Social network :"
-  }
+  },
+  "navList": [
+    "Home",
+    "about-me",
+    "skills",
+    "experiences",
+    "portfolio",
+    "hobbies",
+    "contact"
+  ]
 }

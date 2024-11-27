@@ -29,5 +29,14 @@
   },
   "contact": {
     "title": "Mes réseaux :"
-  }
+  },
+  "navList": [
+    "accueil",
+    "a-propos",
+    "competences",
+    "experiences",
+    "portfolio",
+    "loisirs",
+    "contact"
+  ]
 }
