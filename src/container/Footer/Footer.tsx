@@ -1,13 +1,15 @@
 import './Footer.scss';
 import { NavList } from '../../constants/navList.ts';
+import { useTranslation } from 'react-i18next';
 
 const currentYear = new Date().getFullYear();
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <div id={NavList.Contact}>
       <div className="app__footer app__darkbg app_flex">
         <div className="app__footer-contact-container">
-          <h2 className="head-text">Contactez moi</h2>
+          <h2 className="head-text">{t('contact.title')}</h2>
           <ul className="app__footer-icons-list">
             <li>
               <a

@@ -1,0 +1,42 @@
+{
+  "header": {
+    "welcome": "Welcome to my ",
+    "title": "Portfolio",
+    "hello": "<Hey />",
+    "occupation": "Full stack DevOps engineer"
+  },
+  "about": {
+    "title": "About me",
+    "curriculum": "Download cv"
+  },
+  "skills": {
+    "title": "Skills",
+    "titleAdditional": "[..., other skills]",
+    "additionalFirstLine": "French : native",
+    "additionalSecondLine": "English, Spanish, Wolof : bilingual"
+  },
+  "experiences": {
+    "title": "Experiences"
+  },
+  "projects": {
+    "title": "Projects",
+    "languagesUsed": "Languages :",
+    "sourceCode": "Source code",
+    "visit": "Visit"
+  },
+  "hobbies": {
+    "title": "Activities"
+  },
+  "contact": {
+    "title": "Social network :"
+  },
+  "navList": [
+    "Home",
+    "about-me",
+    "skills",
+    "experiences",
+    "portfolio",
+    "hobbies",
+    "contact"
+  ]
+}

@@ -1,8 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
 import { images } from '../../constants';
-import { navList } from '../../constants/navList.ts';
 import './Navbar.scss';
+import { useTranslation } from 'react-i18next';
+import { $SpecialObject } from 'i18next/typescript/helpers';
+
+// todo : styling of buttons & translate title enums
+const langs = {
+  fr: { nativeName: 'FR'},
+  en: { nativeName: 'EN'},
+  es: { nativeName: 'ES'},
+};
 
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -20,6 +28,8 @@ const Navbar = () => {
     });
   }, []);
 
+  const { i18n } = useTranslation();
+  const navList: $SpecialObject = i18n.t('navList', { returnObjects:true });
   return (
     <div>
       <div
@@ -36,6 +46,17 @@ const Navbar = () => {
                 <a href={`#${item}`}>{item.replace('-', ' ')}</a>
               </li>
             ))}
+            <li>
+              {Object.keys(langs).map((lang) => (
+                <button
+                  className={`app__btn ${i18n.resolvedLanguage === lang ? 'app__btn-active' : ''}`}
+                  key={lang}
+                  onClick={() => i18n.changeLanguage(lang)}
+                  disabled={i18n.resolvedLanguage === lang}>
+                  {langs[lang].nativeName}
+                </button>
+              ))}
+            </li>
           </ul>
         </div>
         <div className="app__navbar-burger">

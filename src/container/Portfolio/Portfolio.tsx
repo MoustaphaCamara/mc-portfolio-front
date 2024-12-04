@@ -14,6 +14,7 @@ import * as Filter from '../../constants/filters.ts';
 import Button from '../../components/Button.tsx';
 import { Queries } from '../../constants/queries.ts';
 import { WorkData } from '../../shared/interfaces/data.ts';
+import { useTranslation } from 'react-i18next';
 
 const settings = {
   dots: true,
@@ -39,6 +40,7 @@ const Portfolio = () => {
 
   const { data, loading, error } = useFetch<WorkData>(query);
   if (error) console.log(error);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (filter === 'tout afficher') {
@@ -52,10 +54,7 @@ const Portfolio = () => {
 
   return (
     <div id={NavList.Portfolio}>
-      <h2 className="head-text">
-        mon <span> portfolio</span>
-      </h2>
-
+      <h2 className="head-text">{t('projects.title')}</h2>
       <div className="app__portfolio-filter">
         {filterButtons.map((item: string, index: number) => (
           <div key={index}>
@@ -84,7 +83,7 @@ const Portfolio = () => {
                 <h4 className="head-text">{work.title}</h4>
                 <p style={{ marginTop: 10 }}>{work.description}</p>
                 <p style={{ color: 'var(--orange-color)' }}>
-                  Technologies utilisées :
+                  {t('projects.languagesUsed')}
                 </p>
                 <div className="app__portfolio-icons">
                   {work.icon?.map((icon, index) => (
@@ -97,14 +96,14 @@ const Portfolio = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="app__portfolio-link-item">
-                    <AiFillGithub /> Code source
+                    <AiFillGithub />{t('projects.sourceCode')}
                   </a>
                   <a
                     href={work.projectLink}
                     target="_blank"
                     rel="noreferrer"
                     className="app__portfolio-link-item">
-                    <AiFillEye /> Visiter
+                    <AiFillEye />{t('projects.visit')}
                   </a>
                 </div>
               </div>
