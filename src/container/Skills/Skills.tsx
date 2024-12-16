@@ -11,6 +11,7 @@ import { SkillData } from '../../shared/interfaces/data.ts';
 import * as Filter from '../../constants/filters.ts';
 import Button from '../../components/Button.tsx';
 import { Queries } from '../../constants/queries.ts';
+import { useTranslation } from 'react-i18next';
 
 const queryList: string[] = [
   Filter.Skills.All,
@@ -36,9 +37,10 @@ const Skills = () => {
     }
   }, [filter]);
 
+  const { t } = useTranslation();
   return (
     <div id={NavList.Skills}>
-      <h2 className="head-text">Compétences</h2>
+      <h2 className="head-text">{t('skills.title')}</h2>
       <div className="app__skills-filter">
         {queryList.map((item: string, index: number) => (
           <div key={index}>
@@ -66,16 +68,16 @@ const Skills = () => {
           ))}
         </motion.div>
       </div>
-      <h3 className="head-text">[..., complémentaires]</h3>
+      <h3 className="head-text">{t('skills.titleAdditional')}</h3>
       <div className="app__skills-complementary">
         <div className="app__skills-complementary-items">
           <p className="p-text">
-            Anglais C1 - Espagnol C1 - Méthode AGILE - SCRUM
+            {t('skills.additionalFirstLine')}
           </p>
         </div>
         <div className="app__skills-complementary-desktop">
           <p className="p-text">
-            RoundCube - Buzzee CRM - SAGE Commercial - Comet SAP
+            {t('skills.additionalSecondLine')}
           </p>
         </div>
       </div>

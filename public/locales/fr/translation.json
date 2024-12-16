@@ -1,0 +1,42 @@
+{
+  "header": {
+    "welcome": "Bienvenue sur mon ",
+    "title": "Portfolio",
+    "hello": "<Hey />",
+    "occupation": "Full Stack DevOps"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "curriculum": "Télécharger cv"
+  },
+  "skills": {
+    "title": "Compétences",
+    "titleAdditional": "[..., complémentaires]",
+    "additionalFirstLine": "Français : natif",
+    "additionalSecondLine": "Anglais, Espagnol, Wolof : bilingue"
+  },
+  "experiences": {
+    "title": "Expériences"
+  },
+  "projects": {
+    "title": "Projets",
+    "languagesUsed": "Technologies utilisées :",
+    "sourceCode": "Code source",
+    "visit": "Visiter"
+  },
+  "hobbies": {
+    "title": "Loisirs"
+  },
+  "contact": {
+    "title": "Mes réseaux :"
+  },
+  "navList": [
+    "accueil",
+    "a-propos",
+    "competences",
+    "experiences",
+    "portfolio",
+    "loisirs",
+    "contact"
+  ]
+}

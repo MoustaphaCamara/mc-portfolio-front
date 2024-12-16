@@ -8,6 +8,7 @@ import Loader from '../../components/Loader/Loader';
 import { NavList } from '../../constants/navList.ts';
 import { Queries } from '../../constants/queries.ts';
 import { HobbiesData } from '../../shared/interfaces/data.ts';
+import { useTranslation } from 'react-i18next';
 
 const Hobbies = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -17,10 +18,10 @@ const Hobbies = () => {
   const { data, error, loading } = useFetch<HobbiesData>(Queries.Hobbies);
   if (error) console.log(error);
   const current = data && data[currentIndex];
-
+  const { t } = useTranslation();
   return (
     <div id={NavList.Hobbies}>
-      <h2 className="head-text">Loisirs</h2>
+      <h2 className="head-text">{t('hobbies.title')}</h2>
       {loading && <Loader />}
       {data && (
         <>
