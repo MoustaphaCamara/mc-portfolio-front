@@ -31,12 +31,12 @@
     "title": "Redes sociales :"
   },
   "navList": [
-    "accueil",
+    "inicio",
     "sobre-mi",
     "competencias",
     "experiencias",
     "portfolio",
     "actividades",
-    "contact"
+    "contacto"
   ]
 }

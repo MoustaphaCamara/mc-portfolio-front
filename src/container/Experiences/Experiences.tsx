@@ -16,6 +16,7 @@ import { ExperienceData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
 import { DiPhp } from 'react-icons/di';
 import { useTranslation } from 'react-i18next';
+import { NavList } from '../../constants/navList.ts';
 
 const companyIcons = {
   'Deltablot':<DiPhp />,
@@ -32,7 +33,7 @@ const Experiences = () => {
   const { t } = useTranslation();
 
   return (
-    <div id="experiences">
+    <div id={NavList.Experiences}>
       <h2 className="head-text">{t('experiences.title')}</h2>
       <div className="app__skills-exp">
         <VerticalTimeline>
