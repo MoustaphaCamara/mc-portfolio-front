@@ -4,8 +4,8 @@ import { images } from '../../constants';
 import './Navbar.scss';
 import { useTranslation } from 'react-i18next';
 import { $SpecialObject } from 'i18next/typescript/helpers';
+import { NavList } from '../../constants/navList.ts';
 
-// todo : styling of buttons & translate title enums
 const langs = {
   fr: { nativeName: 'FR'},
   en: { nativeName: 'EN'},
@@ -30,6 +30,7 @@ const Navbar = () => {
 
   const { i18n } = useTranslation();
   const navList: $SpecialObject = i18n.t('navList', { returnObjects:true });
+  const navListIds = Object.values(NavList);
   return (
     <div>
       <div
@@ -40,10 +41,10 @@ const Navbar = () => {
         </div>
         <div className="app__navbar-links">
           <ul>
-            {navList.map((item: string) => (
+            {navList.map((item: string, index: number) => (
               <li className="app__flex" key={`link-${item}`}>
                 <div />
-                <a href={`#${item}`}>{item.replace('-', ' ')}</a>
+                <a href={`#${navListIds[index]}`}>{item.replace('-', ' ')}</a>
               </li>
             ))}
             <li>
