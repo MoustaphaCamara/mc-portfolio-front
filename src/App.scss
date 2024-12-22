@@ -300,6 +300,16 @@
   }
 }
 
+.active {
+  background-color: var(--dark-purple-color);
+  background-image: linear-gradient(
+                  315deg,
+                  var(--purple-color) 0%,
+                  var(--dark-purple-color) 74%
+  );
+  color:white;
+  margin-inline: 4px;
+}
 .app__btn-active {
   background: transparent;
   background-color: var(--orange-color);

@@ -50,7 +50,7 @@ const Navbar = () => {
             <li>
               {Object.keys(langs).map((lang) => (
                 <button
-                  className={`app__btn ${i18n.resolvedLanguage === lang ? 'app__btn-active' : ''}`}
+                  className={`app__portfolio-link-item ${i18n.resolvedLanguage === lang ? 'active' : ''}`}
                   key={lang}
                   onClick={() => i18n.changeLanguage(lang)}
                   disabled={i18n.resolvedLanguage === lang}>
