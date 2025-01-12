@@ -22,6 +22,9 @@ import profile from '../assets/profile.png';
 import logo from '../assets/logo-mc.svg';
 import php from '../assets/php.svg';
 import laravel from '../assets/laravel-logo.svg';
+import flagEn from '../assets/us.svg';
+import flagEs from '../assets/es.svg';
+import flagFr from '../assets/fr.svg';
 
 export default {
   sanity,
@@ -48,4 +51,7 @@ export default {
   logo,
   php,
   laravel,
+  flagFr,
+  flagEs,
+  flagEn
 };
