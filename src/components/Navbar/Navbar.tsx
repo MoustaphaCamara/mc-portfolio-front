@@ -6,23 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { $SpecialObject } from 'i18next/typescript/helpers';
 import { NavList } from '../../constants/navList.ts';
 
-interface Language {
-  nativeName: string;
-  flag: string;
-}
-
-interface Languages {
-  [key: string]: Language;
-}
-
-const languages: Languages = {
-  fr: { nativeName: 'FR', flag: images.flagFr },
-  en: { nativeName: 'EN', flag: images.flagEn },
-  es: { nativeName: 'ES', flag: images.flagEs },
-};
-
-
-
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [navTop, setNavTop] = useState<number>(0);
@@ -58,26 +41,6 @@ const Navbar = () => {
                 <a href={`#${navListIds[index]}`}>{item.replace('-', ' ')}</a>
               </li>
             ))}
-            <li>
-              {Object.keys(languages).map((lang) => (
-                <button
-                  className={`${i18n.resolvedLanguage === lang ? 'active' : ''}`}
-                  key={lang}
-                  onClick={() => i18n.changeLanguage(lang)}
-                  disabled={i18n.resolvedLanguage === lang}>
-                    <img
-                      src={languages[lang].flag}
-                      alt={languages[lang].nativeName}
-                      style={{
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '50%',
-                        margin: '0 5px',
-                      }}
-                    />
-                </button>
-              ))}
-            </li>
           </ul>
         </div>
         <div className="app__navbar-burger">
