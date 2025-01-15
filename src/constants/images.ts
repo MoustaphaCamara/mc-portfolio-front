@@ -25,6 +25,7 @@ import laravel from '../assets/laravel-logo.svg';
 import flagEn from '../assets/us.svg';
 import flagEs from '../assets/es.svg';
 import flagFr from '../assets/fr.svg';
+import aboutImage from '../assets/images/portfolio-about-image.png';
 
 export default {
   sanity,
@@ -53,5 +54,6 @@ export default {
   laravel,
   flagFr,
   flagEs,
-  flagEn
+  flagEn,
+  aboutImage
 };

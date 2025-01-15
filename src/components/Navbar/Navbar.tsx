@@ -31,7 +31,7 @@ const Navbar = () => {
         className="app__navbar"
         style={{ top: navTop, transition: 'all 1s ease' }}>
         <div className="app__navbar-logo">
-          <img src={images.logo as string} alt="logo-portfolio" />
+          <img src={images.logo} alt="logo-portfolio" />
         </div>
         <div className="app__navbar-links">
           <ul>

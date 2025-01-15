@@ -1,13 +1,14 @@
 {
   "header": {
     "welcome": "Bienvenido en mi ",
-    "title": "Portfolio",
+    "title": "Portafolio",
     "hello": "<Hey />",
     "occupation": "Full stack DevOps engineer"
   },
   "about": {
     "title": "Sobre mí",
-    "curriculum": "Descargar cv"
+    "curriculum": "Descargar cv",
+    "description": "Bienvenido a mi portafolio. Residenciado en París, ocupo el puesto de desarrollador full stack en Deltablot y trabajo a tiempo completo en el proyecto open source elabFTW. Trabajo principalmente con PHP y TypeScript, y he adquirido algo de experiencia en React y Vue/Nuxt. Me encanta programar desde muy joven y he podido convertirlo en mi profesión; hoy en día sigo disfrutándolo y perfeccionando mis habilidades. Mi objetivo a largo plazo es orientarme hacia DevOps. Dejaré que mi portafolio les cuente más sobre mi trayectoria."
   },
   "skills": {
     "title": "Competencias",

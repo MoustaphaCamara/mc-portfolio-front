@@ -9,6 +9,7 @@ import { NavList } from '../../constants/navList.ts';
 import { AboutData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
 import { useTranslation } from 'react-i18next';
+import { images } from '../../constants';
 
 const About = () => {
   const { data, loading, error } = useFetch<AboutData>(Queries.About);
@@ -24,8 +25,8 @@ const About = () => {
         {loading && <Loader />}
         {data?.map((item, index: number) => (
           <div className="app__profile-item" key={index}>
-            <img src={urlFor(item.imgUrl)} alt="who-am-i" />
-            <p>{item.description}</p>
+            <img src={aboutImage} alt="who-am-i" />
+            <p>{t('about.description')}</p>
           </div>
         ))}
         <div className="curriculum">

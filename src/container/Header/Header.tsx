@@ -48,7 +48,7 @@ const Header = () => {
         className="app__header-img"
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         whileInView={{ opacity: [0, 1] }}>
-        <img src={images.profile as string} alt="profile-bg" />
+        <img src={images.profile} alt="profile-bg" />
       </motion.div>
 
       <motion.div

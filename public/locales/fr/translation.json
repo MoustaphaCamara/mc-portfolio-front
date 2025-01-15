@@ -7,7 +7,8 @@
   },
   "about": {
     "title": "À propos de moi",
-    "curriculum": "Télécharger cv"
+    "curriculum": "Télécharger cv",
+    "description": "Bienvenue sur mon portfolio. Domicilié à Paris, j'occupe le poste de développeur full stack chez Deltablot, et travaille à temps plein sur le projet open source elabFTW. Je travaille principalement avec php & typescript, et me suis fait quelques expériences sur React ainsi que Vue/Nuxt. J'adore le code depuis très jeune et ai pu en faire mon métier aujourd'hui, je continue de m'y épanouir et aiguiser mes compétences. Je souhaite à terme m'orienter vers le DevOps. Je laisserai mon portfolio vous en dire plus sur mon parcours."
   },
   "skills": {
     "title": "Compétences",
