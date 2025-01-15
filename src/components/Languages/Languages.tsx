@@ -1,4 +1,4 @@
-import { images } from '../../constants';
+import { flagFr, flagEn, flagEs } from '../../constants/images';
 import { useTranslation } from 'react-i18next';
 import './Languages.scss';
 
@@ -12,9 +12,9 @@ interface Languages {
 }
 
 const languages: Languages = {
-  fr: { nativeName: 'FR', flag: images.flagFr },
-  en: { nativeName: 'EN', flag: images.flagEn },
-  es: { nativeName: 'ES', flag: images.flagEs },
+  en: { nativeName: 'EN', flag: flagEn },
+  fr: { nativeName: 'FR', flag: flagFr },
+  es: { nativeName: 'ES', flag: flagEs },
 };
 
 const Languages = () => {

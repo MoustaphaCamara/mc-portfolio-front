@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { MotionWrap } from '../../wrapper';
-import { images } from '../../constants';
+import { react, laravel, nuxt, vue, profile } from '../../constants/images';
 import './Header.scss';
 import { NavList } from '../../constants/navList.ts';
 import { useTranslation } from 'react-i18next';
@@ -17,10 +17,10 @@ const scaleVariants = {
 };
 
 const technologies: string[] = [
-  images.react,
-  images.laravel,
-  images.nuxt,
-  images.vue,
+  react,
+  laravel,
+  nuxt,
+  vue,
 ];
 const Header = () => {
   const { t } = useTranslation();
@@ -48,7 +48,7 @@ const Header = () => {
         className="app__header-img"
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         whileInView={{ opacity: [0, 1] }}>
-        <img src={images.profile} alt="profile-bg" />
+        <img src={profile} alt="profile-bg" />
       </motion.div>
 
       <motion.div

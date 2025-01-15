@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import files from '../../constants/files.ts';
 import './About.scss';
-import { urlFor } from '../../client.ts';
 import { MotionWrap } from '../../wrapper';
 import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
@@ -9,7 +8,7 @@ import { NavList } from '../../constants/navList.ts';
 import { AboutData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
 import { useTranslation } from 'react-i18next';
-import { images } from '../../constants';
+import { aboutImage } from '../../constants/images.ts';
 
 const About = () => {
   const { data, loading, error } = useFetch<AboutData>(Queries.About);

@@ -1,59 +1,30 @@
-import canva from '../assets/canva.svg';
-import css from '../assets/css.svg';
-import figma from '../assets/figma.png';
-import flutter from '../assets/flutter.svg';
-import git from '../assets/git.svg';
-import github from '../assets/github.svg';
-import html from '../assets/html.svg';
-import javascript from '../assets/javascript.svg';
-import nodejs from '../assets/nodejs.svg';
-import react from '../assets/react.svg';
-import redux from '../assets/redux.svg';
-import sass from '../assets/sass.svg';
-import typescript from '../assets/typescript.svg';
-import vue from '../assets/vue.svg';
-import next from '../assets/nextjs.svg';
-import nuxt from '../assets/nuxt.svg';
-import mysql from '../assets/mysql.svg';
-import photoshop from '../assets/photoshop.svg';
-import express from '../assets/express.svg';
-import sanity from '../assets/sanity.svg';
-import profile from '../assets/profile.png';
-import logo from '../assets/logo-mc.svg';
-import php from '../assets/php.svg';
-import laravel from '../assets/laravel-logo.svg';
-import flagEn from '../assets/us.svg';
-import flagEs from '../assets/es.svg';
-import flagFr from '../assets/fr.svg';
-import aboutImage from '../assets/images/portfolio-about-image.png';
 
-export default {
-  sanity,
-  express,
-  photoshop,
-  github,
-  nuxt,
-  mysql,
-  canva,
-  next,
-  css,
-  figma,
-  flutter,
-  git,
-  html,
-  javascript,
-  nodejs,
-  react,
-  redux,
-  sass,
-  typescript,
-  vue,
-  profile,
-  logo,
-  php,
-  laravel,
-  flagFr,
-  flagEs,
-  flagEn,
-  aboutImage
-};
+export { default as canva } from '../assets/canva.svg';
+export { default as css } from '../assets/css.svg';
+export { default as figma } from '../assets/figma.png';
+export { default as flutter } from '../assets/flutter.svg';
+export { default as git } from '../assets/git.svg';
+export { default as github } from '../assets/github.svg';
+export { default as html } from '../assets/html.svg';
+export { default as javascript } from '../assets/javascript.svg';
+export { default as nodejs } from '../assets/nodejs.svg';
+export { default as react } from '../assets/react.svg';
+export { default as redux } from '../assets/redux.svg';
+export { default as sass } from '../assets/sass.svg';
+export { default as typescript } from '../assets/typescript.svg';
+export { default as vue } from '../assets/vue.svg';
+export { default as next } from '../assets/nextjs.svg';
+export { default as nuxt } from '../assets/nuxt.svg';
+export { default as mysql } from '../assets/mysql.svg';
+export { default as photoshop } from '../assets/photoshop.svg';
+export { default as express } from '../assets/express.svg';
+export { default as sanity } from '../assets/sanity.svg';
+export { default as profile } from '../assets/profile.png';
+export { default as logo } from '../assets/logo-mc.svg';
+export { default as php } from '../assets/php.svg';
+export { default as laravel } from '../assets/laravel-logo.svg';
+export { default as flagEn } from '../assets/us.svg';
+export { default as flagEs } from '../assets/es.svg';
+export { default as flagFr } from '../assets/fr.svg';
+export { default as aboutImage } from '../assets/images/portfolio-about-image.png';
+

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
-import { images } from '../../constants';
+import { logo } from '../../constants/images';
 import './Navbar.scss';
 import { useTranslation } from 'react-i18next';
 import { $SpecialObject } from 'i18next/typescript/helpers';
@@ -31,7 +31,7 @@ const Navbar = () => {
         className="app__navbar"
         style={{ top: navTop, transition: 'all 1s ease' }}>
         <div className="app__navbar-logo">
-          <img src={images.logo} alt="logo-portfolio" />
+          <img src={logo} alt="logo-portfolio" />
         </div>
         <div className="app__navbar-links">
           <ul>
