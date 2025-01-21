@@ -22,12 +22,10 @@ const About = () => {
       <h2 className="head-text">{t('about.title')}</h2>
       <div className="app__profiles">
         {loading && <Loader />}
-        {data?.map((item, index: number) => (
-          <div className="app__profile-item" key={index}>
+          <div className="app__profile-item" >
             <img src={aboutImage} alt="who-am-i" />
             <p>{t('about.description')}</p>
           </div>
-        ))}
         <div className="curriculum">
           <motion.a
             href={selectedCV as string}

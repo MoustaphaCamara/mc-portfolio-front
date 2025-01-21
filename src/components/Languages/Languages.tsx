@@ -12,8 +12,8 @@ interface Languages {
 }
 
 const languages: Languages = {
-  en: { nativeName: 'EN', flag: flagEn },
   fr: { nativeName: 'FR', flag: flagFr },
+  en: { nativeName: 'EN', flag: flagEn },
   es: { nativeName: 'ES', flag: flagEs },
 };
 
