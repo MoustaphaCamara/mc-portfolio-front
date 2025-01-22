@@ -2,17 +2,11 @@ import { motion } from 'framer-motion';
 import files from '../../constants/files.ts';
 import './About.scss';
 import { MotionWrap } from '../../wrapper';
-import useFetch from '../../hooks/useFetch.ts';
-import Loader from '../../components/Loader/Loader';
 import { NavList } from '../../constants/navList.ts';
-import { AboutData } from '../../shared/interfaces/data.ts';
-import { Queries } from '../../constants/queries.ts';
-import { useTranslation } from 'react-i18next';
 import { aboutImage } from '../../constants/images.ts';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
-  const { data, loading, error } = useFetch<AboutData>(Queries.About);
-  if (error) console.log(error);
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
   const selectedCV = currentLang === 'fr' ? files.cv_fr : files.cv_en;
@@ -21,7 +15,6 @@ const About = () => {
     <div id={NavList.About}>
       <h2 className="head-text">{t('about.title')}</h2>
       <div className="app__profiles">
-        {loading && <Loader />}
           <div className="app__profile-item" >
             <img src={aboutImage} alt="who-am-i" />
             <p>{t('about.description')}</p>
