@@ -1,9 +1,3 @@
-export interface AboutData {
-  title: string;
-  description: string;
-  imgUrl: string;
-}
-
 export interface ExperienceData {
   company: string;
   contract: string;

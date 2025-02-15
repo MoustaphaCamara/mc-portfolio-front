@@ -15,6 +15,8 @@ import Loader from '../../components/Loader/Loader';
 import { ExperienceData } from '../../shared/interfaces/data.ts';
 import { Queries } from '../../constants/queries.ts';
 import { DiPhp } from 'react-icons/di';
+import { useTranslation } from 'react-i18next';
+import { NavList } from '../../constants/navList.ts';
 
 const companyIcons = {
   'Deltablot':<DiPhp />,
@@ -28,10 +30,11 @@ const companyIcons = {
 const Experiences = () => {
   const { data, loading, error } = useFetch<ExperienceData>(Queries.Experiences);
   if (error) console.log(error);
+  const { t } = useTranslation();
 
   return (
-    <div id="experiences">
-      <h2 className="head-text">Expériences</h2>
+    <div id={NavList.Experiences}>
+      <h2 className="head-text">{t('experiences.title')}</h2>
       <div className="app__skills-exp">
         <VerticalTimeline>
           {loading && <Loader />}

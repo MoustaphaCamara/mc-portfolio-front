@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { MotionWrap } from '../../wrapper';
-import { images } from '../../constants';
+import { react, laravel, nuxt, vue, profile } from '../../constants/images';
 import './Header.scss';
 import { NavList } from '../../constants/navList.ts';
+import { useTranslation } from 'react-i18next';
 
 const scaleVariants = {
   whileInView: {
@@ -16,12 +17,13 @@ const scaleVariants = {
 };
 
 const technologies: string[] = [
-  images.react,
-  images.laravel,
-  images.nuxt,
-  images.vue,
+  react,
+  laravel,
+  nuxt,
+  vue,
 ];
 const Header = () => {
+  const { t } = useTranslation();
   return (
     <div className="app__header app__flex" id={NavList.Homepage}>
       <motion.div
@@ -30,14 +32,14 @@ const Header = () => {
         className="app__header-info">
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-            <span>{'<salut />'}</span>
+            <span>{t('header.hello')}</span>
             <div style={{ marginLeft: 20 }}>
-              <p className="p-text">Moi c&apos;est</p>
-              <h1 className="head-text">Moustapha</h1>
+              <p className="p-text">{t('header.welcome')}</p>
+              <h1 className="head-text">{t('header.title')}</h1>
             </div>
           </div>
           <div className="tag-cmp app__flex">
-            <p className="p-text">développeur full stack</p>
+            <p className="p-text">{t('header.occupation')}</p>
           </div>
         </div>
       </motion.div>
@@ -46,7 +48,7 @@ const Header = () => {
         className="app__header-img"
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         whileInView={{ opacity: [0, 1] }}>
-        <img src={images.profile as string} alt="profile-bg" />
+        <img src={profile} alt="profile-bg" />
       </motion.div>
 
       <motion.div
