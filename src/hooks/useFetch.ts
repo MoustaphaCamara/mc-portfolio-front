@@ -8,7 +8,7 @@ export type ApiResponse<T> = {
   loading: boolean;
 };
 
-export default function useFetch<T>(query: Queries): ApiResponse<T> {
+export default function useFetch<T>(query: Queries | string): ApiResponse<T> {
   const [data, setData] = useState<T[] | undefined>(undefined);
   const [error, setError] = useState<Error | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(false);

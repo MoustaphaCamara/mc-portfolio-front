@@ -1,0 +1,23 @@
+.app__langs {
+  position: fixed;
+  bottom: 20px;
+  right:20px;
+  z-index: 100;
+  & li {
+    list-style-type: none;
+  }
+}
+.lang_button {
+  background: none;
+  outline: none;
+  border: medium none;
+  margin: 0;
+  padding: 0 8px;
+  & img {
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    margin: 0 5px;
+    border-radius: 4px;
+  }
+}

@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
-import { images } from '../../constants';
-import { navList } from '../../constants/navList.ts';
+import { logo } from '../../constants/images';
 import './Navbar.scss';
+import { useTranslation } from 'react-i18next';
+import { $SpecialObject } from 'i18next/typescript/helpers';
+import { NavList } from '../../constants/navList.ts';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -20,20 +22,23 @@ const Navbar = () => {
     });
   }, []);
 
+  const { i18n } = useTranslation();
+  const navList: $SpecialObject = i18n.t('navList', { returnObjects:true });
+  const navListIds = Object.values(NavList);
   return (
     <div>
       <div
         className="app__navbar"
         style={{ top: navTop, transition: 'all 1s ease' }}>
         <div className="app__navbar-logo">
-          <img src={images.logo as string} alt="logo-portfolio" />
+          <img src={logo} alt="logo-portfolio" />
         </div>
         <div className="app__navbar-links">
           <ul>
-            {navList.map((item: string) => (
+            {navList.map((item: string, index: number) => (
               <li className="app__flex" key={`link-${item}`}>
                 <div />
-                <a href={`#${item}`}>{item.replace('-', ' ')}</a>
+                <a href={`#${navListIds[index]}`}>{item.replace('-', ' ')}</a>
               </li>
             ))}
           </ul>

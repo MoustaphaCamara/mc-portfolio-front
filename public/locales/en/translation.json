@@ -1,0 +1,43 @@
+{
+  "header": {
+    "welcome": "Welcome to my ",
+    "title": "Portfolio",
+    "hello": "<Hey />",
+    "occupation": "Full stack DevOps engineer"
+  },
+  "about": {
+    "title": "About me",
+    "curriculum": "Download cv",
+    "description": "Welcome to my portfolio. Based in Paris, I hold the position of full stack developer at Deltablot and work full-time on the open source project elabFTW. I mainly work with PHP and TypeScript, and have gained some experience with React and Vue/Nuxt. I've loved coding since I was very young and have turned it into my profession; today, I continue to thrive and sharpen my skills. My long-term goal is to move into DevOps. I'll let my portfolio tell you more about my journey."
+  },
+  "skills": {
+    "title": "Skills",
+    "titleAdditional": "[..., other skills]",
+    "additionalFirstLine": "French : native",
+    "additionalSecondLine": "English, Spanish, Wolof : bilingual"
+  },
+  "experiences": {
+    "title": "Experiences"
+  },
+  "projects": {
+    "title": "Projects",
+    "languagesUsed": "Languages :",
+    "sourceCode": "Source code",
+    "visit": "Visit"
+  },
+  "hobbies": {
+    "title": "Activities"
+  },
+  "contact": {
+    "title": "Social network :"
+  },
+  "navList": [
+    "Home",
+    "about-me",
+    "skills",
+    "experiences",
+    "portfolio",
+    "hobbies",
+    "contact"
+  ]
+}
