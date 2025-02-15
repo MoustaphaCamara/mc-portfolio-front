@@ -7,4 +7,4 @@ i18next
   .use(initReactI18next)
   .use(I18nextBrowserLanguageDetector)
   .use(I18NextHttpBackend)
-  .init({ fallbackLng: 'en' })
+  .init({ fallbackLng: 'fr' })
