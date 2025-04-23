@@ -18,8 +18,12 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies & build
+        env:
+          VITE_PROJECT_ID: ${{ secrets.VITE_PROJECT_ID }}
+        run: |
+          npm ci
+          npm run build
 
       - name: Build project
         run: npm run build
