@@ -4,12 +4,14 @@
 git clone https://github.com/MoustaphaCamara/mc-portfolio-front.git
 ```
 
-## Launch
-
-React Project using ViteJs <br />
+## Install dependencies
 
 ```
-npm i ; npm run dev
+npm i
 ```
 
-Back-end created with Sanity
+## Run in dev mode
+
+```
+npm run dev
+```
