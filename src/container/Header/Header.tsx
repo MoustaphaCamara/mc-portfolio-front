@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { MotionWrap } from '../../wrapper';
-import { react, laravel, nuxt, vue, profile } from '../../constants/images';
+import { react, laravel, php, vue, profile } from '../../constants/images';
 import './Header.scss';
 import { NavList } from '../../constants/navList.ts';
 import { useTranslation } from 'react-i18next';
@@ -19,7 +19,7 @@ const scaleVariants = {
 const technologies: string[] = [
   react,
   laravel,
-  nuxt,
+  php,
   vue,
 ];
 const Header = () => {
