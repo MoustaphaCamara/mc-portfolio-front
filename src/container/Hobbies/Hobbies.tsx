@@ -57,4 +57,5 @@ const Hobbies = () => {
     </div>
   );
 };
+
 export default MotionWrap(Hobbies, 'app__hobbies');

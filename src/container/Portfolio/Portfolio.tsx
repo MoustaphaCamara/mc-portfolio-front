@@ -51,7 +51,6 @@ const Portfolio = () => {
       );
     }
   }, [filter]);
-
   return (
     <div id={NavList.Portfolio}>
       <h2 className="head-text">{t('projects.title')}</h2>
@@ -114,4 +113,5 @@ const Portfolio = () => {
     </div>
   );
 };
+
 export default MotionWrap(Portfolio, 'app__portfolio app__darkbg');

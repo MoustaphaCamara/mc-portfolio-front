@@ -19,7 +19,6 @@ const languages: Languages = {
 
 const Languages = () => {
   const { i18n } = useTranslation();
-
   return (
     <div className="app__langs">
       <li>

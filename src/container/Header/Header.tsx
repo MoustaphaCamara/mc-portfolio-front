@@ -22,6 +22,7 @@ const technologies: string[] = [
   php,
   vue,
 ];
+
 const Header = () => {
   const { t } = useTranslation();
   return (

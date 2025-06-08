@@ -3,7 +3,6 @@ import './Modal.scss';
 import { useTranslation } from 'react-i18next';
 import { $SpecialObject } from 'i18next/typescript/helpers';
 
-
 interface ModalProps {
   setToggle: Dispatch<SetStateAction<boolean>>;
 }
@@ -16,8 +15,8 @@ const Modal: FC<ModalProps> = ({ setToggle }) => {
       <ul className="app__modal-links">
         {navList.map((item: string) => (
           <li key={item}>
+            {/* this div is necessary for the pointing arrow*/}
             <div />
-
             <a href={`#${item}`} onClick={() => setToggle(false)}>
               {item.replace('-', ' ')}
             </a>

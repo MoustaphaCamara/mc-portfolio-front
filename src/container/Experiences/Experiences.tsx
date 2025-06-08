@@ -8,7 +8,6 @@ import { BsPersonWorkspace } from 'react-icons/bs';
 import { IoLogoLaravel, IoLogoReact } from 'react-icons/io5';
 import { GiRobe } from 'react-icons/gi';
 import { MdVaccines } from 'react-icons/md';
-
 import './Experiences.scss';
 import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
@@ -31,7 +30,6 @@ const Experiences = () => {
   const { data, loading, error } = useFetch<ExperienceData>(Queries.Experiences);
   if (error) console.log(error);
   const { t } = useTranslation();
-
   return (
     <div id={NavList.Experiences}>
       <h2 className="head-text">{t('experiences.title')}</h2>
@@ -75,4 +73,5 @@ const Experiences = () => {
     </div>
   );
 };
+
 export default Experiences;

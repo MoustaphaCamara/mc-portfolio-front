@@ -10,7 +10,6 @@ const About = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
   const selectedCV = currentLang === 'fr' ? files.cv_fr : files.cv_en;
-
   return (
     <div id={NavList.About}>
       <h2 className="head-text">{t('about.title')}</h2>
@@ -34,4 +33,5 @@ const About = () => {
     </div>
   );
 };
+
 export default MotionWrap(About, 'app__about app_darkbg');
