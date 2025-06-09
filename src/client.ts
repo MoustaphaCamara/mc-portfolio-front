@@ -6,7 +6,7 @@ export const client = createClient({
   dataset: import.meta.env.VITE_DATASET,
   apiVersion: import.meta.env.VITE_API_VERSION,
   useCdn: true,
-  token: process.env.SANITY_READ_TOKEN || undefined,
+  token: import.meta.env.VITE_SANITY_READ_TOKEN || undefined,
 });
 const builder = imageUrlBuilder(client);
 
