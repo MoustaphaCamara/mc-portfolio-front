@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        VITE_PROJECT_ID:  ${VITE_PROJECT_ID}
+        VITE_DATASET:     ${VITE_DATASET:-production}
+        VITE_API_VERSION: ${VITE_API_VERSION}
+        VITE_PORT:        ${VITE_PORT-}
+    ports:
+      - "5198:80"
+    env_file:
+      - .env

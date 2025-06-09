@@ -1,0 +1,11 @@
+node_modules
+dist
+
+# editor cruft
+.git
+.gitignore
+.idea
+
+# Docker artefacts
+Dockerfile
+.dockerignore

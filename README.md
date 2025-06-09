@@ -44,3 +44,26 @@ mc-portfolio-front/
 - Sanity
 - ESLint
 - Prettier
+
+## Run the project
+
+Copy the .env.example into a .env
+
+`cp .env.example .env`
+
+Edit the new .env file to fill in these values:
+
+```env
+VITE_PROJECT_ID= # dev-project-id -> send me an email i'll answer quickly
+VITE_DATASET=development
+VITE_API_VERSION=YYYY-MM-DD
+VITE_PORT=5198 # whichever port you want to expose to
+```
+
+Build and run the project.
+
+`docker compose up -d --build`
+
+See the project in dev mode at port 5198:
+
+`http://localhost:5198/`
