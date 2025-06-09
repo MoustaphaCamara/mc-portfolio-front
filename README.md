@@ -3,6 +3,8 @@ It is built with **React**, **TypeScript** and **Sanity**. The project is contai
 
 You can view the live site at [moustaphacamara.fr](https://moustaphacamara.fr).
 
+To run the project locally, refer to the [Run the project](#run-the-project) section.
+
 ---
 
 ## Project Structure
@@ -49,9 +51,19 @@ mc-portfolio-front/
 
 ## Run the project
 
-Copy the .env.example into a .env
+Clone the project:
 
-`cp .env.example .env`
+`git clone https://github.com/MoustaphaCamara/mc-portfolio-front.git`
+
+Get inside the cloned repository and copy the .env.example into a new .env file
+
+```bash
+# go inside cloned repository
+cd mc-portfolio-front
+# copy the .env.example to a new .env
+cp .env.example .env
+```
+
 
 Edit the new .env file to fill in these values:
 
@@ -59,7 +71,7 @@ Edit the new .env file to fill in these values:
 VITE_PROJECT_ID=kwqfts6s # This example works with a public read-only dev dataset
 VITE_DATASET=development
 VITE_API_VERSION=YYYY-MM-DD
-VITE_PORT=5198 # whichever port you want to expose to
+VITE_PORT=5198 # or whichever port you want to expose to
 ```
 
 Build and run the project.
