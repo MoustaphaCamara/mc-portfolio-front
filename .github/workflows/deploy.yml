@@ -23,6 +23,7 @@ jobs:
           VITE_PROJECT_ID: ${{ secrets.VITE_PROJECT_ID }}
           VITE_DATASET: ${{ secrets.VITE_DATASET }}
           VITE_API_VERSION: ${{ secrets.VITE_API_VERSION }}
+          SANITY_READ_TOKEN: ${{ secrets.SANITY_READ_TOKEN }}
         run: |
           npm ci
           npm run build
