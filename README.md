@@ -53,7 +53,9 @@ mc-portfolio-front/
 
 Clone the project:
 
-`git clone https://github.com/MoustaphaCamara/mc-portfolio-front.git`
+```bash
+git clone https://github.com/MoustaphaCamara/mc-portfolio-front.git
+```
 
 Get inside the cloned repository and copy the .env.example into a new .env file
 
