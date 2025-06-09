@@ -1,4 +1,6 @@
-This is my personal developer portfolio built with **React**, **TypeScript** and **Sanity**.  
+This is my personal developer portfolio.
+It is built with **React**, **TypeScript** and **Sanity**. The project is containerized using Docker.
+
 You can view the live site at [moustaphacamara.fr](https://moustaphacamara.fr).
 
 ---
@@ -54,14 +56,13 @@ Copy the .env.example into a .env
 Edit the new .env file to fill in these values:
 
 ```env
-VITE_PROJECT_ID= # dev-project-id -> send me an email i'll answer quickly
+VITE_PROJECT_ID=kwqfts6s # This example works with a public read-only dev dataset
 VITE_DATASET=development
 VITE_API_VERSION=YYYY-MM-DD
 VITE_PORT=5198 # whichever port you want to expose to
 ```
 
 Build and run the project.
-
 `docker compose up -d --build`
 
 See the project in dev mode at port 5198:
