@@ -7,7 +7,7 @@ To run the project locally, refer to the [Run the project](#run-the-project) sec
 
 ---
 
-## Project Structure
+# Project Structure
 
 The project is organized as follows:
 
@@ -49,7 +49,7 @@ mc-portfolio-front/
 - ESLint
 - Prettier
 
-## Run the project
+## Dev: run the project locally
 
 Clone the project:
 
@@ -66,7 +66,6 @@ cd mc-portfolio-front
 cp .env.example .env
 ```
 
-
 Edit the new .env file to fill in these values:
 
 ```env
@@ -76,8 +75,22 @@ VITE_API_VERSION=YYYY-MM-DD
 VITE_PORT=5198 # or whichever port you want to expose to
 ```
 
-Build and run the project.
-`docker compose up -d --build`
+### Using vite
+
+```bash
+# install dependencies
+npm install
+# start server (at port 5173)
+npm run dev
+```
+
+### With Docker
+
+Build and run the project using docker compose.
+
+```bash
+docker compose up -d --build
+```
 
 See the project in dev mode at port 5198:
 
