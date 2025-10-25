@@ -3,7 +3,7 @@ It is built with **React**, **TypeScript** and **Sanity**. The project is contai
 
 You can view the live site at [moustaphacamara.fr](https://moustaphacamara.fr).
 
-To run the project locally, refer to the [Run the project](#run-the-project) section.
+To run the project locally, refer to the [Run the project](#dev-run-the-project-locally) section.
 
 ---
 
