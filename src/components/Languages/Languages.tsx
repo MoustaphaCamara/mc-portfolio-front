@@ -11,6 +11,7 @@ interface Languages {
   [key: string]: Language;
 }
 
+// TODO: make it a dropdown and place it in the navbar
 const languages: Languages = {
   fr: { nativeName: 'FR', flag: flagFr },
   en: { nativeName: 'EN', flag: flagEn },
