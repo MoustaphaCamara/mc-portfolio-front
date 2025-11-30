@@ -84,14 +84,35 @@ npm install
 npm run dev
 ```
 
-### With Docker
+### With Docker (production)
 
-Build and run the project using docker compose.
+Build and run the project using Docker Compose:
 
 ```bash
 docker compose up -d --build
 ```
 
-See the project in dev mode at port 5198:
+Then open:
+http://localhost:5198/ <!-- or whatever compose port you configured -->
 
-`http://localhost:5198/`
+#### With Docker (development / hot reload)
+
+Build the dev image:
+
+```bash
+docker build -f Dockerfile.dev -t mcportfolio-dev .
+```
+
+Run the app with hot reload:
+
+```bash
+docker run --rm -it \
+  -p 5173:5173 \
+  -v "$PWD":/app \
+  mcportfolio-dev
+```
+
+The Vite dev server runs inside the container on port 5173, so you can access it at: 
+`http://localhost:5173/`
+
+`-v "$PWD":/app` mounts your current project folder into the container, so any file change on your machine triggers Vite’s hot reload.
