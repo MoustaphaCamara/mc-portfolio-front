@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
+import { PORTFOLIO_TO_SANITY } from '../../constants/filterMaps.ts';
 import { MotionWrap } from '../../wrapper';
 import { urlFor } from '../../client.ts';
 import useFetch from '../../hooks/useFetch.ts';
@@ -43,11 +44,12 @@ const Portfolio = () => {
   if (error) console.log(error);
 
   useEffect(() => {
-    if (filter === Filter.Portfolio.All) {
+    const sanityTag = PORTFOLIO_TO_SANITY[filter];
+    if (!sanityTag) {
       setQuery(Queries.Portfolio);
     } else {
       setQuery(
-        `*[_type == 'works' && '${filter}' in tags] | order(releaseDate desc)`,
+        `*[_type == 'works' && '${sanityTag}' in tags] | order(releaseDate desc)`,
       );
     }
   }, [filter]);

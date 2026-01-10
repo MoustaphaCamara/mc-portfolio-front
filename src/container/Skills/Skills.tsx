@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { SKILLS_TO_SANITY } from '../../constants/filterMaps.ts';
 import { MotionWrap } from '../../wrapper';
 import { urlFor } from '../../client.ts';
 import useFetch from '../../hooks/useFetch.ts';
@@ -31,10 +32,11 @@ const Skills = () => {
   if (error) console.log(error);
 
   useEffect(() => {
-    if (filter === Filter.Skills.All) {
+    const sanityValue = SKILLS_TO_SANITY[filter];
+    if (!sanityValue) {
       setQuery(Queries.Skills);
     } else {
-      setQuery(`*[_type == 'skills' && category == "${filter}"]`);
+      setQuery(`*[_type == 'skills' && category == "${sanityValue}"]`);
     }
   }, [filter]);
 
