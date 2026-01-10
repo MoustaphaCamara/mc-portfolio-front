@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Languages from '../Languages/Languages.tsx';
 import Modal from './Modal';
 import { logo } from '../../constants/images';
 import './Navbar.scss';
@@ -48,6 +49,7 @@ const Navbar = () => {
         </div>
       </div>
       {toggle && <Modal setToggle={setToggle} />}
+      <Languages isMobile={false}/>
     </div>
   );
 };

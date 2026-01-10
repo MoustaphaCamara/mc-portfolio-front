@@ -1,11 +1,18 @@
 .app__langs {
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right:20px;
   z-index: 100;
   & li {
     list-style-type: none;
   }
+  // same breakpoint as navbar burger
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+.app__langs_mobile {
+  margin: 30px;
 }
 .lang_button {
   background: none;

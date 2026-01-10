@@ -1,3 +1,4 @@
+import { Dispatch, FC, SetStateAction } from 'react';
 import { flagFr, flagEn, flagEs } from '../../constants/images';
 import { useTranslation } from 'react-i18next';
 import './Languages.scss';
@@ -11,6 +12,10 @@ interface Languages {
   [key: string]: Language;
 }
 
+interface LanguagesProps {
+  isMobile: boolean;
+}
+
 // TODO: make it a dropdown and place it in the navbar
 const languages: Languages = {
   fr: { nativeName: 'FR', flag: flagFr },
@@ -18,10 +23,10 @@ const languages: Languages = {
   es: { nativeName: 'ES', flag: flagEs },
 };
 
-const Languages = () => {
+const Languages: FC<LanguagesProps> = ({ isMobile }) => {
   const { i18n } = useTranslation();
   return (
-    <div className="app__langs">
+    <div className={`${isMobile ? 'app__langs_mobile' : 'app__langs'}`}>
       <li>
         {Object.keys(languages).map((lang) => (
           <button
@@ -29,15 +34,12 @@ const Languages = () => {
             key={lang}
             onClick={() => i18n.changeLanguage(lang)}
             disabled={i18n.resolvedLanguage === lang}>
-            <img
-              src={languages[lang].flag}
-              alt={languages[lang].nativeName}
-            />
+            <img src={languages[lang].flag} alt={languages[lang].nativeName} />
           </button>
         ))}
       </li>
     </div>
-  )
-}
+  );
+};
 
 export default Languages;

@@ -2,6 +2,7 @@ import { Dispatch, FC, SetStateAction } from 'react';
 import './Modal.scss';
 import { useTranslation } from 'react-i18next';
 import { $SpecialObject } from 'i18next/typescript/helpers';
+import Languages from '../Languages/Languages.tsx';
 
 interface ModalProps {
   setToggle: Dispatch<SetStateAction<boolean>>;
@@ -22,6 +23,9 @@ const Modal: FC<ModalProps> = ({ setToggle }) => {
             </a>
           </li>
         ))}
+        <li>
+          <Languages isMobile={true} />
+        </li>
       </ul>
     </div>
   );
