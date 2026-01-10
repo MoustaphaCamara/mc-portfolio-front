@@ -25,7 +25,7 @@ const settings = {
   slidesToScroll: 1,
 };
 
-const filterButtons: string[] = [
+const filterButtons: Filter.Portfolio[] = [
   Filter.Portfolio.All,
   Filter.Portfolio.React,
   Filter.Portfolio.Vue,
@@ -35,15 +35,15 @@ const filterButtons: string[] = [
 ];
 
 const Portfolio = () => {
-  const [filter, setFilter] = useState('tout afficher');
+  const { t } = useTranslation();
+  const [filter, setFilter] = useState<Filter.Portfolio>(Filter.Portfolio.All);
   const [query, setQuery] = useState<Queries | string>(Queries.Portfolio);
 
   const { data, loading, error } = useFetch<WorkData>(query);
   if (error) console.log(error);
-  const { t } = useTranslation();
 
   useEffect(() => {
-    if (filter === 'tout afficher') {
+    if (filter === Filter.Portfolio.All) {
       setQuery(Queries.Portfolio);
     } else {
       setQuery(
@@ -55,10 +55,18 @@ const Portfolio = () => {
     <div id={NavList.Portfolio}>
       <h2 className="head-text">{t('projects.title')}</h2>
       <div className="app__portfolio-filter">
-        {filterButtons.map((item: string, index: number) => (
-          <div key={index}>
-            <Button content={item} status={filter} setStatus={setFilter} />
-          </div>
+        {filterButtons.map((item) => (
+          <Button
+            key={item}
+            content={
+              item === Filter.Portfolio.All
+                ? t('filters.all')
+                : t(`filters.portfolio.${item}`)
+            }
+            status={filter}
+            setStatus={setFilter}
+            value={item}
+          />
         ))}
       </div>
 
@@ -95,14 +103,16 @@ const Portfolio = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="app__portfolio-link-item">
-                    <AiFillGithub />{t('projects.sourceCode')}
+                    <AiFillGithub />
+                    {t('projects.sourceCode')}
                   </a>
                   <a
                     href={work.projectLink}
                     target="_blank"
                     rel="noreferrer"
                     className="app__portfolio-link-item">
-                    <AiFillEye />{t('projects.visit')}
+                    <AiFillEye />
+                    {t('projects.visit')}
                   </a>
                 </div>
               </div>

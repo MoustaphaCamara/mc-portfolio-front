@@ -39,5 +39,22 @@
     "portfolio",
     "actividades",
     "contacto"
-  ]
+  ],
+  "filters": {
+    "all": "Mostrar todo",
+    "portfolio": {
+      "react": "React",
+      "vue": "Vue",
+      "js": "JavaScript",
+      "ts": "TypeScript",
+      "sass": "SASS"
+    },
+    "skills": {
+      "front": "Frontend",
+      "back": "Backend",
+      "db": "Base de datos",
+      "framework": "Frameworks",
+      "tools": "Herramientas"
+    }
+  }
 }

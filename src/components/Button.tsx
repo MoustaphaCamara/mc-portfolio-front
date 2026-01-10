@@ -1,16 +1,22 @@
 import React from 'react';
 
-type ButtonProps = {
-  content: string;
-  setStatus: React.Dispatch<React.SetStateAction<string>>;
-  status: string;
+type ButtonProps<T extends string> = {
+  content: string; // translated label
+  value: T; // enum value (e.g., portfolio / skills)
+  status: T;
+  setStatus: React.Dispatch<React.SetStateAction<T>>;
 };
 
-const Button = ({ content, status, setStatus }: ButtonProps) => {
+const Button = <T extends string>({
+  content,
+  value,
+  status,
+  setStatus,
+}: ButtonProps<T>) => {
   return (
     <div
-      onClick={() => setStatus(content)}
-      className={`app__btn ${status === content ? 'app__btn-active' : ''}`}>
+      onClick={() => setStatus(value)}
+      className={`app__btn ${status === value ? 'app__btn-active' : ''}`}>
       {content}
     </div>
   );

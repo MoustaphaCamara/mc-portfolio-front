@@ -12,7 +12,7 @@ import './App.scss';
 
 const App = () => {
   return (
-    <div className="app">
+    <div>
       <Navbar />
       <Header />
       <About />
