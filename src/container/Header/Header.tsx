@@ -66,4 +66,4 @@ const Header = () => {
   );
 };
 
-export default MotionWrap(Header, 'app__darkbg');
+export default MotionWrap(Header);

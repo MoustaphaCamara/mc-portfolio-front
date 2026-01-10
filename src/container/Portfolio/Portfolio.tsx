@@ -114,4 +114,4 @@ const Portfolio = () => {
   );
 };
 
-export default MotionWrap(Portfolio, 'app__portfolio app__darkbg');
+export default MotionWrap(Portfolio, 'app__portfolio');

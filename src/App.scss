@@ -3,41 +3,10 @@
   font-family: var(--font-base);
 }
 
-.app__whitebg {
-  background-color: var(--white-color);
-}
-
-.app__primarybg {
-  background-color: var(--primary-color);
-}
-
-.app__darkbg {
-  background-color: var(--dark-purple-color);
-}
-
-.app__container {
-  width: 100%;
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: row;
-}
-
 .app__flex {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.app__wrapper {
-  flex: 1;
-  width: 100%;
-  flex-direction: column;
-  padding: 4rem 2rem;
-
-  @media screen and (max-width: 450px) {
-    padding: 4rem 1rem 2rem;
-  }
 }
 
 .head-text {
@@ -141,21 +110,6 @@
     a {
       letter-spacing: 1px;
     }
-  }
-}
-
-.app__navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  padding: 1rem;
-}
-
-@media screen and (max-width: 500px) {
-  .app__navigation {
-    display: none;
   }
 }
 

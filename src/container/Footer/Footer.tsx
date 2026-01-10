@@ -7,7 +7,7 @@ const Footer = () => {
   const { t } = useTranslation();
   return (
     <div id={NavList.Contact}>
-      <div className="app__footer app__darkbg app_flex">
+      <div className="app__footer app_flex">
         <div className="app__footer-contact-container">
           <h2 className="head-text">{t('contact.title')}</h2>
           <ul className="app__footer-icons-list">
