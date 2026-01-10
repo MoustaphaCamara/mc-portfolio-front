@@ -34,4 +34,4 @@ const About = () => {
   );
 };
 
-export default MotionWrap(About, 'app__about app_darkbg');
+export default MotionWrap(About, 'app__about');

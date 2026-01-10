@@ -170,14 +170,13 @@
 
 .app__header-img {
   flex: 1;
-
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-
   img {
     width: 50%;
+    max-width:375px;
     object-fit: contain;
     z-index: 1;
     border-radius: 0 0 50% 50%;
