@@ -30,7 +30,7 @@ const Languages: FC<LanguagesProps> = ({ isMobile }) => {
       <li>
         {Object.keys(languages).map((lang) => (
           <button
-            className={`lang_button ${i18n.resolvedLanguage === lang ? 'active' : ''}`}
+            className={`lang_button ${i18n.resolvedLanguage === lang ? 'lang_button_active' : ''}`}
             key={lang}
             onClick={() => i18n.changeLanguage(lang)}
             disabled={i18n.resolvedLanguage === lang}>
