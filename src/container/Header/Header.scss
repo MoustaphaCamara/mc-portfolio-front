@@ -32,11 +32,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 100%;
-
-  @media screen and (max-width: 2000px) {
-    width: 100%;
-  }
 }
 
 .app__header-badge {
@@ -81,9 +76,6 @@
     font-size: 1.5rem;
     color: white;
     text-shadow: 0 0 10px white;
-    @media screen and (min-width: 2000px) {
-      font-size: 2.5rem;
-    }
   }
 
   @media screen and (max-width: 1200px) {
@@ -106,11 +98,11 @@
     height: 100px;
     border-radius: 50%;
     background: var(--white-color);
-    box-shadow: 0 0 20px (rgba(255, 255, 255, 0.5));
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
 
     &:hover {
-      box-shadow: 0 0 10px (rgba(255, 255, 255, 1));
+      box-shadow: 0 0 10px rgba(255, 255, 255, 1);
     }
 
     img {
@@ -120,42 +112,32 @@
   }
 
   div:nth-child(1) {
+    background: rgb(216, 250, 255);
     width: 100px;
     height: 100px;
   }
 
   div:nth-child(2) {
+    background: rgb(255, 224, 224);
     margin: 1.75rem;
     width: 140px;
     height: 140px;
   }
 
   div:nth-child(3) {
-    width: 90px;
-    height: 90px;
+    background: rgb(229, 211, 255);
+    width: 130px;
+    height: 130px;
   }
 
   div:nth-child(4) {
+    background: rgb(243, 255, 243);
     margin: 2.25rem;
     width: 110px;
     height: 110px;
+    padding-top: .8rem;
   }
 
-  @media screen and (min-width: 2000px) {
-    div:nth-child(1) {
-      width: 200px;
-      height: 200px;
-    }
-    div:nth-child(2) {
-      margin: 1.75rem;
-      width: 180px;
-      height: 180px;
-    }
-    div:nth-child(3) {
-      width: 220px;
-      height: 220px;
-    }
-  }
   @media screen and (max-width: 1200px) {
     width: 100%;
     flex-direction: row;

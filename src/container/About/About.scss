@@ -43,6 +43,10 @@
     flex-direction: column;
   }
 
+  @media screen and (min-width: 1500px) {
+    max-width: 1200px;
+  }
+
   img {
     min-width: 220px;
     width: 50%;
