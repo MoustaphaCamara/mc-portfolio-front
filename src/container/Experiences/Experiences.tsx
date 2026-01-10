@@ -8,7 +8,6 @@ import { BsPersonWorkspace } from 'react-icons/bs';
 import { IoLogoLaravel, IoLogoReact } from 'react-icons/io5';
 import { GiRobe } from 'react-icons/gi';
 import { MdVaccines } from 'react-icons/md';
-import './Experiences.scss';
 import useFetch from '../../hooks/useFetch.ts';
 import Loader from '../../components/Loader/Loader';
 import { ExperienceData } from '../../shared/interfaces/data.ts';
