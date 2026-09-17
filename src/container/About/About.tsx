@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import files from '../../constants/files.ts';
 import './About.scss';
 import { MotionWrap } from '../../wrapper';
 import { NavList } from '../../constants/navList.ts';
