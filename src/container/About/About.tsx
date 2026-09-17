@@ -15,7 +15,6 @@ const About = () => {
 
   const cvUrl = `https://moustaphacamara.github.io/cv/?lang=${cvLang}`;
 
-  const selectedCV = currentLang === 'fr' ? files.cv_fr : files.cv_en;
   return (
     <div id={NavList.About}>
       <h2 className="head-text">{t('about.title')}</h2>
