@@ -9,6 +9,13 @@ import { useTranslation } from 'react-i18next';
 const About = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
+  const cvLang =
+    currentLang === 'fr' ? 'fr'
+      : currentLang === 'en'
+        ? 'en' : 'es';
+
+  const cvUrl = `https://moustaphacamara.github.io/cv/?lang=${cvLang}`;
+
   const selectedCV = currentLang === 'fr' ? files.cv_fr : files.cv_en;
   return (
     <div id={NavList.About}>
@@ -20,7 +27,7 @@ const About = () => {
           </div>
         <div className="curriculum">
           <motion.a
-            href={selectedCV as string}
+            href={cvUrl}
             target="_blank"
             className="btn btn-action"
             whileInView={{ opacity: [0, 1] }}
