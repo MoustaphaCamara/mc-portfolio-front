@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
-import Slider from 'react-slick';
+import SliderImport from 'react-slick';
 import { PORTFOLIO_TO_SANITY } from '../../constants/filterMaps.ts';
 import { MotionWrap } from '../../wrapper';
 import { urlFor } from '../../client.ts';
@@ -16,6 +16,8 @@ import Button from '../../components/Button.tsx';
 import { Queries } from '../../constants/queries.ts';
 import { WorkData } from '../../shared/interfaces/data.ts';
 import { useTranslation } from 'react-i18next';
+
+const Slider = (SliderImport as any).default ?? SliderImport;
 
 const settings = {
   dots: true,
