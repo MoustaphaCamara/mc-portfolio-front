@@ -12,7 +12,7 @@ To run the project locally, refer to the [Run the project](#dev-run-the-project-
 The project is organized as follows:
 
 ```graphql
-mc-portfolio-front/
+portfolioV1/
 ├── .github/
 │   └── workflows/          # GitHub Actions
 ├── public/                 # Static assets served directly
@@ -54,14 +54,14 @@ mc-portfolio-front/
 Clone the project:
 
 ```bash
-git clone https://github.com/MoustaphaCamara/mc-portfolio-front.git
+git clone https://github.com/MoustaphaCamara/portfolioV1.git
 ```
 
 Get inside the cloned repository and copy the .env.example into a new .env file
 
 ```bash
 # go inside cloned repository
-cd mc-portfolio-front
+cd portfolioV1
 # copy the .env.example to a new .env
 cp .env.example .env
 ```
