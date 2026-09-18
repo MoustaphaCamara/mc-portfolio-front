@@ -7,4 +7,9 @@ i18next
   .use(initReactI18next)
   .use(I18nextBrowserLanguageDetector)
   .use(I18NextHttpBackend)
-  .init({ fallbackLng: 'fr' })
+  .init({
+    fallbackLng: 'fr',
+    backend: {
+      loadPath: `${import.meta.env.BASE_URL}locales/{{lng}}/translation.json`,
+    },
+  });
