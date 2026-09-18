@@ -1,0 +1,44 @@
+name: Deploy to OVH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Set up Node
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: '22'
+
+      - name: Install dependencies & build
+        env:
+          VITE_PROJECT_ID: ${{ secrets.VITE_PROJECT_ID }}
+          VITE_DATASET: ${{ secrets.VITE_DATASET }}
+          VITE_API_VERSION: ${{ secrets.VITE_API_VERSION }}
+          VITE_SANITY_READ_TOKEN: ${{ secrets.SANITY_READ_TOKEN }}
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy with lftp
+        env:
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+          lftp -c "
+            set sftp:auto-confirm yes;
+            set ssl:verify-certificate no;
+            open -u $FTP_USER,$FTP_PASSWORD sftp://$FTP_HOST;
+            mirror -R --delete --verbose dist/ www/"
